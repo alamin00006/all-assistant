@@ -1,9 +1,10 @@
-import Navbar from "./components/Home/Navbar/Navbar";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./components/router/router";
 
 function App() {
   return (
-    <div>
-      <Navbar />
+    <div className="max-w-[1440px] mx-auto">
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
