@@ -1,9 +1,9 @@
-import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
 
 function App() {
   return (
     <div className="max-w-[1440px] mx-auto">
-      <Header></Header>
+      <Home></Home>
     </div>
   );
 }
