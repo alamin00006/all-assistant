@@ -7,8 +7,8 @@ import story4 from "../../assets/images/thedailystar.png";
 const OurStory = () => {
   return (
     <div>
-      <h1 className="text-center">Our Story</h1>
-      <div className="grid grid-cols-1 md:grid md:grid-cols-3   lg:grid lg:grid-cols-4 gap-2 place-items-center my-4">
+      <h1 className="text-center text-black">Our Story</h1>
+      <div className="grid grid-cols-2 md:grid md:grid-cols-3   lg:grid lg:grid-cols-4 gap-2 place-items-center my-4">
         <div>
           <img className="w-28" src={story1} alt="" />
         </div>
