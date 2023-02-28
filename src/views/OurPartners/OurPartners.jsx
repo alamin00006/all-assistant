@@ -6,20 +6,20 @@ import partner4 from "../../assets/images/youthcolab_ql5lcg.png";
 
 const OurPartners = () => {
   return (
-    <div>
+    <div className="my-20">
       <h1 className="text-center text-black">Our Partners</h1>
       <div className="grid grid-cols-2 md:grid md:grid-cols-3   lg:grid lg:grid-cols-4 gap-2 place-items-center my-4">
         <div>
-          <img className="w-28" src={partner1} alt="" />
+          <img className="w-72" src={partner1} alt="" />
         </div>
         <div>
-          <img className="w-28" src={partner2} alt="" />
+          <img className="w-72" src={partner2} alt="" />
         </div>
         <div>
-          <img className="w-28" src={partner3} alt="" />
+          <img className="w-72" src={partner3} alt="" />
         </div>
         <div>
-          <img className="w-28" src={partner4} alt="" />
+          <img className="w-72" src={partner4} alt="" />
         </div>
       </div>
     </div>
