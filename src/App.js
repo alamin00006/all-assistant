@@ -1,9 +1,11 @@
 import Navbar from "./components/Header/Navbar/Navbar";
+import Home from "./components/Home/Home";
 
 function App() {
   return (
-    <div className="max-w-[1440px] mx-auto">
+    <div className="">
       <Navbar />
+      <Home />
     </div>
   );
 }
