@@ -4,13 +4,15 @@ import LayOut from "../Main/LayOut";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <LayOut></LayOut>,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home></Home>,
       },
     ],
   },
 ]);
+
+ 
