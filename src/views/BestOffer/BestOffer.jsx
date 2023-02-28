@@ -47,15 +47,15 @@ export default function App() {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide><img className="rounded-lg" src={img1} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="rounded-lg" src={img2} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="rounded-lg" src={img3} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="rounded-lg" src={img4} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="rounded-lg" src={img1} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="rounded-lg" src={img2} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="rounded-lg" src={img3} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="rounded-lg" src={img4} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="rounded-lg" src={img4} alt="" /></SwiperSlide>
+        <SwiperSlide className="flex flex-col"><img className="rounded-lg" src={img1} alt="" /><h1>Milk Develery</h1><p className="text-sm">only at 66Taka/Kg</p></SwiperSlide>
+        <SwiperSlide className="flex flex-col"><img className="rounded-lg" src={img2} alt="" /><h1>Shifting Service</h1><p className="text-sm">on demand</p></SwiperSlide>
+        <SwiperSlide className="flex flex-col"><img className="rounded-lg" src={img3} alt="" /><h1>Special Gas Delivery Offer</h1><p className="text-sm">free Home Delivery</p></SwiperSlide>
+        <SwiperSlide className="flex flex-col"><img className="rounded-lg" src={img4} alt="" /><h1>Rent Your Home/Office/Mess</h1><p className="text-sm">free of cost</p></SwiperSlide>
+        <SwiperSlide className="flex flex-col"><img className="rounded-lg" src={img1} alt="" /><h1>Milk Develery</h1><p className="text-sm">only at 66Taka/Kg</p></SwiperSlide>
+        <SwiperSlide className="flex flex-col"><img className="rounded-lg" src={img2} alt="" /><h1>Shifting Service</h1><p className="text-sm">on demand</p></SwiperSlide>
+        <SwiperSlide className="flex flex-col"><img className="rounded-lg" src={img3} alt="" /><h1>Special Gas Delivery Offer</h1><p className="text-sm">free Home Delivery</p></SwiperSlide>
+        <SwiperSlide className="flex flex-col"><img className="rounded-lg" src={img4} alt="" /><h1>Rent Your Home/Office/Mess</h1><p className="text-sm">free of cost</p></SwiperSlide>
+      
       </Swiper>
     </>
   );
