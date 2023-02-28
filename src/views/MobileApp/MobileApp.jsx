@@ -4,7 +4,7 @@ const MobileApp = () => {
   return (
     <div>
       <div>
-        <img src="" alt="" />
+        <img src="..." alt="" />
       </div>
     </div>
   );
