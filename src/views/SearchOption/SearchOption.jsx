@@ -1,9 +1,7 @@
 import React from "react";
 
-const SearchOption = ({ divisions }) => {
- 
-const SearchOption = ({ divisions, handleDistricts }) => {
-  //   console.log(handleDistricts);
+const SearchOption = ({ divisions, handleDistricts,getDistricts }) => {
+
   return (
     <div>
       Search Option
@@ -17,9 +15,6 @@ const SearchOption = ({ divisions, handleDistricts }) => {
             --Select--
           </option>
           {divisions.map((div) => (
-            <option key={div.id}>{div.name}</option>
-          ))
-          }
             <option value={div.id} key={div.id}>
               {div.id} {div.name}
             </option>
