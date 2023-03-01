@@ -16,7 +16,7 @@ const UserInfo = () => {
       </div>
       <div className='text-center'>
         <h1>15,000 +</h1>
-        <span>Service Provided</span>
+        <span>Service Provide</span>
       </div>
      </div>
      <div>
