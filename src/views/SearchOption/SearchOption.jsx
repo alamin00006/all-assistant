@@ -1,21 +1,16 @@
 import React from "react";
 
-const SearchOption = ({
-  divisions,
-  handleDistricts,
-  getDistricts,
-  handleUpozilla,
-  getFindUpozillas,
-}) => {
-  // console.log(getDistricts);
+const SearchOption = ({ divisions, handleDistricts, getDistricts,handleUpozilas,getUpozilas }) => {
+  console.log(getDistricts);
   return (
     <div className="w-3/4 m-0 mx-auto">
       Search Option
-      <div>
+      <div >
         <select
           name="division"
           className="select w-full max-w-xs"
           onChange={(e) => handleDistricts(e.target.value)}
+         
         >
           <option disabled defaultValue="--Select--">
             --Select--
@@ -26,11 +21,9 @@ const SearchOption = ({
             </option>
           ))}
         </select>
-        <select
-          name="district"
-          className="select w-full max-w-xs"
-          onChange={(e) => handleUpozilla(e.target.value)}
-        >
+        <select name="district" className="select w-full max-w-xs" 
+        onChange={(e) => handleUpozilas(e.target.value)}>
+
           <option disabled defaultValue="--Select--">
             --Select--
           </option>
@@ -45,7 +38,7 @@ const SearchOption = ({
           <option disabled defaultValue="--Select--">
             --Select--
           </option>
-          {getFindUpozillas.map((dis) => (
+          {getUpozilas.map((dis) => (
             <option value={dis.id} key={dis.id}>
               {dis.name}
             </option>

@@ -5,9 +5,10 @@ import SearchOption from "../SearchOption/SearchOption";
 const House = () => {
   const [divisions, setDivision] = useState([]);
   const [districts, setDistricts] = useState([]);
-  const [upozillas, setUpozillas] = useState([]);
+  const [upazilas,setUpazilas] = useState([]);
   const [getDistricts, setFindDistrict] = useState([]);
-  const [getFindUpozillas, setFindUpozillas] = useState([]);
+  const [getUpazilas,setUpazila] = useState([]);
+
   useEffect(() => {
     fetch("bd-division.json")
       .then((res) => res.json())
@@ -19,32 +20,35 @@ const House = () => {
       .then((res) => res.json())
       .then((data) => setDistricts(data.districts));
   }, []);
+  // console.log(districts)
 
   useEffect(() => {
-    fetch("bd-upozilla.json")
+    fetch("bd-upazilas.json")
       .then((res) => res.json())
-      .then((data) => setUpozillas(data.upazilas));
+      .then((data) => setUpazilas(data.upazilas));
   }, []);
-  // console.log(upozillas);
+  //console.log(upazilas);
 
   const handleDistricts = (e) => {
     const findDistricts = districts.filter((dis) => dis.division_id === e);
     setFindDistrict(findDistricts);
     // console.log(findDistricts);
   };
-  const handleUpozilla = (e) => {
-    const findUpozilla = upozillas.filter((upz) => upz.district_id === e);
-    setFindUpozillas(findUpozilla);
+ 
+  const handleUpazilas = (e) => {
+    const findUpazilas = upazilas.filter((ups) => ups.district_id === e);
+    setUpazila(findUpazilas);
+  console.log(e);
   };
-  // console.log(getDistricts);
+  //console.log(getUpazilas);
   return (
     <div>
       <SearchOption
         divisions={divisions}
         handleDistricts={handleDistricts}
         getDistricts={getDistricts}
-        handleUpozilla={handleUpozilla}
-        getFindUpozillas={getFindUpozillas}
+        handleUpazilas={handleUpazilas}
+        getUpazilas={getUpazilas}
       ></SearchOption>
       <RecentProperties></RecentProperties>
     </div>
