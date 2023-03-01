@@ -35,7 +35,7 @@ const SearchOption = ({ divisions, handleDistricts, getDistricts,handleUpozilas,
           ))}
         </select>
 
-        <select name="upozilla" className="select w-full max-w-xs">
+        <select name="upazilla" className="select w-full max-w-xs">
           <option disabled defaultValue="--Select--">
             --Select--
           </option>
