@@ -4,15 +4,15 @@ import googlePlayStore from "../../assets/images/google-play_gksojj.png";
 const MobileApp = () => {
   return (
     <div>
-      <div className="flex lg:flex-row md:flex-row sm:flex-row xs:flex-col items-center lg:justify-center  sm:justify-center xs:justify-center ">
+      <div className="flex lg:flex-row md:flex-row sm:flex-row xs:flex-col items-center lg:justify-center  sm:justify-center xs:justify-center md:justify-center">
         <div>
           <img
-            className="lg:w-[190px] lg:h-[380px] md:h-[350px] sm:h-10 xs:h-10 md:w-[190px] sm:w-[173px] sm:h-[380px] xs:w-[200px] xs:h-[380px]"
             src={mobileApp}
+            className="lg:w-[190px] lg:h-[380px] md:w-[190px] md:h-[380px] sm:w-[190px] sm:h-[380px] xs:w-[190px] xs:h-[380px]"
             alt=""
           />
         </div>
-        <div className="text-black ml-16  ">
+        <div className="text-black ml-16">
           <h2 className="text-2xl text-orange-400">
             Book an assistant by two minutes
           </h2>

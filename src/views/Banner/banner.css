@@ -1,0 +1,22 @@
+.slider-content {
+  z-index: 999;
+  color: white;
+}
+/* .slider img {
+  width: 100%;
+  min-height: calc(100vh - 300px) !important;
+} */
+
+.swiper-pagination-bullet-active {
+  display: none;
+}
+.swiper-button-prev {
+  color: rgb(252, 201, 16);
+  margin-right: 40px;
+  font-weight: 400;
+}
+.swiper-button-next {
+  color: rgb(252, 201, 16);
+  margin-right: 40px;
+  font-weight: 400;
+}
