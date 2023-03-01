@@ -61,7 +61,7 @@ const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Home</a>
+            <Link>Home</Link>
           </li>
 
           <li>
@@ -73,7 +73,7 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn">Get started</Link>
+        <Link className="btn bg-red-400">Get started</Link>
       </div>
     </div>
   );
