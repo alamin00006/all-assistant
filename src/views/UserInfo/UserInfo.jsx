@@ -26,7 +26,7 @@ const UserInfo = () => {
       </div>
       <div className='text-center'>
         <h1>300 +</h1>
-        <span>Property Owners</span>
+        <span>Property Owner</span>
       </div>
      </div>
      </div>
