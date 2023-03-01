@@ -1,87 +1,49 @@
-import React, { useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-import "./styles.css";
-
-// import required modules
-import { Navigation } from "swiper";
-
+import house from "../../assets/images/hose.png";
+import hotel from "../../assets/images/hotel.png";
+import shifting from "../../assets/images/shifting.png";
+import technician from "../../assets/images/technician.png";
+import pureMil from "../../assets/images/milk.png";
+import villagePur from "../../assets/images/Village.png";
+import gas from "../../assets/images/gas.png";
+import { Link } from "react-router-dom";
 const Services = () => {
-  const [swiperRef, setSwiperRef] = useState(null);
-
-  let appendNumber = 4;
-  let prependNumber = 1;
-
-  //   const prepend2 = () => {
-  //     swiperRef.prependSlide([
-  //       '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
-  //       '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
-  //     ]);
-  //   };
-
-  //   const prepend = () => {
-  //     swiperRef.prependSlide(
-  //       '<div class="swiper-slide">Slide ' + --prependNumber + "</div>"
-  //     );
-  //   };
-
-  //   const append = () => {
-  //     swiperRef.appendSlide(
-  //       '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>"
-  //     );
-  //   };
-
-  //   const append2 = () => {
-  //     swiperRef.appendSlide([
-  //       '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
-  //       '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
-  //     ]);
-  //   };
   return (
-    <div className="mt-4">
-      <div>
-        <h1 className="text-center text-black">Services</h1>
+    <div className="mt-4 mb-48 lg:mx-36 md:mx-26 sm:mx-16 xs:mx-0">
+      <h2 className="text-center text-2xl font-bold text-gray-500">Services</h2>
+      <div className="grid lg:grid-cols-7 md:grid-cols-5 sm:grid-cols-5 xs:grid-cols-3 mt-5">
+        <div>
+          <Link to="/house">
+            <img style={{ width: "100px" }} src={house} alt="" />
+            <p className="ml-7">House</p>
+          </Link>
+        </div>
+        <div>
+          <Link to="/hotel">
+            <img style={{ width: "100px" }} src={hotel} alt="" />
+            <p className="ml-7">Hotel</p>
+          </Link>
+        </div>
+        <div>
+          <img style={{ width: "100px" }} src={shifting} alt="" />
+          <p className="ml-7">Shifting</p>
+        </div>
+        <div>
+          <img style={{ width: "100px" }} src={technician} alt="" />
+          <p className="ml-7">Technician</p>
+        </div>
+        <div className="lg:mt-0 xs:mt-5">
+          <img style={{ width: "100px" }} src={pureMil} alt="" />
+          <p className="ml-7">Pure Milk</p>
+        </div>
+        <div className="lg:mt-0 xs:mt-5">
+          <img style={{ width: "100px" }} src={villagePur} alt="" />
+          <p className="ml-7">Village Pur</p>
+        </div>
+        <div className="lg:mt-0 xs:mt-5">
+          <img style={{ width: "100px" }} src={gas} alt="" />
+          <p className="ml-7">Gas</p>
+        </div>
       </div>
-      <>
-        <Swiper
-          onSwiper={setSwiperRef}
-          slidesPerView={3}
-          centeredSlides={true}
-          spaceBetween={30}
-          navigation={true}
-          modules={[Navigation]}
-          className="mySwiper"
-        >
-          <SwiperSlide>Slide 1</SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-          <SwiperSlide>Slide 6</SwiperSlide>
-          <SwiperSlide>Slide 7</SwiperSlide>
-        </Swiper>
-
-        {/* <p className="append-buttons">
-          <button onClick={() => prepend2()} className="prepend-2-slides">
-            Prepend 2 Slides
-          </button>
-          <button onClick={() => prepend()} className="prepend-slide">
-            Prepend Slide
-          </button>
-          <button onClick={() => append()} className="append-slide">
-            Append Slide
-          </button>
-          <button onClick={() => append2()} className="append-2-slides">
-            Append 2 Slides
-          </button>
-        </p> */}
-      </>
     </div>
   );
 };
