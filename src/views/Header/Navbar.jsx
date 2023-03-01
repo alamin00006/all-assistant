@@ -1,8 +1,18 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo1 from "../../assets/images/logo1.png";
+import useUser from "../../Hooks/userUser";
 
 const Navbar = () => {
+  const [user, refetch, isLoading] = useUser();
+
+  const navigate = useNavigate();
+
+  const SingOutHandle = () => {
+    navigate("/");
+    localStorage.removeItem("token");
+    window.location.reload(false);
+  };
   return (
     <header className="bg-green-300">
       <nav className="lg:mx-36 md:mx-26 sm:mx-16 xs:mx-0">
@@ -40,9 +50,15 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/login" className="px-3">
-                    LOGIN
-                  </Link>
+                  {user?.email ? (
+                    <Link onClick={SingOutHandle} to="">
+                      LOGOUT
+                    </Link>
+                  ) : (
+                    <Link to="/login" className="px-3">
+                      LOGIN
+                    </Link>
+                  )}
                 </li>
               </ul>
             </div>
@@ -69,9 +85,15 @@ const Navbar = () => {
             <Link to="" className="px-3 hidden lg:flex">
               CART
             </Link>
-            <Link to="/login" className="px-3">
-              LOGIN
-            </Link>
+            {user?.email ? (
+              <Link onClick={SingOutHandle} to="">
+                LOGOUT
+              </Link>
+            ) : (
+              <Link to="/login" className="px-3">
+                LOGIN
+              </Link>
+            )}
           </div>
         </div>
       </nav>
