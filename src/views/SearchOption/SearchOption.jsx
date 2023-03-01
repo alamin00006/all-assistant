@@ -9,7 +9,7 @@ const SearchOption = ({
 }) => {
   // console.log(getDistricts);
   return (
-    <div>
+    <div className="w-3/4 m-0 mx-auto">
       Search Option
       <div>
         <select
