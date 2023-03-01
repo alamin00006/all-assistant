@@ -2,7 +2,8 @@ import React from "react";
 import MobileApp from "../../views/MobileApp/MobileApp";
 import OurStory from "../../views/OurStory/OurStory";
 import Banner from "../../views/Banner/Banner";
-import Header from "../../views/Header/Navbar";
+import Footer from "../../views/Footer/Footer";
+import OurPartners from "../../views/OurPartners/OurPartners";
 import Services from "../../views/Services/Services";
 
 const Home = () => {
@@ -13,9 +14,9 @@ const Home = () => {
       <section>
         <MobileApp />
       </section>
-      {/* <section>
-        <OurStory />
-      </section> */}
+      <OurStory></OurStory>
+      <OurPartners></OurPartners>
+      <Footer></Footer>
     </div>
   );
 };
