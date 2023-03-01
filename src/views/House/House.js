@@ -20,7 +20,7 @@ const House = () => {
       .then((res) => res.json())
       .then((data) => setDistricts(data.districts));
   }, []);
-  // console.log(districts)
+  //console.log(districts)
 
   useEffect(() => {
     fetch("bd-upazilas.json")

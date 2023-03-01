@@ -1,11 +1,12 @@
 import React from "react";
 
-const SearchOption = ({ divisions, handleDistricts, getDistricts,handleUpozilas,getUpozilas }) => {
-  console.log(getDistricts);
+const SearchOption = ({ divisions, handleDistricts, getDistricts,handleUpozilas,getUpazilas }) => {
+  console.log(getUpazilas);
   return (
     <div className="w-3/4 m-0 mx-auto">
       Search Option
       <div >
+
         <select
           name="division"
           className="select w-full max-w-xs"
@@ -38,7 +39,7 @@ const SearchOption = ({ divisions, handleDistricts, getDistricts,handleUpozilas,
           <option disabled defaultValue="--Select--">
             --Select--
           </option>
-          {getUpozilas.map((dis) => (
+          {getUpazilas.map((dis) => (
             <option value={dis.id} key={dis.id}>
               {dis.name}
             </option>
