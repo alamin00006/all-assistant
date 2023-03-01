@@ -34,8 +34,7 @@ const House = () => {
     setFindDistrict(findDistricts);
     // console.log(findDistricts);
   };
-  // console.log(getDistricts);
-
+ 
   const handleUpazilas = (e) => {
     const findUpazilas = upazilas.filter((ups) => ups.district_id === e);
     setUpazila(findUpazilas);
