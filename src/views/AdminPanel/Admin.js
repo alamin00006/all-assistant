@@ -1,40 +1,38 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Admin = () => {
     return (
-        <div className='grid grid-cols-2'>
+       <div>
 
+           <div>
+           <div className="drawer drawer-mobile">
+  <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
+  <div className="drawer-content ">
 
-<div className="flex flex-col items-center border-2 border-sky-500">
-        <div className="flex  items-center ">
-          <div>
-            <img
-              className="w-24"
-              src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
-              alt=""
-            />
-          </div>
-          <div>
-            <h1>Name:Muhib</h1>
-            <p>01918647966</p>
-            <button className="btn btn-xs">Edit</button>
-            <button className="btn btn-xs">Logout</button>
-          </div>
-        </div>
-        <div>
-          <h1>All</h1>
-          <h1>HomeService</h1>
-          <h1>Shifting</h1>
-          <h1>Rental</h1>
-        </div>
-      </div>
-            
-            <div>2</div>
-           
-                  
-         
-           
-        </div>
+    <div></div>
+  
+  </div> 
+  <div className="drawer-side ">
+    <label htmlFor="dashboard-drawer" className="drawer-overlay "></label> 
+    <ul className="menu p-4 w-80 bg-green-100 space-y-2">
+     
+     <li className='bg-sky-300  hover:bg-slate-300'><Link>Profile</Link></li>
+      <li className='bg-sky-300 hover:bg-slate-300'> <Link>Home Service</Link></li>
+      <li className='bg-sky-300 hover:bg-slate-300'><Link>Shifting</Link></li>
+      <li className='bg-sky-300 hover:bg-slate-300'><Link>Rental</Link></li>
+      <li className='bg-sky-300 hover:bg-slate-300'><Link>Slider</Link></li>
+      <li className='bg-sky-300 hover:bg-slate-300'><Link>Users</Link></li>
+      <li className='bg-sky-300 hover:bg-slate-300'><Link>Orders</Link></li>
+      <li className='bg-sky-300 hover:bg-slate-300'><Link>Settings</Link></li>
+     
+    </ul>
+  
+  </div>
+</div>
+  </div>
+</div>
+          
     );
 };
 
