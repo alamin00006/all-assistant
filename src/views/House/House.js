@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropertyCategory from "../PropertyCategory/PropertyCategory";
 import RecentProperties from "../RecentProperties/RecentProperties";
 import SearchOption from "../SearchOption/SearchOption";
 
@@ -43,6 +44,8 @@ const House = () => {
   //console.log(getUpazilas);
   return (
     <div>
+
+      <PropertyCategory></PropertyCategory>
       <SearchOption
         divisions={divisions}
         handleDistricts={handleDistricts}
