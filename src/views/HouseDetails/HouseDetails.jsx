@@ -130,6 +130,7 @@ const HouseDetails = () => {
       </div> */}
 
       <div className="overflow-x-auto mt-7">
+        <h1>Over View</h1>
         <table className="table w-full border border-sky-500">
           {/* head */}
           {/* <thead>
@@ -143,24 +144,24 @@ const HouseDetails = () => {
           <tbody>
             {/* row 1 */}
             <tr>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-              <td>Blue</td>
+              <td>Kitchen</td>
+              <td>Yes</td>
+              <td>Floor Type</td>
+              <td>Tiled</td>
             </tr>
             {/* row 2 */}
             <tr>
-              <td>Hart Hagerty</td>
-              <td>Desktop Support Technician</td>
-              <td>Purple</td>
-              <td>Purple</td>
+              <td>Furnishing</td>
+              <td>No</td>
+              <td>Water Supply</td>
+              <td>North</td>
             </tr>
             {/* row 3 */}
             <tr>
-              <td>Brice Swyre</td>
-              <td>Tax Accountant</td>
-              <td>Red</td>
-              <td>Red</td>
+              <td>Gas Supply</td>
+              <td>Cylinder</td>
+              <td>Facing</td>
+              <td>North</td>
             </tr>
           </tbody>
         </table>
