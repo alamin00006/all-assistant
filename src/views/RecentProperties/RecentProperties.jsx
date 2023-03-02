@@ -1,26 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import img1 from "../../assets//images/house1.jpg";
 
 const RecentProperties = () => {
+  const navigate = useNavigate();
   const [houses, setHouses] = useState([]);
   useEffect(() => {
     fetch("bd-houseinfo.json")
       .then((res) => res.json())
       .then((data) => setHouses(data.houses));
   }, []);
-  console.log(houses);
+  const houseDetails = (id) => {
+    // console.log(id);
+    navigate(`/housedetails/${id}`);
+  };
   return (
     <div className="w-3/4 m-0 mx-auto">
       <h1 className="text-center">Recent Properties</h1>
       <div className="grid grid-cols-1 md:grid md:grid-cols-2 md:gap-2 lg:grid lg:grid-cols-3 lg:gap-2 xl:grid xl:grid-cols-4 gap-2 justify-items-center">
         {houses.map((house) => (
           <div key={house.id} className="card w-72 bg-base-100 shadow-xl">
-            <Link to={`/lists/${house.id}`}>
-              <figure>
-                <img className="p-3" src={house.img} alt="Shoes" />
-              </figure>
-            </Link>
+            <figure onClick={() => houseDetails(house.id)}>
+              <img className="p-3" src={house.img} alt="Shoes" />
+            </figure>
 
             <div className="card-body">
               <h2 className="card-title">
