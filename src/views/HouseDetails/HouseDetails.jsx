@@ -13,14 +13,21 @@ const HouseDetails = () => {
       .then((res) => res.json())
       .then((data) => setHouse(data.data));
   }, [id]);
+  if (!house) {
+    return <div>Loading...</div>;
+  }
 
-  console.log(house);
+  console.log(house.houseImage?.[0]);
   return (
     <div className="w-3/4 m-0 mx-auto">
       <h1>House Details</h1>
       <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-2">
         <div className="border-2 border-sky-500">
-          <img className="p-4" src="" alt="" />
+          <img
+            className="p-4"
+            src={`http://localhost:5000/${house.houseImage?.[0]}`}
+            alt=""
+          />
         </div>
         <div className="border-2 border-sky-500 text-center">
           <div>

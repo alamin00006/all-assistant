@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 // import img1 from "../../assets//images/house1.jpg";
-
+import "./style.css";
 const RecentProperties = ({ datas }) => {
   const navigate = useNavigate();
   // const [houses, setHouses] = useState([]);
@@ -25,8 +25,8 @@ const RecentProperties = ({ datas }) => {
               <div key={house._id} className="card w-72 bg-base-100 shadow-xl">
                 <figure onClick={() => houseDetails(house._id)}>
                   <img
-                    className="p-3"
-                    src={`http://localhost:5000/${house?.houseImage[0]}`}
+                    className="p-3 click"
+                    src={`http://localhost:5000/${house?.houseImage?.[0]}`}
                     alt="Shoes"
                   />
                 </figure>
