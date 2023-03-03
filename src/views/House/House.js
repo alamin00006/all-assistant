@@ -30,6 +30,25 @@ const House = () => {
   }, []);
   //console.log(upazilas);
 
+  const handleDivision = (divisionName) => {
+    console.log(divisionName);
+  };
+  const [searchHouse, setSearchHouse] = useState([]);
+
+  // const { isLoading, refetch } = useQuery([], () =>
+  //   fetch(
+  //     `http://localhost:5000/api/v1/product?division=${}&page=${page}&size=${2}& `,
+  //     {
+  //       method: "GET",
+  //     }
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       // setSearchHouse(data?.data);
+  //       console.log(data);
+  //     })
+  // );
+
   const handleDistricts = (e) => {
     const findDistricts = districts.filter((dis) => dis.division_id === e);
     setFindDistrict(findDistricts);
@@ -42,10 +61,12 @@ const House = () => {
     console.log(e);
   };
   //console.log(getUpazilas);
+
   return (
     <div>
       <PropertyCategory />
       <SearchOption
+        handleDivision={handleDivision}
         divisions={divisions}
         handleDistricts={handleDistricts}
         getDistricts={getDistricts}

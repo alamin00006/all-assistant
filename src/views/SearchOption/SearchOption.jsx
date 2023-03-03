@@ -1,30 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import { useQuery } from "react-query";
 
-const SearchOption = ({ divisions, handleDistricts, getDistricts,handleUpozilas,getUpazilas }) => {
-  console.log(getUpazilas);
+const SearchOption = ({
+  divisions,
+  handleDistricts,
+  getDistricts,
+  handleUpozilas,
+  getUpazilas,
+  handleDivision,
+}) => {
+  // console.log(getUpazilas);
+
   return (
     <div className="w-3/4 m-0 mx-auto">
       Search Option
-      <div >
-
+      <div>
         <select
           name="division"
           className="select w-full max-w-xs"
-          onChange={(e) => handleDistricts(e.target.value)}
-         
+          // onChange={(e) => handleDistricts(e.target.value)}
+          onChange={(e) => handleDivision(e.target.value)}
         >
           <option disabled defaultValue="--Select--">
             --Select--
           </option>
           {divisions.map((div) => (
-            <option value={div.id} key={div.id}>
+            <option value={div.name} key={div.id}>
               {div.name}
             </option>
           ))}
         </select>
-        <select name="district" className="select w-full max-w-xs" 
-        onChange={(e) => handleUpozilas(e.target.value)}>
-
+        <select
+          name="district"
+          className="select w-full max-w-xs"
+          onChange={(e) => handleUpozilas(e.target.value)}
+        >
           <option disabled defaultValue="--Select--">
             --Select--
           </option>
