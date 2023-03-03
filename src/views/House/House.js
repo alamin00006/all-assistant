@@ -39,11 +39,13 @@ const House = () => {
   const handleUpazilas = (e) => {
     const findUpazilas = upazilas.filter((ups) => ups.district_id === e);
     setUpazila(findUpazilas);
+    // console.log(e);
     console.log(e);
   };
-  //console.log(getUpazilas);
+  // console.log(getUpazilas);
   return (
     <div>
+      <PropertyCategory></PropertyCategory>
       <PropertyCategory />
       <SearchOption
         divisions={divisions}
