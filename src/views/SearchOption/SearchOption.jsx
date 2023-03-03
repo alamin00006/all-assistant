@@ -1,16 +1,14 @@
-import React, { useState } from "react";
-import { useQuery } from "react-query";
+import React from "react";
 
 const SearchOption = ({
   divisions,
   handleDistricts,
   getDistricts,
-  handleUpozilas,
+  handleUpazilas,
+  handleallUpazilas,
   getUpazilas,
-  handleDivision,
 }) => {
   // console.log(getUpazilas);
-
   return (
     <div className="w-3/4 m-0 mx-auto">
       Search Option
@@ -18,14 +16,16 @@ const SearchOption = ({
         <select
           name="division"
           className="select w-full max-w-xs"
-          // onChange={(e) => handleDistricts(e.target.value)}
-          onChange={(e) => handleDivision(e.target.value)}
+          onChange={(e) => {
+            handleDistricts(e.target.value);
+            // console.log(e.target.value);
+          }}
         >
-          <option disabled defaultValue="--Select--">
+          <option disabled selected>
             --Select--
           </option>
           {divisions.map((div) => (
-            <option value={div.name} key={div.id}>
+            <option value={div.id} key={div.id}>
               {div.name}
             </option>
           ))}
@@ -33,9 +33,9 @@ const SearchOption = ({
         <select
           name="district"
           className="select w-full max-w-xs"
-          onChange={(e) => handleUpozilas(e.target.value)}
+          onChange={(e) => handleUpazilas(e.target.value)}
         >
-          <option disabled defaultValue="--Select--">
+          <option disabled selected>
             --Select--
           </option>
           {getDistricts.map((dis) => (
@@ -45,8 +45,15 @@ const SearchOption = ({
           ))}
         </select>
 
-        <select name="upozilla" className="select w-full max-w-xs">
-          <option disabled defaultValue="--Select--">
+        <select
+          name="upozilla"
+          className="select w-full max-w-xs"
+          onChange={(e) => {
+            handleallUpazilas(e.target.value);
+            // console.log(e.target.value);
+          }}
+        >
+          <option disabled selected>
             --Select--
           </option>
           {getUpazilas.map((dis) => (
@@ -56,7 +63,7 @@ const SearchOption = ({
           ))}
         </select>
         <select name="price" className="select w-full max-w-xs">
-          <option disabled defaultValue="--Select--">
+          <option disabled selected>
             --Select--
           </option>
           <option>Up to 1000</option>
@@ -64,7 +71,7 @@ const SearchOption = ({
           <option>Up to 4000</option>
           <option>Up to 6000</option>
           <option>Up to 8000</option>
-          <option>Up to 10000</option>
+          <option>Up to 1000888</option>
         </select>
 
         <select name="price" className="select w-full max-w-xs">
