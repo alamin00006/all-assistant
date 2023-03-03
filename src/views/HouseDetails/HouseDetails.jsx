@@ -22,7 +22,11 @@ const HouseDetails = () => {
         <div className="border-2 border-sky-500 text-center">
           <div>
             <h2>PROPERTY ID:1610</h2>
-            <p>Location : North Babukhan, Babukhan, Sadar, Rangpur</p>
+            <p>
+              Location: <span>{house?.data.district}</span>{" "}
+              <span>{house?.data.division}</span>{" "}
+              <span>{house?.data.upazila}</span>
+            </p>
             <button className="btn bg-lime-500 text-white">For Family</button>
           </div>
           <div>
