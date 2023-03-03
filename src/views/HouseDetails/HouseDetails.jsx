@@ -90,57 +90,9 @@ const HouseDetails = () => {
         </div>
       </div>
 
-      {/* <div className="flex flex-row">
-        <div className="flex flex-row mr-6">
-          <div>
-            <h1>Kitchen</h1>
-            <h1>Furnishing</h1>
-            <h1>Gas Supply</h1>
-            <h1>CCTV Camera</h1>
-            <h1>Store Room</h1>
-            <h1>Lift</h1>
-          </div>
-          <div>
-            <h1>Yes</h1>
-            <h1>No</h1>
-            <h1>Cylinder</h1>
-            <h1>No</h1>
-            <h1>No</h1>
-            <h1>No</h1>
-          </div>
-        </div>
-        <div className="flex flex-row">
-          <div>
-            <h1>Kitchen</h1>
-            <h1>Furnishing</h1>
-            <h1>Gas Supply</h1>
-            <h1>CCTV Camera</h1>
-            <h1>Store Room</h1>
-            <h1>Lift</h1>
-          </div>
-          <div>
-            <h1>Yes</h1>
-            <h1>No</h1>
-            <h1>Cylinder</h1>
-            <h1>No</h1>
-            <h1>No</h1>
-            <h1>No</h1>
-          </div>
-        </div>
-      </div> */}
-
       <div className="overflow-x-auto mt-7">
         <h1>Over View</h1>
         <table className="table w-full border border-sky-500">
-          {/* head */}
-          {/* <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-            </tr>
-          </thead> */}
           <tbody>
             {/* row 1 */}
             <tr>
@@ -166,6 +118,32 @@ const HouseDetails = () => {
           </tbody>
         </table>
       </div>
+
+      {/* fahim */}
+      {/* 
+      <div className="flex flex-col items-center border-2 border-sky-500 w-1/3">
+        <div className="flex  items-center ">
+          <div>
+            <img
+              className="w-24"
+              src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
+              alt=""
+            />
+          </div>
+          <div>
+            <h1>Name:Muhib</h1>
+            <p>01918647966</p>
+            <button className="btn btn-xs">Edit</button>
+            <button className="btn btn-xs">Logout</button>
+          </div>
+        </div>
+        <div>
+          <h1>All</h1>
+          <h1>HomeService</h1>
+          <h1>Shifting</h1>
+          <h1>Rental</h1>
+        </div>
+      </div> */}
     </div>
   );
 };
