@@ -11,7 +11,7 @@ const Admin = () => {
   <div className="drawer-content ">
 
     <Outlet></Outlet>
-  
+  {/* hello */}
   </div> 
   <div className="drawer-side ">
     <label htmlFor="dashboard-drawer" className="drawer-overlay "></label> 

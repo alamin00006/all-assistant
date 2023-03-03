@@ -6,9 +6,9 @@ import SearchOption from "../SearchOption/SearchOption";
 const House = () => {
   const [divisions, setDivision] = useState([]);
   const [districts, setDistricts] = useState([]);
-  const [upazilas,setUpazilas] = useState([]);
+  const [upazilas, setUpazilas] = useState([]);
   const [getDistricts, setFindDistrict] = useState([]);
-  const [getUpazilas,setUpazila] = useState([]);
+  const [getUpazilas, setUpazila] = useState([]);
 
   useEffect(() => {
     fetch("bd-division.json")
@@ -35,17 +35,20 @@ const House = () => {
     setFindDistrict(findDistricts);
     // console.log(findDistricts);
   };
- 
+
   const handleUpazilas = (e) => {
     const findUpazilas = upazilas.filter((ups) => ups.district_id === e);
     setUpazila(findUpazilas);
-  console.log(e);
+    // console.log(e);
+    console.log(e);
   };
-  //console.log(getUpazilas);
+  // console.log(getUpazilas);
   return (
     <div>
 
       <PropertyCategory></PropertyCategory>
+      <PropertyCategory></PropertyCategory>
+      <PropertyCategory />
       <SearchOption
         divisions={divisions}
         handleDistricts={handleDistricts}

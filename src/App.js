@@ -6,6 +6,11 @@ import Navbar from "./views/Header/Navbar";
 import Hotel from "./views/Hotel/Hotel";
 import House from "./views/House/House";
 
+import CreateHouse from "./views/dashboard/CreateHouse/CreateHouse";
+
+
+
+import HouseDetails from "./views/HouseDetails/HouseDetails";
 import Login from "./views/Login/Login";
 import SignUp from "./views/SignUp/SignUp";
 
@@ -27,6 +32,9 @@ function App() {
         </Route>
 
        
+        <Route path="/housedetails/:id" element={<HouseDetails />} />
+        <Route path="/singUp" element={<SignUp />} />
+        <Route path="/create-house" element={<CreateHouse />} />
       </Routes>
     </div>
   );
