@@ -60,7 +60,7 @@ const SearchOption = ({
           <option>Up to 4000</option>
           <option>Up to 6000</option>
           <option>Up to 8000</option>
-          <option>Up to 10000</option>
+          <option>Up to 1000888</option>
         </select>
 
         <select name="price" className="select w-full max-w-xs">
