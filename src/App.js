@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Admin from "./views/AdminPanel/Admin";
+import Dashboard from "./views/AdminPanel/Dashboard";
+import Profile from "./views/AdminPanel/Profile";
 import Navbar from "./views/Header/Navbar";
 import Hotel from "./views/Hotel/Hotel";
 import House from "./views/House/House";
@@ -20,7 +21,12 @@ function App() {
         <Route path="/hotel" element={<Hotel />} />
         <Route path="/login" element={<Login />} />
         <Route path="singUp" element={<SignUp />} />
-        <Route path="admin" element={<Admin />} />
+        <Route path="/dashboard" element={<Dashboard />}>
+        
+        <Route path="profile" element={<Profile></Profile>}></Route>
+        </Route>
+
+       
       </Routes>
     </div>
   );
