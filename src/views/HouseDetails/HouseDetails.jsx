@@ -5,8 +5,8 @@ import HouseDetailsHook from "../../Hooks/HoseDetailsHook";
 const HouseDetails = () => {
   //   const [info, setInfo] = useState();
   const { id } = useParams();
-  const a = HouseDetailsHook(id);
-  console.log(a);
+  const [house, refetch, isLoading] = HouseDetailsHook(id);
+  console.log(house?.data);
 
   return (
     <div className="w-3/4 m-0 mx-auto">
@@ -15,7 +15,7 @@ const HouseDetails = () => {
         <div className="border-2 border-sky-500">
           <img
             className="p-4"
-            src="https://res.cloudinary.com/bdassistant/image/upload/w_1000,ar_16:9,c_fill/wofkt2dkdqixbcjpztjx"
+            src={`http://localhost:5000/${house?.data.houseImage[0]}`}
             alt=""
           />
         </div>
@@ -29,54 +29,57 @@ const HouseDetails = () => {
             <div className="flex flex-row justify-center text-left">
               <div className="mr-4">
                 <div>
-                  <h2>2 Bedroom</h2>
+                  <h2>{house?.data.bedRoomInfo}</h2>
                   <p>No. of Bedroom</p>
                 </div>
                 <div>
-                  <h2>Yes</h2>
+                  <h2>{house?.data.diningSpace}</h2>
                   <p>Dining Space</p>
                 </div>
                 <div>
-                  <h2>1</h2>
-                  <p>Dining Space</p>
+                  <h2>{house?.data.commonBathRoom}</h2>
+                  <p>Common Bathroom</p>
                 </div>
                 <div>
-                  <h2>2</h2>
+                  <h2>{house?.data.balcony}</h2>
                   <p>Balcony</p>
                 </div>
                 <div>
-                  <h2>Renovated</h2>
+                  <h2>{house?.data.propertyCondition}</h2>
                   <p>Property condition</p>
                 </div>
                 <div>
-                  <h2>6500 (Fixed)</h2>
+                  <h2>
+                    {house?.data.rentPrice}
+                    <span> {house?.data.rentPriceTitle}</span>
+                  </h2>
                   <p>Rent</p>
                 </div>
               </div>
               <div>
                 <div>
-                  <h2>2 Bedroom</h2>
-                  <p>No. of Bedroom</p>
+                  <h2>{house?.data.floorLevel}</h2>
+                  <p>Floor Level</p>
                 </div>
                 <div>
-                  <h2>Yes</h2>
-                  <p>Dining Space</p>
+                  <h2>{house?.data.spaceSize}</h2>
+                  <p>Space Size</p>
                 </div>
                 <div>
-                  <h2>1</h2>
-                  <p>Dining Space</p>
+                  <h2>{house?.data.attachedBathRoom}</h2>
+                  <p>Attached Bathroom</p>
                 </div>
                 <div>
-                  <h2>2</h2>
-                  <p>Balcony</p>
+                  <h2>{house?.data.rentPriceTitle}</h2>
+                  <p>Rental Preference</p>
                 </div>
                 <div>
-                  <h2>Renovated</h2>
-                  <p>Property condition</p>
+                  <h2>{house?.data.availableFrom}</h2>
+                  <p>Available From</p>
                 </div>
                 <div>
-                  <h2>6500 (Fixed)</h2>
-                  <p>Rent</p>
+                  <h2>{house?.data.deposit}</h2>
+                  <p>Deposit</p>
                 </div>
               </div>
             </div>
@@ -97,16 +100,16 @@ const HouseDetails = () => {
             {/* row 1 */}
             <tr>
               <td>Kitchen</td>
-              <td>Yes</td>
+              <td>{house?.data.kitchen}</td>
               <td>Floor Type</td>
-              <td>Tiled</td>
+              <td>{house?.data.floorType}</td>
             </tr>
             {/* row 2 */}
             <tr>
               <td>Furnishing</td>
-              <td>No</td>
+              <td>{house?.data.furnishing}</td>
               <td>Water Supply</td>
-              <td>North</td>
+              <td>{house?.data.facing}</td>
             </tr>
             {/* row 3 */}
             <tr>
@@ -114,6 +117,26 @@ const HouseDetails = () => {
               <td>Cylinder</td>
               <td>Facing</td>
               <td>North</td>
+            </tr>
+            <tr>
+              <td>CCTV Camera</td>
+              <td>{house?.data.ccTvCamera}</td>
+              <td>Security Guard</td>
+              <td>{house?.data.securityGuard}</td>
+            </tr>
+
+            <tr>
+              <td>Store Room</td>
+              <td>{house?.data.storeRoom}</td>
+              <td>IPS Connection</td>
+              <td>{house?.data.ipsConnection}</td>
+            </tr>
+
+            <tr>
+              <td>Lift</td>
+              <td>{house?.data.lift}</td>
+              <td>Parking Space</td>
+              <td>{house?.data.parkingSpace}</td>
             </tr>
           </tbody>
         </table>

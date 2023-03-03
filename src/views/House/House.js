@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import useHouse from "../../Hooks/useHouse";
 import PropertyCategory from "../PropertyCategory/PropertyCategory";
 import RecentProperties from "../RecentProperties/RecentProperties";
 import SearchOption from "../SearchOption/SearchOption";
@@ -42,11 +43,17 @@ const House = () => {
     // console.log(e);
     console.log(e);
   };
+  const [houses, refetch, isLoading] = useHouse();
+
+  const datas = houses?.data;
+  // const d = houses[0];
+  // const { data } = d;
+  // console.log(datas);
   // console.log(getUpazilas);
   return (
     <div>
       <PropertyCategory></PropertyCategory>
-      <PropertyCategory />
+
       <SearchOption
         divisions={divisions}
         handleDistricts={handleDistricts}
@@ -54,7 +61,7 @@ const House = () => {
         handleUpazilas={handleUpazilas}
         getUpazilas={getUpazilas}
       ></SearchOption>
-      <RecentProperties></RecentProperties>
+      <RecentProperties datas={datas}></RecentProperties>
     </div>
   );
 };
