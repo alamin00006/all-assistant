@@ -1,13 +1,13 @@
 import React from "react";
 
-const SearchOption = ({
+const HotelSearchOption = ({
   divisions,
   handleDistricts,
   getDistricts,
   handleUpazilas,
   getUpazilas,
 }) => {
-  // console.log(getUpazilas);
+  // console.log(divisions);
   return (
     <div className="w-3/4 m-0 mx-auto">
       Search Option
@@ -78,5 +78,4 @@ const SearchOption = ({
     </div>
   );
 };
-
-export default SearchOption;
+export default HotelSearchOption;
