@@ -13,6 +13,9 @@ import CreateHouse from "./views/dashboard/CreateHouse/CreateHouse";
 import HouseDetails from "./views/HouseDetails/HouseDetails";
 import Login from "./views/Login/Login";
 import SignUp from "./views/SignUp/SignUp";
+import AddHouse from "./views/AdminPanel/AddHouse";
+import AddHotel from "./views/AdminPanel/AddHotel";
+import UserManage from "./views/AdminPanel/UserManage";
 
 function App() {
   return (
@@ -28,7 +31,10 @@ function App() {
         <Route path="singUp" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />}>
         
-        <Route path="profile" element={<Profile></Profile>}></Route>
+        <Route path="profile" element={<Profile/>}></Route>
+        <Route path="addhotel" element={<AddHotel/>}></Route>
+        <Route path="addhouse" element={<AddHouse/>}></Route>
+        <Route path="manage-user" element={<UserManage/>}></Route>
         </Route>
 
        

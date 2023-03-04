@@ -46,8 +46,7 @@ const House = () => {
   return (
     <div>
 
-      <PropertyCategory></PropertyCategory>
-      <PropertyCategory></PropertyCategory>
+    
       <PropertyCategory />
       <SearchOption
         divisions={divisions}
