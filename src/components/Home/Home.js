@@ -7,17 +7,17 @@ import Banner from "../../views/Banner/Banner";
 import Footer from "../../views/Footer/Footer";
 import OurPartners from "../../views/OurPartners/OurPartners";
 import Services from "../../views/Services/Services";
+import ModalBooking from "../../views/ModalBooking/ModalBooking";
 
 const Home = () => {
-
-  return(
+  return (
     <div>
-      
+      <ModalBooking></ModalBooking>
       <Banner></Banner>
       <Services></Services>
       <section>
-      <UserInfo></UserInfo>
-      <BestOffer></BestOffer>
+        <UserInfo></UserInfo>
+        <BestOffer></BestOffer>
         <MobileApp />
       </section>
       <OurStory></OurStory>
@@ -25,8 +25,6 @@ const Home = () => {
       <Footer></Footer>
     </div>
   );
-
-  
 };
 
 export default Home;
