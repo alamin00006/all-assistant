@@ -64,7 +64,7 @@ const AddHouse = () => {
         <td>Canada</td> 
         <td>12/16/2020</td> 
         <td>Blue</td>
-       
+       {/* hello */}
         <td>
           <div className='flex space-x-4'>
           <button className="btn btn-circle btn-outline ">
