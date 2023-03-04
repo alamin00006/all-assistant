@@ -7,6 +7,8 @@ const SearchOption = ({
   handleUpazilas,
   handleallUpazilas,
   getUpazilas,
+  handlePrice,
+  handleRoom,
 }) => {
   // console.log(getUpazilas);
   return (
@@ -50,7 +52,6 @@ const SearchOption = ({
           className="select w-full max-w-xs"
           onChange={(e) => {
             handleallUpazilas(e.target.value);
-            // console.log(e.target.value);
           }}
         >
           <option disabled selected>
@@ -62,7 +63,13 @@ const SearchOption = ({
             </option>
           ))}
         </select>
-        <select name="price" className="select w-full max-w-xs">
+        <select
+          name="price"
+          className="select w-full max-w-xs"
+          onChange={(e) => {
+            handlePrice(e.target.value);
+          }}
+        >
           <option disabled selected>
             --Select--
           </option>
@@ -74,8 +81,14 @@ const SearchOption = ({
           <option>Up to 1000888</option>
         </select>
 
-        <select name="price" className="select w-full max-w-xs">
-          <option disabled defaultValue="--Select--">
+        <select
+          name="price"
+          className="select w-full max-w-xs"
+          onChange={(e) => {
+            handleRoom(e.target.value);
+          }}
+        >
+          <option disabled selected>
             --Select--
           </option>
           <option>One</option>
@@ -84,6 +97,8 @@ const SearchOption = ({
           <option>Four</option>
           <option>Five</option>
           <option>Six</option>
+          <option>Seven</option>
+          <option>Eight</option>
         </select>
       </div>
     </div>

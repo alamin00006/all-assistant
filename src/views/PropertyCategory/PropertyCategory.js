@@ -3,8 +3,7 @@ import React from "react";
 
 import { choosesCategory } from "../../fakeData/chooseCategory";
 
-const PropertyCategory = ({ handleCategory, setCategoryName }) => {
-  console.log(choosesCategory);
+const PropertyCategory = ({ handleCategory }) => {
   return (
     <div className="lg:mx-36 md:mx-26 sm:mx-16 xs:mx-0">
       <h1 className="text-center text-lg ">Select Your Property Category</h1>

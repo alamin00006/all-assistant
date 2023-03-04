@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 const CreateHouse = () => {
   const [discount, setDiscount] = useState("0");
   const [houseImage, setHouseImage] = useState([]);
+
   const handleHouseCreate = async (e) => {
     e.preventDefault();
     const productAdd = {
@@ -37,10 +38,11 @@ const CreateHouse = () => {
       ipsConnection: e.target.ipsConnection.value,
       parkingSpace: e.target.parkingSpace.value,
       floorType: e.target.floorType.value,
-      category: {
-        categoryName: "Family",
-        category_id: "63ff32037f39971474a7551b",
-      },
+      categoryName: e.target.categoryName.value,
+      // category: {
+      //   categoryName: "Family",
+      //   category_id: "63ff32037f39971474a7551b",
+      // },
       houseDetailsAddress: e.target.houseDetailsAddress.value,
     };
 
@@ -75,7 +77,8 @@ const CreateHouse = () => {
     formData.append("ipsConnection", productAdd.ipsConnection);
     formData.append("parkingSpace", productAdd.parkingSpace);
     formData.append("floorType", productAdd.floorType);
-    formData.append("category", JSON.stringify(productAdd.category));
+    formData.append("categoryName", productAdd.categoryName);
+    // formData.append("category", JSON.stringify(productAdd.category));
     formData.append("houseDetailsAddress", productAdd.houseDetailsAddress);
 
     const isValidFileUploaded = (file) => {
@@ -190,21 +193,6 @@ const CreateHouse = () => {
               className="border-2 border-green-500"
               required
               name="upazila"
-              placeholder="Quantity"
-              id=""
-            />
-          </div>
-          <div className="">
-            <label>
-              totalRentRoom :{" "}
-              <span className="text-danger fw-bold fs-5">*</span>
-            </label>{" "}
-            <br />
-            <input
-              type="text"
-              className="border-2 border-green-500"
-              required
-              name="totalRentRoom"
               placeholder="Quantity"
               id=""
             />

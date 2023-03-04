@@ -14,7 +14,9 @@ const House = () => {
   const [divisionName, setDivisionName] = useState("");
   const [districtName, setDistrictName] = useState("");
   const [upaZilaName, setUpazilaName] = useState("");
-  const [categoryName, setCategoryName] = useState("");
+  const [categoryName, setCategoryName] = useState("Family");
+  const [userPrice, setUserPrice] = useState("1000");
+  const [room, setRoom] = useState("Two");
   const [searchHouse, setSearchHouse] = useState([]);
   useEffect(() => {
     fetch("bd-division.json")
@@ -27,7 +29,6 @@ const House = () => {
       .then((res) => res.json())
       .then((data) => setDistricts(data.districts));
   }, []);
-  //console.log(districts)
 
   useEffect(() => {
     fetch("bd-upazilas.json")
@@ -52,6 +53,7 @@ const House = () => {
     );
     setDistrictName(findDistrict?.name);
   };
+
   const handleallUpazilas = (e) => {
     const findUPazila = upazilas.find((districtName) => e === districtName.id);
     setUpazilaName(findUPazila?.name);
@@ -61,11 +63,19 @@ const House = () => {
     setCategoryName(name);
   };
 
+  const handlePrice = (price) => {
+    setUserPrice(price.split(" ")?.[2]);
+  };
+
+  const handleRoom = (room) => {
+    setRoom(room);
+  };
+
   const { isLoading, refetch } = useQuery(
-    [divisionName, districtName, upaZilaName, categoryName],
+    [divisionName, districtName, upaZilaName, categoryName, userPrice, room],
     () =>
       fetch(
-        `http://localhost:5000/api/v1/house?division=${divisionName}&district=${districtName}&upazila=${upaZilaName} `,
+        `http://localhost:5000/api/v1/house?division=${divisionName}&district=${districtName}&upazila=${upaZilaName}&categoryName=${categoryName}&rentPrice=${userPrice}&totalRentRoom=${room}`,
         {
           method: "GET",
         }
@@ -79,10 +89,7 @@ const House = () => {
 
   return (
     <div>
-      <PropertyCategory
-        handleCategory={handleCategory}
-        setCategoryName={setCategoryName}
-      />
+      <PropertyCategory handleCategory={handleCategory} />
       <SearchOption
         divisions={divisions}
         handleDistricts={handleDistricts}
@@ -90,6 +97,8 @@ const House = () => {
         handleUpazilas={handleUpazilas}
         handleallUpazilas={handleallUpazilas}
         getUpazilas={getUpazilas}
+        handlePrice={handlePrice}
+        handleRoom={handleRoom}
       ></SearchOption>
       <RecentProperties></RecentProperties>
     </div>
