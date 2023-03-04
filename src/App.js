@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
+import AllHouse from "./views/dashboard/CreateHouse/AllHouse";
 import CreateHouse from "./views/dashboard/CreateHouse/CreateHouse";
 import Navbar from "./views/Header/Navbar";
 import Hotel from "./views/Hotel/Hotel";
@@ -25,6 +26,7 @@ function App() {
         <Route path="/hoteldetails/:id" element={<HotelDetails />} />
         <Route path="/singUp" element={<SignUp />} />
         <Route path="/create-house" element={<CreateHouse />} />
+        <Route path="/all-house" element={<AllHouse />} />
       </Routes>
     </div>
   );
