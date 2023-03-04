@@ -16,6 +16,7 @@ import SignUp from "./views/SignUp/SignUp";
 import AddHouse from "./views/AdminPanel/AddHouse";
 import AddHotel from "./views/AdminPanel/AddHotel";
 import UserManage from "./views/AdminPanel/UserManage";
+import Order from "./views/AdminPanel/Order/Order";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="addhotel" element={<AddHotel/>}></Route>
         <Route path="addhouse" element={<AddHouse/>}></Route>
         <Route path="manage-user" element={<UserManage/>}></Route>
+        <Route path="order" element={<Order/>}></Route>
         </Route>
 
        

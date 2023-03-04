@@ -4,11 +4,14 @@ import { DiWindows } from 'react-icons/di';
 import './AddHouse.css'
 import EditHouseModal from './EditHouseModal';
 import DeleteHouseModal from './DeleteHouseModal';
+import { RiDeleteBin6Line } from 'react-icons/ri';
+import { FiEdit } from 'react-icons/fi';
+
 
 const AddHouse = () => {
     return (
         <div>
-    <label htmlFor="my-modal-5" className="btn bg-cyan-300"><DiWindows/>ADDHouse</label>
+    <label htmlFor="my-modal-5" className="btn bg-cyan-300"><DiWindows/>AddHouse</label>
            <AddHouseModal/>
                 
            <div>
@@ -61,14 +64,16 @@ const AddHouse = () => {
         <td>Canada</td> 
         <td>12/16/2020</td> 
         <td>Blue</td>
-        <td><div className="dropdown dropdown-right dropdown-end">
-  <label tabIndex={0} className=" m-1 btn glass">Click</label>
-  <ul tabIndex={0} className="dropdown-content menu p-2 shadow  bg-green-400 rounded-box w-52">
-    <li><label htmlFor="editmodal" className="btn">Edit</label>
-    </li>
-    <li><label htmlFor="deletemodal" className="btn">Delete</label></li>
-  </ul>
-</div>  </td>
+       
+        <td>
+          <div className='flex space-x-4'>
+          <button className="btn btn-circle btn-outline ">
+          <label htmlFor="editmodal" className=""><FiEdit/></label><lable>_|_</lable>
+         <label htmlFor="deletemodal" className=""><RiDeleteBin6Line/></label>
+            </button>
+        
+          </div>
+        </td>
       </tr>
       {/* <tr>
         <th>2</th> 

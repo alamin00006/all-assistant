@@ -12,14 +12,14 @@ const Admin = () => {
            <div>
            <div className="drawer drawer-mobile">
   <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
-  <div className="drawer-content border  border-indigo-200 ">
+  <div className="drawer-content border  border-indigo-200 p-6">
 
     <Outlet></Outlet>
 
   </div> 
   <div className="drawer-side w-48">
     <label htmlFor="dashboard-drawer" className="drawer-overlay "></label> 
-    <ul className="menu p-2 w-80 bg-green-100 space-y-2">
+    <ul className="menu p-2 w-80 bg-green-100 space-y-2 ">
      
      <li className='bg-sky-300  hover:bg-slate-300 border-none  h-10'><Link to="profile"><CgProfile/> Profile</Link></li>
       <li className='bg-sky-300 hover:bg-slate-300 h-10'> <Link to="addhouse"><FaLaptopHouse/>Add House</Link></li>
@@ -27,7 +27,7 @@ const Admin = () => {
       <li className='bg-sky-300 hover:bg-slate-300 h-10'><Link><MdCategory/>Add Category</Link></li>
       <li className='bg-sky-300 hover:bg-slate-300 h-10'><Link><MdCarRental/>Rental</Link></li>
       <li className='bg-sky-300 hover:bg-slate-300 h-10'><Link to="manage-user"><FaUsersCog/>Users</Link></li>
-      <li className='bg-sky-300 hover:bg-slate-300 h-10'><Link><AiOutlineUnorderedList/>Orders</Link></li>
+      <li className='bg-sky-300 hover:bg-slate-300 h-10'><Link to="order"><AiOutlineUnorderedList/>Orders</Link></li>
      
      
     </ul>
