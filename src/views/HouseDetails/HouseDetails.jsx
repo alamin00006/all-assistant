@@ -38,7 +38,9 @@ const HouseDetails = () => {
               Location: <span>{house?.district}</span>{" "}
               <span>{house?.division}</span> <span>{house?.upazila}</span>
             </p>
-            <button className="btn bg-lime-500 text-white">For Family</button>
+            <button className="btn bg-sky-500 hover:bg-sky-700 text-white">
+              For Family
+            </button>
           </div>
           <div>
             <div className="flex flex-row justify-center text-left">
@@ -99,10 +101,12 @@ const HouseDetails = () => {
               </div>
             </div>
             <div className="my-4">
-              <button className="btn bg-lime-500 text-white mr-4">
+              <button className="btn bg-sky-500 hover:bg-sky-700 text-white mr-4">
                 Get Phone Number
               </button>
-              <button className="btn btn-outline">Share</button>
+              <button className="btn bg-violet-500 hover:bg-violet-600 border-none text-white">
+                Share
+              </button>
             </div>
           </div>
         </div>
@@ -110,7 +114,7 @@ const HouseDetails = () => {
 
       <div className="overflow-x-auto mt-7">
         <h1>Over View</h1>
-        <table className="table w-full border border-sky-500">
+        <table className="table w-full border border-sky-500 ">
           <tbody>
             {/* row 1 */}
             <tr>

@@ -8,13 +8,13 @@ const DetailsHouseImage = ({ images }) => {
   };
   //   console.log(number);
   return (
-    <div className="grid grid-cols-2">
+    <div className="grid grid-cols-2 relative">
       {images ? (
         <div className="grid grid-cols-1">
           {images.map((img, index) => (
             <img
               onClick={() => imageHandle(index)}
-              className="w-24"
+              className="w-24 "
               key={index}
               src={`http://localhost:5000/${img}`}
               alt=""

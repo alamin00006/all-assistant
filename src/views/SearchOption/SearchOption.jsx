@@ -7,7 +7,7 @@ const SearchOption = ({
   handleUpazilas,
   getUpazilas,
 }) => {
-  console.log(getUpazilas);
+  // console.log(getUpazilas);
   return (
     <div className="w-3/4 m-0 mx-auto">
       Search Option
