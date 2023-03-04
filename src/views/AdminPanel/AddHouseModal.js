@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-const CreateHouse = () => {
+import { RxCrossCircled } from 'react-icons/rx';
+
+const AddHouseModal = () => {
   const [discount, setDiscount] = useState("0");
   const [houseImage, setHouseImage] = useState([]);
-
   const handleHouseCreate = async (e) => {
     e.preventDefault();
     const productAdd = {
@@ -13,7 +14,6 @@ const CreateHouse = () => {
       division: e.target.division.value,
       district: e.target.district.value,
       upazila: e.target.upazila.value,
-      totalRentRoom: e.target.totalRentRoom.value,
       spaceSize: e.target.spaceSize.value,
       commonBathRoom: e.target.commonBathRoom.value,
       attachedBathRoom: e.target.attachedBathRoom.value,
@@ -38,12 +38,11 @@ const CreateHouse = () => {
       ipsConnection: e.target.ipsConnection.value,
       parkingSpace: e.target.parkingSpace.value,
       floorType: e.target.floorType.value,
-      categoryName: e.target.categoryName.value,
-      // category: {
-      //   categoryName: "Family",
-      //   category_id: "63ff32037f39971474a7551b",
-      // },
-      houseDetailsAddress: e.target.houseDetailsAddress.value,
+
+      category: {
+        categoryName: "Family",
+        category_id: "63ff32037f39971474a7551b",
+      },
     };
 
     const formData = new FormData();
@@ -52,7 +51,6 @@ const CreateHouse = () => {
     formData.append("division", productAdd.division);
     formData.append("district", productAdd.district);
     formData.append("upazila", productAdd.upazila);
-    formData.append("totalRentRoom", productAdd.totalRentRoom);
     formData.append("spaceSize", productAdd?.spaceSize);
     formData.append("commonBathRoom", productAdd.commonBathRoom);
     formData.append("attachedBathRoom", productAdd.attachedBathRoom);
@@ -77,9 +75,7 @@ const CreateHouse = () => {
     formData.append("ipsConnection", productAdd.ipsConnection);
     formData.append("parkingSpace", productAdd.parkingSpace);
     formData.append("floorType", productAdd.floorType);
-    formData.append("categoryName", productAdd.categoryName);
-    // formData.append("category", JSON.stringify(productAdd.category));
-    formData.append("houseDetailsAddress", productAdd.houseDetailsAddress);
+    formData.append("category", JSON.stringify(productAdd.category));
 
     const isValidFileUploaded = (file) => {
       const validExtensions = [
@@ -96,13 +92,18 @@ const CreateHouse = () => {
       return validExtensions.includes(fileExtension);
     };
 
-    const file = houseImage[0];
+    // if (image?.length > 1) {
+    //   return toast.error("please provide one book picture");
+    // }
 
+    const file = houseImage[0];
+    // console.log(file);
     if (file.size > 5000000) {
       return toast.error("Product Picture size 5MB more than not allowed");
     } else {
       if (isValidFileUploaded(file)) {
         Array.from(houseImage).forEach((item) => {
+          // console.log(item);
           formData.append("houseImage", item);
         });
       } else {
@@ -118,9 +119,25 @@ const CreateHouse = () => {
       console.log(error);
     }
   };
-
-  return (
-    <div>
+    return (
+        <div>
+  
+<input type="checkbox" id="my-modal-5" className="modal-toggle" />
+<div className="modal">
+  <div className="modal-box w-8/12 max-w-5xl glass">
+    <dic className="flex">
+    <div class="grow h-14 ...">
+    <h3 className="text-center text-xl border border-spacing-1">Please Inpute House Informations</h3>
+  </div>
+  <div class="flex-none w-14 h-14 modal-action">
+ 
+      <label htmlFor="my-modal-5" className="text-xl"><RxCrossCircled/></label>
+    
+  </div>
+    </dic>
+  
+ 
+  <div>
       <form
         onSubmit={handleHouseCreate}
         className="mt-2 product-form px-4 mx-2 py-3 rounded"
@@ -196,34 +213,6 @@ const CreateHouse = () => {
               placeholder="Quantity"
               id=""
             />
-          </div>
-
-          <div className="">
-            <label for="category">
-              totalRentRoom :{" "}
-              <span className="text-rose-500 fw-bold fs-5">*</span>
-            </label>
-            <br />
-            <select
-              style={{ width: "100%", height: "45px" }}
-              required
-              name="totalRentRoom"
-              id="category"
-              className="border-2 border-green-500"
-            >
-              <option selected disabled>
-                Select A totalRentRoom
-              </option>
-
-              <option>One</option>
-              <option>Two</option>
-              <option>Three</option>
-              <option>Four</option>
-              <option>Five</option>
-              <option>Six</option>
-              <option>Seven</option>
-              <option>Eight</option>
-            </select>
           </div>
           <div className="">
             <label>
@@ -684,19 +673,13 @@ const CreateHouse = () => {
               <option selected disabled>
                 Select A Category
               </option>
+              {/* {
+                      categories?.data?.map(category =><option>{category.name}</option>)
+                     } */}
               <option>Family</option>
               <option>Bachelor</option>
             </select>
           </div>
-        </div>
-        <div>
-          <label for="">House Deatails Address:</label>
-          <textarea
-            className="rounded"
-            id=""
-            name="houseDetailsAddress"
-            rows="4"
-          />
         </div>
         <div className="">
           <label>
@@ -727,8 +710,13 @@ const CreateHouse = () => {
           </div>
         </div>
       </form>
-    </div>
-  );
+    </div> 
+  </div>
+</div>
+
+
+        </div>
+    );
 };
 
-export default CreateHouse;
+export default AddHouseModal;

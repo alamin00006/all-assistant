@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useHouse from "../../Hooks/useHouse";
+import { useQuery } from "react-query";
 import PropertyCategory from "../PropertyCategory/PropertyCategory";
 import RecentProperties from "../RecentProperties/RecentProperties";
 import SearchOption from "../SearchOption/SearchOption";
@@ -11,6 +11,13 @@ const House = () => {
   const [getDistricts, setFindDistrict] = useState([]);
   const [getUpazilas, setUpazila] = useState([]);
 
+  const [divisionName, setDivisionName] = useState("");
+  const [districtName, setDistrictName] = useState("");
+  const [upaZilaName, setUpazilaName] = useState("");
+  const [categoryName, setCategoryName] = useState("Family");
+  const [userPrice, setUserPrice] = useState("1000");
+  const [room, setRoom] = useState("Two");
+  const [searchHouse, setSearchHouse] = useState([]);
   useEffect(() => {
     fetch("bd-division.json")
       .then((res) => res.json())
@@ -22,46 +29,80 @@ const House = () => {
       .then((res) => res.json())
       .then((data) => setDistricts(data.districts));
   }, []);
-  //console.log(districts)
 
   useEffect(() => {
     fetch("bd-upazilas.json")
       .then((res) => res.json())
       .then((data) => setUpazilas(data.upazilas));
   }, []);
-  //console.log(upazilas);
 
   const handleDistricts = (e) => {
     const findDistricts = districts.filter((dis) => dis.division_id === e);
     setFindDistrict(findDistricts);
-    // console.log(findDistricts);
+    const findDivision = divisions.find(
+      (divisionName) => e === divisionName.id
+    );
+    setDivisionName(findDivision?.name);
   };
 
   const handleUpazilas = (e) => {
     const findUpazilas = upazilas.filter((ups) => ups.district_id === e);
     setUpazila(findUpazilas);
-    // console.log(e);
-    console.log(e);
+    const findDistrict = districts.find(
+      (districtName) => e === districtName.id
+    );
+    setDistrictName(findDistrict?.name);
   };
-  const [houses, refetch, isLoading] = useHouse();
 
-  const datas = houses?.data;
-  // const d = houses[0];
-  // const { data } = d;
-  // console.log(datas);
-  // console.log(getUpazilas);
+  const handleallUpazilas = (e) => {
+    const findUPazila = upazilas.find((districtName) => e === districtName.id);
+    setUpazilaName(findUPazila?.name);
+  };
+
+  const handleCategory = (name) => {
+    setCategoryName(name);
+  };
+
+  const handlePrice = (price) => {
+    setUserPrice(price.split(" ")?.[2]);
+  };
+
+  const handleRoom = (room) => {
+    setRoom(room);
+  };
+
+  const { isLoading, refetch } = useQuery(
+    [divisionName, districtName, upaZilaName, categoryName, userPrice, room],
+    () =>
+      fetch(
+        `http://localhost:5000/api/v1/house?division=${divisionName}&district=${districtName}&upazila=${upaZilaName}&categoryName=${categoryName}&rentPrice=${userPrice}&totalRentRoom=${room}`,
+        {
+          method: "GET",
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          // setSearchHouse(data?.data);
+          console.log(data);
+        })
+  );
+
   return (
     <div>
-      <PropertyCategory></PropertyCategory>
 
+    
+      <PropertyCategory />
       <SearchOption
         divisions={divisions}
         handleDistricts={handleDistricts}
         getDistricts={getDistricts}
         handleUpazilas={handleUpazilas}
+        handleallUpazilas={handleallUpazilas}
         getUpazilas={getUpazilas}
+        handlePrice={handlePrice}
+        handleRoom={handleRoom}
       ></SearchOption>
-      <RecentProperties datas={datas}></RecentProperties>
+      <RecentProperties></RecentProperties>
     </div>
   );
 };
