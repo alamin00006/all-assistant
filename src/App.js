@@ -4,6 +4,7 @@ import Dashboard from "./views/AdminPanel/Dashboard";
 import Profile from "./views/AdminPanel/Profile";
 import Navbar from "./views/Header/Navbar";
 import Hotel from "./views/Hotel/Hotel";
+import HotelDetails from "./views/HotelDetails/HotelDetails";
 import House from "./views/House/House";
 
 import CreateHouse from "./views/dashboard/CreateHouse/CreateHouse";
@@ -17,6 +18,7 @@ import AddHouse from "./views/AdminPanel/AddHouse";
 import AddHotel from "./views/AdminPanel/AddHotel";
 import UserManage from "./views/AdminPanel/UserManage";
 import Order from "./views/AdminPanel/Order/Order";
+import AllHouse from "./views/dashboard/CreateHouse/AllHouse";
 
 function App() {
   return (
@@ -41,8 +43,10 @@ function App() {
 
        
         <Route path="/housedetails/:id" element={<HouseDetails />} />
+        <Route path="/hoteldetails/:id" element={<HotelDetails />} />
         <Route path="/singUp" element={<SignUp />} />
         <Route path="/create-house" element={<CreateHouse />} />
+        <Route path="/all-house" element={<AllHouse />} />
       </Routes>
     </div>
   );

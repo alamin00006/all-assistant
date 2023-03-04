@@ -1,20 +1,12 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-// import img1 from "../../assets//images/house1.jpg";
-import "./style.css";
-const RecentProperties = ({ datas }) => {
+import { useNavigate } from "react-router-dom";
+
+const HotelRecentProperties = ({ datas }) => {
   const navigate = useNavigate();
-  // const [houses, setHouses] = useState([]);
-  // useEffect(() => {
-  //   fetch("bd-houseinfo.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setHouses(data.houses));
-  // }, []);
   const houseDetails = (id) => {
     // console.log(id);
-    navigate(`/housedetails/${id}`);
+    navigate(`/hoteldetails/${id}`);
   };
-  // console.log(datas);
   return (
     <div className="w-3/4 m-0 mx-auto">
       <h1 className="text-center">Recent Properties</h1>
@@ -55,4 +47,4 @@ const RecentProperties = ({ datas }) => {
   );
 };
 
-export default RecentProperties;
+export default HotelRecentProperties;

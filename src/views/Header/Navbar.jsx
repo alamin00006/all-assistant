@@ -14,7 +14,7 @@ const Navbar = () => {
     window.location.reload(false);
   };
   return (
-    <header className="bg-green-300">
+    <header className="bg-green-300 sticky top-0 z-50">
       <nav className="lg:mx-36 md:mx-26 sm:mx-16 xs:mx-0">
         <div className="navbar  text-black">
           <div className="navbar-start">

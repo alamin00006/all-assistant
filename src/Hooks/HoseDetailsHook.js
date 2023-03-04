@@ -1,12 +1,17 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 
 const HoseDetailsHook = (id) => {
-  const [houseDetails, setDetails] = useState([]);
-  useEffect(() => {
-    fetch("bd-houseinfo.json")
-      .then((res) => res.json())
-      .then((data) => console.log(data.houses));
-  }, []);
+  const {
+    data: house,
+    isLoading,
+    refetch,
+  } = useQuery([], () =>
+    fetch(`http://localhost:5000/api/v1/house/${id}`, {
+      method: "GET",
+    }).then((res) => res.json())
+  );
+
+  return [house, refetch, isLoading];
 };
 
 export default HoseDetailsHook;
