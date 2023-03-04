@@ -47,14 +47,8 @@ const SearchOption = ({
           ))}
         </select>
 
-        <select
-          name="upozilla"
-          className="select w-full max-w-xs"
-          onChange={(e) => {
-            handleallUpazilas(e.target.value);
-          }}
-        >
-          <option disabled selected>
+        <select name="upazilla" className="select w-full max-w-xs">
+          <option disabled defaultValue="--Select--">
             --Select--
           </option>
           {getUpazilas.map((dis) => (

@@ -89,7 +89,9 @@ const House = () => {
 
   return (
     <div>
-      <PropertyCategory handleCategory={handleCategory} />
+
+    
+      <PropertyCategory />
       <SearchOption
         divisions={divisions}
         handleDistricts={handleDistricts}
