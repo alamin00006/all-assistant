@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import DetailsHouseImage from "../DetailsHouseImage/DetailsHouseImage";
 
 const HouseDetails = () => {
   const { id } = useParams();
@@ -13,21 +14,22 @@ const HouseDetails = () => {
       .then((res) => res.json())
       .then((data) => setHouse(data.data));
   }, [id]);
-  if (!house) {
-    return <div>Loading...</div>;
-  }
-
-  console.log(house.houseImage?.[0]);
+  // if (!house) {
+  //   return <div>Loading...</div>;
+  // }
+  const images = house?.houseImage;
+  // console.log(house?.houseImage);
   return (
     <div className="w-3/4 m-0 mx-auto">
       <h1>House Details</h1>
       <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-2">
         <div className="border-2 border-sky-500">
-          <img
+          <DetailsHouseImage images={images}></DetailsHouseImage>
+          {/* <img
             className="p-4"
             src={`http://localhost:5000/${house.houseImage?.[0]}`}
             alt=""
-          />
+          /> */}
         </div>
         <div className="border-2 border-sky-500 text-center">
           <div>
