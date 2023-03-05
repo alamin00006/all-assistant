@@ -13,7 +13,7 @@ const PropertyCategory = ({ handleCategory }) => {
             {choosesCategory.map((category) => (
               <div
                 onClick={() => handleCategory(category.title)}
-                className="w-24 mask mask-squircle"
+                className="w-24 mask mask-squircle cursor-pointer"
               >
                 <img src={category.image} alt="" />
               </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DetailsHouseImage from "../DetailsHouseImage/DetailsHouseImage";
+import ModalBooking from "../../views/ModalBooking/ModalBooking";
 
 const HouseDetails = () => {
   const { id } = useParams();
@@ -101,9 +102,15 @@ const HouseDetails = () => {
               </div>
             </div>
             <div className="my-4">
-              <button className="btn bg-sky-500 hover:bg-sky-700 text-white mr-4">
+              <label
+                htmlFor="booking-input"
+                className="btn bg-sky-500 hover:bg-sky-700 text-white mr-4"
+              >
                 Get Phone Number
-              </button>
+              </label>
+              {/* <button className="btn bg-sky-500 hover:bg-sky-700 text-white mr-4">
+                Get Phone Number
+              </button> */}
               <button className="btn bg-violet-500 hover:bg-violet-600 border-none text-white">
                 Share
               </button>
@@ -160,6 +167,7 @@ const HouseDetails = () => {
           </tbody>
         </table>
       </div>
+      <ModalBooking></ModalBooking>
     </div>
   );
 };
