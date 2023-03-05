@@ -27,7 +27,7 @@ const RecentProperties = ({ searchHouse }) => {
                 <figure onClick={() => houseDetails(house._id)}>
                   <img
                     className="p-3 click"
-                    src={`http://localhost:5000/${house?.houseImage?.[0]}`}
+                    src={`http://localhost:5000/${house?.image?.[0]}`}
                     alt="Shoes"
                   />
                 </figure>

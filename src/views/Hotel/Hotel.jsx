@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import useHotels from "../../Hooks/useHotels";
 import useHouse from "../../Hooks/useHouse";
 import HotelRecentProperties from "../HotelRecentProperties/HotelRecentProperties";
 import HotelSearchOption from "../HotelSearchOption/HotelSearchOption";
+// import PropertyCategory from "../PropertyCategory/PropertyCategory";
 
 const Hotel = () => {
   const [divisions, setDivision] = useState([]);
@@ -43,12 +45,13 @@ const Hotel = () => {
     // console.log(e);
   };
 
-  const [houses, refetch, isLoading] = useHouse();
-
-  const datas = houses?.data;
+  const [hotels, refetch, isLoading] = useHotels();
+  // console.log(hotels);
+  const datas = hotels?.data;
   return (
     <div>
       <h1>This is a hotel Route</h1>
+      {/* <PropertyCategory></PropertyCategory> */}
       <HotelSearchOption
         divisions={divisions}
         handleDistricts={handleDistricts}
