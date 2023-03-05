@@ -100,8 +100,8 @@ const EditHouseModal = ({ editHouse, refetch }) => {
         <div className="modal-box w-8/12 max-w-5xl glass">
           <dic className="flex">
             <div class="grow h-14 ...">
-              <h3 className="text-center text-xl border border-spacing-1">
-                Update House Informations
+            <h3 className="text-center text-xl border border-spacing-1 bg-sky-300">
+                Please Inpute House Informations
               </h3>
             </div>
             <div class="flex-none w-14 h-14 modal-action">
@@ -116,16 +116,16 @@ const EditHouseModal = ({ editHouse, refetch }) => {
               onSubmit={handleHouseUpdate}
               className="mt-2 product-form px-4 mx-2 py-3 rounded"
             >
-              <div className="grid grid-cols-4">
+              <div className="md:grid md:grid-cols-3 sm:grid sm:grid-cols-2 grid grid-cols-1">
                 <div className="">
                   <label>
-                    bedRoomInfo:{" "}
+                    Bed Room Info:{" "}
                     <span className="text-danger font-bold ">*</span>
                   </label>
                   <br />
                   <input
                     type="text"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     name="bedRoomInfo"
                     required
                     placeholder="Product Name in English"
@@ -136,13 +136,13 @@ const EditHouseModal = ({ editHouse, refetch }) => {
 
                 <div className="">
                   <label>
-                    floorLevel :{" "}
+                    FloorLevel :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="text"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="floorLevel"
                     placeholder="Price"
@@ -158,7 +158,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                   <br />
                   <input
                     type="text"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="division"
                     placeholder="Quantity"
@@ -168,13 +168,13 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label>
-                    district :{" "}
+                    District :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="text"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="district"
                     placeholder="Quantity"
@@ -184,13 +184,13 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label>
-                    upazila :{" "}
+                    Upazila :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="text"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="upazila"
                     placeholder="Quantity"
@@ -201,7 +201,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
 
                 <div className="">
                   <label for="category">
-                    totalRentRoom :{" "}
+                    Total Rent Room :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -210,10 +210,10 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="totalRentRoom"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A totalRentRoom
+                      Select A total Rent Room
                     </option>
 
                     <option>One</option>
@@ -228,13 +228,13 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label>
-                    spaceSize :{" "}
+                    Space Size :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="spaceSize"
                     placeholder="Quantity"
@@ -244,13 +244,13 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label>
-                    commonBathRoom :{" "}
+                    Common BathRoom :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="commonBathRoom"
                     placeholder="Quantity"
@@ -260,13 +260,13 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label>
-                    attachedBathRoom :{" "}
+                    Attached BathRoom :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="attachedBathRoom"
                     placeholder="Quantity"
@@ -276,13 +276,13 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label>
-                    balcony :{" "}
+                    Balcony :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="balcony"
                     placeholder="Quantity"
@@ -293,7 +293,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
 
                 <div className="">
                   <label for="category">
-                    propertyCondition :{" "}
+                    Property Condition :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -302,10 +302,10 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="propertyCondition"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A propertyCondition
+                      Select A Property Condition
                     </option>
 
                     <option>Brand New</option>
@@ -314,7 +314,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    facing :{" "}
+                    Facing :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -323,10 +323,10 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="facing"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A facing
+                      Select A Facing
                     </option>
 
                     <option>East</option>
@@ -337,13 +337,13 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label>
-                    availableFrom :{" "}
+                    Available From :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="text"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="availableFrom"
                     placeholder="Quantity"
@@ -354,7 +354,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
 
                 <div className="">
                   <label for="category">
-                    rentPriceTitle :{" "}
+                    Rent Price Title :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -363,10 +363,10 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="rentPriceTitle"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A rentPriceTitle
+                      Select A Rent PriceTitle
                     </option>
 
                     <option>Fixed</option>
@@ -375,13 +375,13 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label>
-                    rentPrice :{" "}
+                    Rent Price :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="rentPrice"
                     placeholder="Quantity"
@@ -391,13 +391,13 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label>
-                    deposit :{" "}
+                    Deposit :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="deposit"
                     placeholder="Quantity"
@@ -411,7 +411,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                   <input
                     onChange={(e) => setDiscount(e.target.value)}
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     name="discount"
                     placeholder="discount"
                     id=""
@@ -428,7 +428,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="status"
                     id="status"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
                       Select A Status
@@ -449,7 +449,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="kitchen"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
                       Select A kitchen
@@ -461,7 +461,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    diningSpace :{" "}
+                    Dining Space :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -470,10 +470,10 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="diningSpace"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A diningSpace
+                      Select A DiningSpace
                     </option>
 
                     <option>Yes</option>
@@ -482,7 +482,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    furnishing :{" "}
+                    Furnishing :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -491,10 +491,10 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="furnishing"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A furnishing
+                      Select A Furnishing
                     </option>
 
                     <option>Yes</option>
@@ -503,7 +503,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    gasSupply :{" "}
+                    Gas Supply :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -512,10 +512,10 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="gasSupply"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A gasSupply
+                      Select A gas Supply
                     </option>
 
                     <option>Yes</option>
@@ -533,10 +533,10 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="ccTvCamera"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A ccTvCamera
+                      Select A ccTv Camera
                     </option>
 
                     <option>Yes</option>
@@ -545,7 +545,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    storeRoom :{" "}
+                    Store Room :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -554,10 +554,10 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="storeRoom"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A storeRoom
+                      Select A Store Room
                     </option>
 
                     <option>Yes</option>
@@ -574,7 +574,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="lift"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
                       Select A lift
@@ -586,7 +586,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    waterSupply :{" "}
+                    Water Supply :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -595,10 +595,10 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="waterSupply"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A waterSupply
+                      Select A Water Supply
                     </option>
 
                     <option>Yes</option>
@@ -607,7 +607,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    securityGuard :{" "}
+                    Security Guard :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -616,10 +616,10 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="securityGuard"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A securityGuard
+                      Select A Security Guard
                     </option>
 
                     <option>Yes</option>
@@ -628,7 +628,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    ipsConnection :{" "}
+                    ips Connection :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -637,10 +637,10 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="ipsConnection"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A ipsConnection
+                      Select A ips Connection
                     </option>
 
                     <option>Yes</option>
@@ -649,7 +649,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    parkingSpace :{" "}
+                    Parking Space :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -658,10 +658,10 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="parkingSpace"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A parkingSpace
+                      Select A ParkingSpace
                     </option>
 
                     <option>Car & Bike Both</option>
@@ -670,7 +670,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    floorType :{" "}
+                    FloorType :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -679,10 +679,10 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="floorType"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A floorType
+                      Select A FloorType
                     </option>
 
                     <option>Tilesed</option>
@@ -700,7 +700,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     required
                     name="categoryName"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
                       Select A Category
@@ -711,9 +711,9 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                 </div>
               </div>
               <div>
-                <label for="">House Deatails Address:</label>
+              <h1><label for="" >House Deatails Address:</label></h1>
                 <textarea
-                  className="border-2 border-green-500"
+                  className="border-2 border-orange-400 input input-bordered input-sm textarea textarea-bordered textarea-xs w-full max-w-xs"
                   id=""
                   name="houseDetailsAddress"
                   rows="4"

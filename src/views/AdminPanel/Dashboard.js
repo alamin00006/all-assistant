@@ -3,7 +3,8 @@ import { Link, Outlet } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { FaLaptopHouse, FaUsersCog } from "react-icons/fa";
 import { MdCategory, MdCarRental } from "react-icons/md";
-import { AiOutlineUnorderedList } from "react-icons/ai";
+import { AiOutlineUnorderedList  } from "react-icons/ai";
+import { RiLogoutBoxRFill  } from "react-icons/ri";
 
 const Admin = () => {
   return (
@@ -50,12 +51,6 @@ const Admin = () => {
                 </Link>
               </li>
               <li className="bg-sky-300 hover:bg-slate-300 h-10">
-                <Link>
-                  <MdCarRental />
-                  Rental
-                </Link>
-              </li>
-              <li className="bg-sky-300 hover:bg-slate-300 h-10">
                 <Link to="manage-user">
                   <FaUsersCog />
                   Users
@@ -65,6 +60,12 @@ const Admin = () => {
                 <Link to="order">
                   <AiOutlineUnorderedList />
                   Orders
+                </Link>
+              </li>
+              <li className="bg-sky-300 hover:bg-slate-300 h-10">
+                <Link to="logout">
+                  <RiLogoutBoxRFill />
+                  Logout
                 </Link>
               </li>
             </ul>
