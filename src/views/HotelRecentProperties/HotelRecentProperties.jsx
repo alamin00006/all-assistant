@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const HotelRecentProperties = ({ datas }) => {
   const navigate = useNavigate();
   const houseDetails = (id) => {
-    // console.log(id);
+    console.log(id);
     navigate(`/hoteldetails/${id}`);
   };
   return (
