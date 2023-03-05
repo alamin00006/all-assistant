@@ -84,6 +84,7 @@ const House = () => {
         .then((data) => {
           setSearchHouse(data?.data);
           console.log(data?.data);
+          // console.log(data);
         })
   );
 

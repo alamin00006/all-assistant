@@ -1,5 +1,7 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import DetailsHouseImage from "../DetailsHouseImage/DetailsHouseImage";
 import ModalBooking from "../../views/ModalBooking/ModalBooking";
 
@@ -19,7 +21,25 @@ const HouseDetails = () => {
   //   return <div>Loading...</div>;
   // }
   const images = house?.houseImage;
-  // console.log(house?.houseImage);
+
+  // const handleHouseOrder = async () => {
+  //   const orderData = {
+  //     orderHouse: house,
+  //     name: "alamin",
+  //     phone: "01749718743",
+  //   };
+  //   try {
+  //     const { data } = await axios.post(
+  //       `http://localhost:5000/api/v1/order`,
+  //       orderData
+  //     );
+  //     toast.success(data.data.message);
+  //   } catch (error) {
+  //     return toast.warn(error.response.data.message);
+  //   }
+  //   // e.target.reset();
+  // };
+
   return (
     <div className="w-3/4 m-0 mx-auto">
       <h1>House Details</h1>
@@ -167,7 +187,7 @@ const HouseDetails = () => {
           </tbody>
         </table>
       </div>
-      <ModalBooking></ModalBooking>
+      <ModalBooking house={house}></ModalBooking>
     </div>
   );
 };

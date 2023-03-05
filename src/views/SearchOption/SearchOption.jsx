@@ -14,7 +14,7 @@ const SearchOption = ({
   return (
     <div className="w-3/4 m-0 mx-auto">
       Search Option
-      <div>
+      <div className="md:grid md:grid-cols-3 lg:grid lg:grid-cols-5 gap-2">
         <select
           name="division"
           className="select w-full max-w-xs"

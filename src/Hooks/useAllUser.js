@@ -7,7 +7,7 @@ const useAllUser = () => {
   const [allUser, setallUser] = useState({});
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
-  const { isLoading, refetch } = useQuery(["user", token], () => {
+  const { isLoading, refetch } = useQuery([token], () => {
     async function getUser() {
       if (!token) {
         return;

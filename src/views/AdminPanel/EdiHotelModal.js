@@ -1,27 +1,23 @@
-import axios from "axios";
 import React, { useState } from "react";
-import { RxCrossCircled } from "react-icons/rx";
+import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { RxCrossCircled } from "react-icons/rx";
 
-const EditHouseModal = ({ editHouse, refetch }) => {
+const EdiHotelModal = ({ editHotel, refetch }) => {
   const [discount, setDiscount] = useState("0");
 
-  const handleHouseUpdate = async (e) => {
+  const handleUpdateHotel = async (e) => {
     e.preventDefault();
-    const houseUpdate = {
+    const productAdd = {
       bedRoomInfo: e.target.bedRoomInfo.value,
       floorLevel: e.target.floorLevel.value,
       division: e.target.division.value,
       district: e.target.district.value,
       upazila: e.target.upazila.value,
       totalRentRoom: e.target.totalRentRoom.value,
-      spaceSize: e.target.spaceSize.value,
-      commonBathRoom: e.target.commonBathRoom.value,
       attachedBathRoom: e.target.attachedBathRoom.value,
       balcony: e.target.balcony.value,
-      propertyCondition: e.target.propertyCondition.value,
-      facing: e.target.facing.value,
-      availableFrom: e.target.availableFrom.value,
       rentPriceTitle: e.target.rentPriceTitle.value,
       rentPrice: e.target.rentPrice.value,
       deposit: e.target.deposit.value,
@@ -32,53 +28,45 @@ const EditHouseModal = ({ editHouse, refetch }) => {
       furnishing: e.target.furnishing.value,
       gasSupply: e.target.gasSupply.value,
       ccTvCamera: e.target.ccTvCamera.value,
-      storeRoom: e.target.storeRoom.value,
       lift: e.target.lift.value,
       waterSupply: e.target.waterSupply.value,
       securityGuard: e.target.securityGuard.value,
       ipsConnection: e.target.ipsConnection.value,
       parkingSpace: e.target.parkingSpace.value,
       floorType: e.target.floorType.value,
-      categoryName: e.target.categoryName.value,
-      houseDetailsAddress: e.target.houseDetailsAddress.value,
+      hotelDetailsAddress: e.target.hotelDetailsAddress.value,
     };
-
+    console.log(productAdd);
     const formData = new FormData();
-    formData.append("bedRoomInfo", houseUpdate.bedRoomInfo);
-    formData.append("floorLevel", houseUpdate.floorLevel);
-    formData.append("division", houseUpdate.division);
-    formData.append("district", houseUpdate.district);
-    formData.append("upazila", houseUpdate.upazila);
-    formData.append("totalRentRoom", houseUpdate.totalRentRoom);
-    formData.append("spaceSize", houseUpdate?.spaceSize);
-    formData.append("commonBathRoom", houseUpdate.commonBathRoom);
-    formData.append("attachedBathRoom", houseUpdate.attachedBathRoom);
-    formData.append("balcony", houseUpdate.balcony);
-    formData.append("propertyCondition", houseUpdate.propertyCondition);
-    formData.append("facing", houseUpdate.facing);
-    formData.append("availableFrom", houseUpdate.availableFrom);
-    formData.append("rentPriceTitle", houseUpdate.rentPriceTitle);
-    formData.append("rentPrice", houseUpdate.rentPrice);
-    formData.append("deposit", houseUpdate.deposit);
-    formData.append("discount", houseUpdate.discount);
-    formData.append("status", houseUpdate.status);
-    formData.append("kitchen", houseUpdate.kitchen);
-    formData.append("diningSpace", houseUpdate.diningSpace);
-    formData.append("furnishing", houseUpdate.furnishing);
-    formData.append("gasSupply", houseUpdate.gasSupply);
-    formData.append("ccTvCamera", houseUpdate.ccTvCamera);
-    formData.append("storeRoom", houseUpdate.storeRoom);
-    formData.append("lift", houseUpdate.lift);
-    formData.append("waterSupply", houseUpdate.waterSupply);
-    formData.append("securityGuard", houseUpdate.securityGuard);
-    formData.append("ipsConnection", houseUpdate.ipsConnection);
-    formData.append("parkingSpace", houseUpdate.parkingSpace);
-    formData.append("floorType", houseUpdate.floorType);
-    formData.append("categoryName", houseUpdate.categoryName);
-    formData.append("houseDetailsAddress", houseUpdate.houseDetailsAddress);
+    formData.append("bedRoomInfo", productAdd.bedRoomInfo);
+    formData.append("floorLevel", productAdd.floorLevel);
+    formData.append("division", productAdd.division);
+    formData.append("district", productAdd.district);
+    formData.append("upazila", productAdd.upazila);
+    formData.append("totalRentRoom", productAdd.totalRentRoom);
+    formData.append("attachedBathRoom", productAdd.attachedBathRoom);
+    formData.append("balcony", productAdd.balcony);
+    formData.append("rentPriceTitle", productAdd.rentPriceTitle);
+    formData.append("rentPrice", productAdd.rentPrice);
+    formData.append("deposit", productAdd.deposit);
+    formData.append("discount", productAdd.discount);
+    formData.append("status", productAdd.status);
+    formData.append("kitchen", productAdd.kitchen);
+    formData.append("diningSpace", productAdd.diningSpace);
+    formData.append("furnishing", productAdd.furnishing);
+    formData.append("gasSupply", productAdd.gasSupply);
+    formData.append("ccTvCamera", productAdd.ccTvCamera);
+    formData.append("lift", productAdd.lift);
+    formData.append("waterSupply", productAdd.waterSupply);
+    formData.append("securityGuard", productAdd.securityGuard);
+    formData.append("ipsConnection", productAdd.ipsConnection);
+    formData.append("parkingSpace", productAdd.parkingSpace);
+    formData.append("floorType", productAdd.floorType);
+    formData.append("hotelDetailsAddress", productAdd.hotelDetailsAddress);
+
     try {
       const { data } = await axios.patch(
-        `http://localhost:5000/api/v1/house/${editHouse?._id}`,
+        `http://localhost:5000/api/v1/hotel/${editHotel?._id}`,
         formData,
         {
           headers: {
@@ -93,19 +81,20 @@ const EditHouseModal = ({ editHouse, refetch }) => {
     }
     e.target.reset();
   };
+
   return (
     <div>
-      <input type="checkbox" id="edit-modal" className="modal-toggle" />
+      <input type="checkbox" id="edit-hotel-modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box w-8/12 max-w-5xl glass">
           <dic className="flex">
             <div class="grow h-14 ...">
               <h3 className="text-center text-xl border border-spacing-1">
-                Update House Informations
+                Update Hotel Informations
               </h3>
             </div>
             <div class="flex-none w-14 h-14 modal-action">
-              <label htmlFor="edit-modal" className="text-xl">
+              <label htmlFor="edit-hotel-modal" className="text-xl">
                 <RxCrossCircled />
               </label>
             </div>
@@ -113,7 +102,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
 
           <div>
             <form
-              onSubmit={handleHouseUpdate}
+              onSubmit={handleUpdateHotel}
               className="mt-2 product-form px-4 mx-2 py-3 rounded"
             >
               <div className="grid grid-cols-4">
@@ -124,13 +113,13 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                   </label>
                   <br />
                   <input
-                    type="text"
+                    type="number"
                     className="border-2 border-green-500"
                     name="bedRoomInfo"
                     required
                     placeholder="Product Name in English"
                     id=""
-                    defaultValue={editHouse?.bedRoomInfo}
+                    defaultValue={editHotel?.bedRoomInfo}
                   />
                 </div>
 
@@ -147,7 +136,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="floorLevel"
                     placeholder="Price"
                     id=""
-                    defaultValue={editHouse?.floorLevel}
+                    defaultValue={editHotel?.floorLevel}
                   />
                 </div>
                 <div className="">
@@ -163,7 +152,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="division"
                     placeholder="Quantity"
                     id=""
-                    defaultValue={editHouse?.division}
+                    defaultValue={editHotel?.division}
                   />
                 </div>
                 <div className="">
@@ -179,7 +168,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="district"
                     placeholder="Quantity"
                     id=""
-                    defaultValue={editHouse?.district}
+                    defaultValue={editHotel?.district}
                   />
                 </div>
                 <div className="">
@@ -195,7 +184,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="upazila"
                     placeholder="Quantity"
                     id=""
-                    defaultValue={editHouse?.upazila}
+                    defaultValue={editHotel?.upazila}
                   />
                 </div>
 
@@ -211,6 +200,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="totalRentRoom"
                     id="category"
                     className="border-2 border-green-500"
+                    defaultValue={editHotel?.totalRentRoom}
                   >
                     <option selected disabled>
                       Select A totalRentRoom
@@ -226,38 +216,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     <option>Eight</option>
                   </select>
                 </div>
-                <div className="">
-                  <label>
-                    spaceSize :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
-                  </label>{" "}
-                  <br />
-                  <input
-                    type="number"
-                    className="border-2 border-green-500"
-                    required
-                    name="spaceSize"
-                    placeholder="Quantity"
-                    id=""
-                    defaultValue={editHouse?.spaceSize}
-                  />
-                </div>
-                <div className="">
-                  <label>
-                    commonBathRoom :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
-                  </label>{" "}
-                  <br />
-                  <input
-                    type="number"
-                    className="border-2 border-green-500"
-                    required
-                    name="commonBathRoom"
-                    placeholder="Quantity"
-                    id=""
-                    defaultValue={editHouse?.commonBathRoom}
-                  />
-                </div>
+
                 <div className="">
                   <label>
                     attachedBathRoom :{" "}
@@ -271,7 +230,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="attachedBathRoom"
                     placeholder="Quantity"
                     id=""
-                    defaultValue={editHouse?.attachedBathRoom}
+                    defaultValue={editHotel?.attachedBathRoom}
                   />
                 </div>
                 <div className="">
@@ -287,68 +246,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="balcony"
                     placeholder="Quantity"
                     id=""
-                    defaultValue={editHouse?.balcony}
-                  />
-                </div>
-
-                <div className="">
-                  <label for="category">
-                    propertyCondition :{" "}
-                    <span className="text-rose-500 fw-bold fs-5">*</span>
-                  </label>
-                  <br />
-                  <select
-                    style={{ width: "100%", height: "45px" }}
-                    required
-                    name="propertyCondition"
-                    id="category"
-                    className="border-2 border-green-500"
-                  >
-                    <option selected disabled>
-                      Select A propertyCondition
-                    </option>
-
-                    <option>Brand New</option>
-                    <option>Renovated</option>
-                  </select>
-                </div>
-                <div className="">
-                  <label for="category">
-                    facing :{" "}
-                    <span className="text-rose-500 fw-bold fs-5">*</span>
-                  </label>
-                  <br />
-                  <select
-                    style={{ width: "100%", height: "45px" }}
-                    required
-                    name="facing"
-                    id="category"
-                    className="border-2 border-green-500"
-                  >
-                    <option selected disabled>
-                      Select A facing
-                    </option>
-
-                    <option>East</option>
-                    <option>West</option>
-                    <option>North</option>
-                    <option>South</option>
-                  </select>
-                </div>
-                <div className="">
-                  <label>
-                    availableFrom :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
-                  </label>{" "}
-                  <br />
-                  <input
-                    type="text"
-                    className="border-2 border-green-500"
-                    required
-                    name="availableFrom"
-                    placeholder="Quantity"
-                    id=""
-                    defaultValue={editHouse?.availableFrom}
+                    defaultValue={editHotel?.balcony}
                   />
                 </div>
 
@@ -364,6 +262,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="rentPriceTitle"
                     id="category"
                     className="border-2 border-green-500"
+                    defaultValue={editHotel?.rentPriceTitle}
                   >
                     <option selected disabled>
                       Select A rentPriceTitle
@@ -386,7 +285,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="rentPrice"
                     placeholder="Quantity"
                     id=""
-                    defaultValue={editHouse?.rentPrice}
+                    defaultValue={editHotel?.rentPrice}
                   />
                 </div>
                 <div className="">
@@ -402,7 +301,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="deposit"
                     placeholder="Quantity"
                     id=""
-                    defaultValue={editHouse?.deposit}
+                    defaultValue={editHotel?.deposit}
                   />
                 </div>
 
@@ -415,7 +314,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="discount"
                     placeholder="discount"
                     id=""
-                    defaultValue={editHouse?.discount}
+                    defaultValue={editHotel?.discount}
                   />
                 </div>
                 <div className="col-lg-4">
@@ -429,6 +328,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="status"
                     id="status"
                     className="border-2 border-green-500"
+                    defaultValue={editHotel?.status}
                   >
                     <option selected disabled>
                       Select A Status
@@ -450,6 +350,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="kitchen"
                     id="category"
                     className="border-2 border-green-500"
+                    defaultValue={editHotel?.kitchen}
                   >
                     <option selected disabled>
                       Select A kitchen
@@ -471,6 +372,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="diningSpace"
                     id="category"
                     className="border-2 border-green-500"
+                    defaultValue={editHotel?.diningSpace}
                   >
                     <option selected disabled>
                       Select A diningSpace
@@ -492,6 +394,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="furnishing"
                     id="category"
                     className="border-2 border-green-500"
+                    defaultValue={editHotel?.furnishing}
                   >
                     <option selected disabled>
                       Select A furnishing
@@ -513,6 +416,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="gasSupply"
                     id="category"
                     className="border-2 border-green-500"
+                    defaultValue={editHotel?.gasSupply}
                   >
                     <option selected disabled>
                       Select A gasSupply
@@ -534,6 +438,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="ccTvCamera"
                     id="category"
                     className="border-2 border-green-500"
+                    defaultValue={editHotel?.ccTvCamera}
                   >
                     <option selected disabled>
                       Select A ccTvCamera
@@ -543,27 +448,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     <option>No</option>
                   </select>
                 </div>
-                <div className="">
-                  <label for="category">
-                    storeRoom :{" "}
-                    <span className="text-rose-500 fw-bold fs-5">*</span>
-                  </label>
-                  <br />
-                  <select
-                    style={{ width: "100%", height: "45px" }}
-                    required
-                    name="storeRoom"
-                    id="category"
-                    className="border-2 border-green-500"
-                  >
-                    <option selected disabled>
-                      Select A storeRoom
-                    </option>
 
-                    <option>Yes</option>
-                    <option>No</option>
-                  </select>
-                </div>
                 <div className="">
                   <label for="category">
                     lift : <span className="text-rose-500 fw-bold fs-5">*</span>
@@ -575,6 +460,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="lift"
                     id="category"
                     className="border-2 border-green-500"
+                    defaultValue={editHotel?.lift}
                   >
                     <option selected disabled>
                       Select A lift
@@ -596,6 +482,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="waterSupply"
                     id="category"
                     className="border-2 border-green-500"
+                    defaultValue={editHotel?.waterSupply}
                   >
                     <option selected disabled>
                       Select A waterSupply
@@ -617,6 +504,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="securityGuard"
                     id="category"
                     className="border-2 border-green-500"
+                    defaultValue={editHotel?.securityGuard}
                   >
                     <option selected disabled>
                       Select A securityGuard
@@ -638,6 +526,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="ipsConnection"
                     id="category"
                     className="border-2 border-green-500"
+                    defaultValue={editHotel?.ipsConnection}
                   >
                     <option selected disabled>
                       Select A ipsConnection
@@ -659,6 +548,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="parkingSpace"
                     id="category"
                     className="border-2 border-green-500"
+                    defaultValue={editHotel?.parkingSpace}
                   >
                     <option selected disabled>
                       Select A parkingSpace
@@ -680,6 +570,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     name="floorType"
                     id="category"
                     className="border-2 border-green-500"
+                    defaultValue={editHotel?.floorType}
                   >
                     <option selected disabled>
                       Select A floorType
@@ -689,44 +580,23 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     <option>Normal</option>
                   </select>
                 </div>
-                <div className="">
-                  <label for="category">
-                    Category :{" "}
-                    <span className="text-rose-500 fw-bold fs-5">*</span>
-                  </label>
-                  <br />
-                  <select
-                    style={{ width: "100%", height: "45px" }}
-                    required
-                    name="categoryName"
-                    id="category"
-                    className="border-2 border-green-500"
-                  >
-                    <option selected disabled>
-                      Select A Category
-                    </option>
-                    <option>Family</option>
-                    <option>Bachelor</option>
-                  </select>
-                </div>
               </div>
               <div>
-                <label for="">House Deatails Address:</label>
+                <label for="">Hotel Deatails Address:</label>
                 <textarea
                   className="border-2 border-green-500"
                   id=""
-                  name="houseDetailsAddress"
+                  name="hotelDetailsAddress"
                   rows="4"
-                  defaultValue={editHouse?.houseDetailsAddress}
+                  defaultValue={editHotel?.hotelDetailsAddress}
                 />
               </div>
-
               <div className="d-flex justify-content-end mt-4">
                 <div>
                   <input
-                    className="btn btn-rose-500 fs-5"
+                    className="btn btn-danger fs-5"
                     type="submit"
-                    value="Update House"
+                    value="Update Hotel"
                   />
                 </div>
               </div>
@@ -739,4 +609,4 @@ const EditHouseModal = ({ editHouse, refetch }) => {
   );
 };
 
-export default EditHouseModal;
+export default EdiHotelModal;

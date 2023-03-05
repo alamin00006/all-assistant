@@ -1,6 +1,29 @@
+import axios from "axios";
 import React from "react";
+import { toast } from "react-toastify";
 
-const ModalBooking = () => {
+const ModalBooking = ({ house }) => {
+  const handleHouseOrder = async (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const phone = e.target.phone.value;
+
+    const orderData = {
+      orderHouse: house,
+      name,
+      phone,
+    };
+    try {
+      const { data } = await axios.post(
+        `http://localhost:5000/api/v1/order`,
+        orderData
+      );
+      toast.success(data.data.message);
+    } catch (error) {
+      return toast.warn(error.response.data.message);
+    }
+    // e.target.reset();
+  };
   return (
     <div>
       {/* The button to open modal */}
@@ -12,7 +35,7 @@ const ModalBooking = () => {
       <input type="checkbox" id="booking-input" className="modal-toggle " />
       <div className="modal">
         <div className="modal-box bg-amber-100">
-          <form>
+          <form onSubmit={(e) => handleHouseOrder(e)}>
             <div className="flex flex-col items-center">
               <div className="form-control w-full max-w-xs">
                 <label className="label">
@@ -20,6 +43,7 @@ const ModalBooking = () => {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   placeholder="Type here"
                   className="input input-bordered w-full max-w-xs"
                 />
@@ -30,6 +54,7 @@ const ModalBooking = () => {
                 </label>
                 <input
                   type="tel"
+                  name="phone"
                   placeholder="Type here"
                   className="input input-bordered w-full max-w-xs"
                 />

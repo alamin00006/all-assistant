@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 const RecentProperties = ({ searchHouse }) => {
   const navigate = useNavigate();
+  console.log(searchHouse);
   // const [houses, setHouses] = useState([]);
   // useEffect(() => {
   //   fetch("bd-houseinfo.json")
@@ -26,7 +27,7 @@ const RecentProperties = ({ searchHouse }) => {
                 <figure onClick={() => houseDetails(house._id)}>
                   <img
                     className="p-3 click"
-                    src={`http://localhost:5000/${house?.houseImage?.[0]}`}
+                    src={`http://localhost:5000/${house?.image?.[0]}`}
                     alt="Shoes"
                   />
                 </figure>
