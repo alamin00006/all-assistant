@@ -6,7 +6,7 @@ import { RxCrossCircled } from "react-icons/rx";
 
 const AddHouseModal = ({ refetch }) => {
   const [discount, setDiscount] = useState("0");
-  const [houseImage, setHouseImage] = useState([]);
+  const [image, setImage] = useState([]);
 
   const handleHouseCreate = async (e) => {
     e.preventDefault();
@@ -94,14 +94,14 @@ const AddHouseModal = ({ refetch }) => {
       return validExtensions.includes(fileExtension);
     };
 
-    const file = houseImage[0];
+    const file = image[0];
 
     if (file.size > 5000000) {
       return toast.error("Product Picture size 5MB more than not allowed");
     } else {
       if (isValidFileUploaded(file)) {
-        Array.from(houseImage).forEach((item) => {
-          formData.append("houseImage", item);
+        Array.from(image).forEach((item) => {
+          formData.append("image", item);
         });
       } else {
         return toast.error("Product Picture is not valid");
@@ -742,7 +742,7 @@ const AddHouseModal = ({ refetch }) => {
                 <input
                   multiple
                   onChange={(e) => {
-                    setHouseImage(e.target.files);
+                    setImage(e.target.files);
                   }}
                   type="file"
                   className="border-2 border-green-500"
