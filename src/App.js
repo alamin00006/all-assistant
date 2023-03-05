@@ -9,8 +9,6 @@ import House from "./views/House/House";
 
 import CreateHouse from "./views/dashboard/CreateHouse/CreateHouse";
 
-
-
 import HouseDetails from "./views/HouseDetails/HouseDetails";
 import Login from "./views/Login/Login";
 import SignUp from "./views/SignUp/SignUp";
@@ -33,15 +31,13 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="singUp" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />}>
-        
-        <Route path="profile" element={<Profile/>}></Route>
-        <Route path="addhotel" element={<AddHotel/>}></Route>
-        <Route path="addhouse" element={<AddHouse/>}></Route>
-        <Route path="manage-user" element={<UserManage/>}></Route>
-        <Route path="order" element={<Order/>}></Route>
+          <Route index element={<Profile />}></Route>
+          <Route path="addhotel" element={<AddHotel />}></Route>
+          <Route path="addhouse" element={<AddHouse />}></Route>
+          <Route path="manage-user" element={<UserManage />}></Route>
+          <Route path="order" element={<Order />}></Route>
         </Route>
 
-       
         <Route path="/housedetails/:id" element={<HouseDetails />} />
         <Route path="/hoteldetails/:id" element={<HotelDetails />} />
         <Route path="/singUp" element={<SignUp />} />

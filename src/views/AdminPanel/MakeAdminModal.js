@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const MakeAdminModal = ({ makeAdmin, refetch }) => {
   const token = localStorage.getItem("token");
@@ -10,6 +10,9 @@ const MakeAdminModal = ({ makeAdmin, refetch }) => {
       role: "Admin",
     };
     try {
+      if (makeAdmin?.role === "SuperAdmin") {
+        return toast.warn("Sorry You SuperAdmin");
+      }
       const { data } = await axios.patch(
         `http://localhost:5000/api/v1/user/${makeAdmin?._id}`,
         adminMake,
@@ -45,6 +48,7 @@ const MakeAdminModal = ({ makeAdmin, refetch }) => {
           </div>
         </div>
       </div>
+      <ToastContainer className="toast-position" position="top-center" />
     </div>
   );
 };

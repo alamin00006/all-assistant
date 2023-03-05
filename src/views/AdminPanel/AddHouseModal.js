@@ -7,7 +7,6 @@ import { RxCrossCircled } from "react-icons/rx";
 const AddHouseModal = ({ refetch }) => {
   const [discount, setDiscount] = useState("0");
   const [image, setimage] = useState([]);
- 
 
   const handleHouseCreate = async (e) => {
     e.preventDefault();
@@ -123,13 +122,13 @@ const AddHouseModal = ({ refetch }) => {
   };
 
   return (
-    <div>
+    <div className="mt-4">
       <input type="checkbox" id="my-modal-5" className="modal-toggle" />
-      <div className="modal">
+      <div className="modal mt-24">
         <div className="modal-box w-8/12 max-w-5xl glass">
           <dic className="flex">
             <div class="grow h-14 ...">
-              <h3 className="text-center text-xl border border-spacing-1 bg-sky-300">
+              <h3 className="text-center text-xl border border-spacing-1">
                 Please Inpute House Informations
               </h3>
             </div>
@@ -147,10 +146,7 @@ const AddHouseModal = ({ refetch }) => {
             >
               <div className=" md:grid md:grid-cols-3 sm:grid sm:grid-cols-2 grid grid-cols-1">
                 <div className="">
-                  <label>
-                    Bed Room Info:{" "}
-                   
-                  </label>
+                  <label>Bed Room Info: </label>
                   <span className="text-danger font-bold ">*</span>
                   <br />
                   <input
@@ -164,7 +160,7 @@ const AddHouseModal = ({ refetch }) => {
                 </div>
 
                 <div className="">
-                  <label >
+                  <label>
                     Floor Level :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
@@ -177,10 +173,9 @@ const AddHouseModal = ({ refetch }) => {
                     placeholder="Price"
                     id=""
                   />
-                  
                 </div>
                 <div className="">
-                  <label >
+                  <label>
                     Division :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
@@ -210,7 +205,7 @@ const AddHouseModal = ({ refetch }) => {
                   />
                 </div>
                 <div className="">
-                  <label >
+                  <label>
                     Upazila :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
@@ -226,7 +221,7 @@ const AddHouseModal = ({ refetch }) => {
                 </div>
 
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Total Rent Room :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -238,7 +233,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A total Rent Room
                     </option>
 
@@ -253,7 +248,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label > 
+                  <label>
                     Space Size :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
@@ -268,7 +263,7 @@ const AddHouseModal = ({ refetch }) => {
                   />
                 </div>
                 <div className="">
-                  <label >
+                  <label>
                     Common BathRoom :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
@@ -283,7 +278,7 @@ const AddHouseModal = ({ refetch }) => {
                   />
                 </div>
                 <div className="">
-                  <label >
+                  <label>
                     Attached BathRoom :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
@@ -298,7 +293,7 @@ const AddHouseModal = ({ refetch }) => {
                   />
                 </div>
                 <div className="">
-                  <label >
+                  <label>
                     Balcony :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
@@ -314,7 +309,7 @@ const AddHouseModal = ({ refetch }) => {
                 </div>
 
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Property Condition :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -326,7 +321,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A propertyCondition
                     </option>
 
@@ -335,7 +330,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Facing :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -347,7 +342,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A facing
                     </option>
 
@@ -358,7 +353,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label >
+                  <label>
                     Available From :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
@@ -374,7 +369,7 @@ const AddHouseModal = ({ refetch }) => {
                 </div>
 
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Rent Price Title :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -386,7 +381,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A RentPrice Title
                     </option>
 
@@ -395,7 +390,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label >
+                  <label>
                     RentPrice :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
@@ -410,7 +405,7 @@ const AddHouseModal = ({ refetch }) => {
                   />
                 </div>
                 <div className="">
-                  <label >
+                  <label>
                     Deposit :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
@@ -426,7 +421,7 @@ const AddHouseModal = ({ refetch }) => {
                 </div>
 
                 <div className="">
-                  <label >Discount : </label> <br />
+                  <label>Discount : </label> <br />
                   <input
                     onChange={(e) => setDiscount(e.target.value)}
                     type="number"
@@ -437,7 +432,7 @@ const AddHouseModal = ({ refetch }) => {
                   />
                 </div>
                 <div className="col-lg-4">
-                  <label for="status" >
+                  <label for="status">
                     Status : <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
@@ -448,7 +443,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="status"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A Status
                     </option>
                     <option>Available</option>
@@ -457,7 +452,7 @@ const AddHouseModal = ({ refetch }) => {
                 </div>
 
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     kitchen :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -469,7 +464,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A kitchen
                     </option>
 
@@ -478,7 +473,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Dining Space :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -490,7 +485,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A diningSpace
                     </option>
 
@@ -499,7 +494,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Furnishing :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -520,7 +515,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     GasSupply :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -532,7 +527,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A gasSupply
                     </option>
 
@@ -541,7 +536,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     ccTv Camera :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -553,7 +548,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A ccTv Camera
                     </option>
 
@@ -562,7 +557,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Store Room :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -574,7 +569,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A storeRoom
                     </option>
 
@@ -583,7 +578,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Lift : <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -594,7 +589,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A lift
                     </option>
 
@@ -603,7 +598,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Water Supply :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -615,7 +610,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A water Supply
                     </option>
 
@@ -624,7 +619,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Security Guard :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -636,7 +631,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A Security Guard
                     </option>
 
@@ -645,7 +640,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     ips Connection :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -657,7 +652,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A ips Connection
                     </option>
 
@@ -666,7 +661,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Parking Space :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -678,7 +673,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A parking Space
                     </option>
 
@@ -687,7 +682,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Floor Type :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -699,7 +694,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A Floor Type
                     </option>
 
@@ -708,7 +703,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Category :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -720,7 +715,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A Category
                     </option>
                     <option>Family</option>
@@ -729,29 +724,33 @@ const AddHouseModal = ({ refetch }) => {
                 </div>
               </div>
               <div>
-                <h1><label for="" >House Deatails Address:</label></h1>
+                <h1>
+                  <label for="">House Deatails Address:</label>
+                </h1>
                 {/* <textarea
                   className="border-2 border-orange-400 input input-bordered input-sm"
                  
                 /> */}
-                <textarea placeholder="House Area Address" className=" border-2 border-orange-400 input  input-sm  textarea textarea-bordered textarea-xs w-full max-w-xs"  id=""
+                <textarea
+                  placeholder="House Area Address"
+                  className=" border-2 border-orange-400 input  input-sm  textarea textarea-bordered textarea-xs w-full max-w-xs"
+                  id=""
                   name="houseDetailsAddress"
-                  rows="4"/>
-
+                  rows="4"
+                />
               </div>
               <div className="">
-                <h1> 
+                <h1>
                   <label>
-                  Upload a Book Picture :{" "}
-                  <span className="text-danger fw-bold fs-5">*</span>
-                </label>
+                    Upload a Book Picture :{" "}
+                    <span className="text-danger fw-bold fs-5">*</span>
+                  </label>
                 </h1>
-               
+
                 <input
                   multiple
                   onChange={(e) => {
                     setimage(e.target.files);
-                    
                   }}
                   type="file"
                   className="border-2 border-orange-400 input input-bordered input-sm"
@@ -765,7 +764,7 @@ const AddHouseModal = ({ refetch }) => {
               <div className="d-flex justify-content-end mt-4">
                 <div>
                   <input
-                    className="btn btn-danger fs-5 bg-sky-300"
+                    className="bg-rose-600 text-white px-8 text-lg py-2 rounded-lg cursor-pointer"
                     type="submit"
                     value="Add House"
                   />

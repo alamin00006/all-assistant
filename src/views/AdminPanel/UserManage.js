@@ -1,21 +1,21 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
 import useAllUser from "../../Hooks/useAllUser";
+import useUser from "../../Hooks/userUser";
 import MakeAdminModal from "./MakeAdminModal";
 import RemoveAdminModal from "./RemoveAdminModal";
 
 const UserManage = () => {
   const [allUser, refetch] = useAllUser();
-
+  const [user, refetchSingle] = useUser();
   const [makeAdmin, setMakeAdmin] = useState({});
   const [removeAdmin, setRemoveAdmin] = useState({});
-
+  console.log(user);
   useEffect(() => {
-    if (!allUser?.data?.data.length === 0) {
+    if (!allUser?.data?.data.length === 0 || !user?.email) {
       refetch();
+      refetchSingle();
     }
-  }, [allUser, refetch]);
+  }, [allUser, refetch, user, refetchSingle]);
 
   return (
     <div>
@@ -27,7 +27,6 @@ const UserManage = () => {
               <th></th>
               <th>Name</th>
               <th>EMAIL</th>
-              <th>PASSWORD</th>
               <th>Role</th>
               <th>Status</th>
               <th>CreatedAt</th>
@@ -36,12 +35,11 @@ const UserManage = () => {
             </tr>
           </thead>
           <tbody>
-            {allUser?.data?.data?.map((user) => (
+            {allUser?.data?.data?.map((user, index) => (
               <tr key={user._id}>
-                <th>1</th>
+                <td>{index + 1}</td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
-                <td>{user.password}</td>
                 <td>{user.role}</td>
                 <td>{user.status}</td>
                 <td>{user.createdAt}</td>

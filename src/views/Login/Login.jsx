@@ -5,12 +5,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useUser from "../../Hooks/userUser";
 import axios from "axios";
+import Loading from "../Loading/Loading";
 
 const Login = () => {
   const [user, refetch, isLoading] = useUser();
 
   const token = localStorage.getItem("token");
-  // console.log(user)
+
+  const navigate = useNavigate();
+
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
@@ -21,8 +24,6 @@ const Login = () => {
     passWordError: "",
   });
 
-  const navigate = useNavigate();
-
   const emailCheck = (e) => {
     const emailRegex = /\S+@\S+\.\S+/;
     const validEmail = emailRegex.test(e.target.value);
@@ -30,7 +31,7 @@ const Login = () => {
       setUserInfo({ ...userInfo, email: e.target.value });
       setError({ ...error, emailError: "" });
     } else {
-      setError({ ...error, emailError: "Invalid Email" });
+      setError({ ...error, emailError: " Please Valid Email" });
       setUserInfo({ ...userInfo, email: "" });
     }
   };
@@ -42,7 +43,7 @@ const Login = () => {
       setUserInfo({ ...userInfo, password: e.target.value });
       setError({ ...error, passWordError: "" });
     } else {
-      setError({ ...error, passWordError: "Invalid Password" });
+      setError({ ...error, passWordError: "Please Provide Valid Password" });
       setUserInfo({ ...userInfo, password: "" });
     }
   };
@@ -62,9 +63,6 @@ const Login = () => {
     }
   };
 
-  //  if(isLoading){
-  //   return(<Loading></Loading>)
-  //  }
   useEffect(() => {
     if (!user?.email) {
       refetch();
@@ -72,7 +70,9 @@ const Login = () => {
       navigate("/");
     }
   }, [refetch, token, user, isLoading, navigate]);
-
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="bg-white">
       <div className="">
