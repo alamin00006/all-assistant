@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { toast } from "react-toastify";
 
-const DeleteHouseModal = ({ deleteHotel, refetch }) => {
+const DeleteHotelModal = ({ deleteHotel, refetch }) => {
   const handleDelete = async () => {
     try {
       const data = await axios.delete(
@@ -46,4 +46,4 @@ const DeleteHouseModal = ({ deleteHotel, refetch }) => {
   );
 };
 
-export default DeleteHouseModal;
+export default DeleteHotelModal;
