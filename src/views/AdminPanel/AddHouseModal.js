@@ -7,6 +7,7 @@ import { RxCrossCircled } from "react-icons/rx";
 const AddHouseModal = ({ refetch }) => {
   const [discount, setDiscount] = useState("0");
   const [image, setimage] = useState([]);
+ 
 
   const handleHouseCreate = async (e) => {
     e.preventDefault();
@@ -743,6 +744,7 @@ const AddHouseModal = ({ refetch }) => {
                   multiple
                   onChange={(e) => {
                     setimage(e.target.files);
+                    
                   }}
                   type="file"
                   className="border-2 border-green-500"
