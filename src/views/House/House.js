@@ -82,16 +82,14 @@ const House = () => {
       )
         .then((res) => res.json())
         .then((data) => {
-          // setSearchHouse(data?.data);
-          console.log(data);
+          setSearchHouse(data?.data);
+          console.log(data?.data);
         })
   );
 
   return (
     <div>
-
-    
-      <PropertyCategory />
+      <PropertyCategory handleCategory={handleCategory} />
       <SearchOption
         divisions={divisions}
         handleDistricts={handleDistricts}
@@ -102,7 +100,7 @@ const House = () => {
         handlePrice={handlePrice}
         handleRoom={handleRoom}
       ></SearchOption>
-      <RecentProperties></RecentProperties>
+      <RecentProperties searchHouse={searchHouse}></RecentProperties>
     </div>
   );
 };

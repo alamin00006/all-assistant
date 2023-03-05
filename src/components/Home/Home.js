@@ -7,12 +7,12 @@ import Banner from "../../views/Banner/Banner";
 import Footer from "../../views/Footer/Footer";
 import OurPartners from "../../views/OurPartners/OurPartners";
 import Services from "../../views/Services/Services";
-import ModalBooking from "../../views/ModalBooking/ModalBooking";
+// import ModalBooking from "../../views/ModalBooking/ModalBooking";
 
 const Home = () => {
   return (
     <div>
-      <ModalBooking></ModalBooking>
+      {/* <ModalBooking></ModalBooking> */}
       <Banner></Banner>
       <Services></Services>
       <section>

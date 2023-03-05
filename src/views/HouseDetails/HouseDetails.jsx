@@ -13,7 +13,7 @@ const HouseDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => setHouse(data.data));
-  }, [id]);
+  }, [house, id]);
   // if (!house) {
   //   return <div>Loading...</div>;
   // }
