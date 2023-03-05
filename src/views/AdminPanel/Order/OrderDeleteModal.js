@@ -21,16 +21,16 @@ const OrderDeleteModal = ({ orderDelete, refetch }) => {
       return toast.error(error.response.data.message);
     }
   };
-
+  console.log(orderDelete);
   return (
     <div>
       <input type="checkbox" id="order-delete-modal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box bg-red-500">
+        <div className="modal-box glass">
           <h3 className="font-bold text-lg">Are You Sure This Order Delete</h3>
           <div className="flex justify-end">
             <div className="modal-action">
-              <label htmlFor="order-delete-modal" className="btn">
+              <label htmlFor="order-delete-modal" className="btn mr-4">
                 Cancel
               </label>
             </div>

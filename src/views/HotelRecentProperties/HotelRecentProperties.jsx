@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const HotelRecentProperties = ({ datas }) => {
   const navigate = useNavigate();
   const houseDetails = (id) => {
-    // console.log(id);
+    console.log(id);
     navigate(`/hoteldetails/${id}`);
   };
   return (
@@ -18,7 +18,7 @@ const HotelRecentProperties = ({ datas }) => {
                 <figure onClick={() => houseDetails(house._id)}>
                   <img
                     className="p-3 click"
-                    src={`http://localhost:5000/${house?.houseImage?.[0]}`}
+                    src={`http://localhost:5000/${house?.image?.[0]}`}
                     alt="Shoes"
                   />
                 </figure>

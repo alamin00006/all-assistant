@@ -23,11 +23,15 @@ const UserManage = () => {
         <table className="table w-full">
           {/* head */}
           <thead>
-            <tr>
+            <tr className="bg-amber-200">
               <th></th>
               <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>EMAIL</th>
+              <th>PASSWORD</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>CreatedAt</th>
+              <th>UpdatedAt</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -35,9 +39,13 @@ const UserManage = () => {
             {allUser?.data?.data?.map((user) => (
               <tr key={user._id}>
                 <th>1</th>
-                <td>Cy Ganderton</td>
-                <td>Quality Control Specialist</td>
-                <td>Blue</td>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.password}</td>
+                <td>{user.role}</td>
+                <td>{user.status}</td>
+                <td>{user.createdAt}</td>
+                <td>{user.updatedAt}</td>
                 <td>
                   <div className="flex justify-between">
                     <div onClick={() => setMakeAdmin(user)}>
