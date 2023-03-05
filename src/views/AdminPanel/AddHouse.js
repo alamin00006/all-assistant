@@ -10,6 +10,7 @@ import useHouse from "../../Hooks/useHouse";
 
 const AddHouse = () => {
   const [houses, refetch] = useHouse();
+  //console.log(houses);
 
   const [editHouse, setEditHouse] = useState({});
   const [deleteHouse, setDeleteHouse] = useState({});
@@ -90,22 +91,7 @@ const AddHouse = () => {
                   </td>
                 </tr>
               ))}
-              {/* <tr>
-        <th>2</th> 
-        <td>Hart Hagerty</td> 
-        <td>Desktop Support Technician</td> 
-        <td>Zemlak, Daniel and Leannon</td> 
-        <td>United States</td> 
-        <td>12/5/2020</td> 
-        <td>Purple</td>
-        <td><td><div className="dropdown dropdown-right dropdown-end">
-  <label tabIndex={0} className=" m-1 btn">Click</label>
-  <ul tabIndex={0} className="dropdown-content menu p-2 shadow  bg-green-400 rounded-box w-52">
-    <li><Link>Edit</Link></li>
-    <li><Link>Delete</Link></li>
-  </ul>
-</div>  </td></td>
-      </tr> */}
+             
               <EditHouseModal editHouse={editHouse} refetch={refetch} />
 
               <DeleteHouseModal deleteHouse={deleteHouse} refetch={refetch} />

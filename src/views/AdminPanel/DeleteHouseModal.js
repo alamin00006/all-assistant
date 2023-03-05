@@ -3,6 +3,7 @@ import React from "react";
 import { toast } from "react-toastify";
 
 const DeleteHouseModal = ({ deleteHouse, refetch }) => {
+  console.log(deleteHouse);
   const handleDelete = async () => {
     try {
       const data = await axios.delete(
