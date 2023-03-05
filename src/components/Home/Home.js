@@ -9,15 +9,13 @@ import OurPartners from "../../views/OurPartners/OurPartners";
 import Services from "../../views/Services/Services";
 
 const Home = () => {
-
-  return(
+  return (
     <div>
-      
       <Banner></Banner>
       <Services></Services>
       <section>
-      <UserInfo></UserInfo>
-      <BestOffer></BestOffer>
+        <UserInfo></UserInfo>
+        <BestOffer></BestOffer>
         <MobileApp />
       </section>
       <OurStory></OurStory>
@@ -25,8 +23,6 @@ const Home = () => {
       <Footer></Footer>
     </div>
   );
-
-  
 };
 
 export default Home;

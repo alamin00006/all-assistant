@@ -1,12 +1,12 @@
 import axios from "axios";
 import React from "react";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const RemoveAdminModal = ({ removeAdmin, refetch }) => {
   const token = localStorage.getItem("token");
   const handleRemoveAdmin = async () => {
     const adminRemove = {
-      role: "user",
+      role: "User",
     };
     try {
       const { data } = await axios.patch(
@@ -44,6 +44,7 @@ const RemoveAdminModal = ({ removeAdmin, refetch }) => {
           </div>
         </div>
       </div>
+      <ToastContainer className="toast-position" position="top-center" />
     </div>
   );
 };

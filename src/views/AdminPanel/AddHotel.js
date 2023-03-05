@@ -25,7 +25,7 @@ const AddHotel = () => {
         <div className="overflow-x-auto">
           <table className="table table-compact w-full">
             <thead>
-              <tr>
+              <tr className="bg-amber-200">
                 <th></th>
                 <th>BedRoom.Info</th>
                 <th>Floor</th>
@@ -89,62 +89,12 @@ const AddHotel = () => {
                   </td>
                 </tr>
               ))}
-              {/* <tr>
-        <th>2</th> 
-        <td>Hart Hagerty</td> 
-        <td>Desktop Support Technician</td> 
-        <td>Zemlak, Daniel and Leannon</td> 
-        <td>United States</td> 
-        <td>12/5/2020</td> 
-        <td>Purple</td>
-        <td><td><div className="dropdown dropdown-right dropdown-end">
-  <label tabIndex={0} className=" m-1 btn">Click</label>
-  <ul tabIndex={0} className="dropdown-content menu p-2 shadow  bg-green-400 rounded-box w-52">
-    <li><Link>Edit</Link></li>
-    <li><Link>Delete</Link></li>
-  </ul>
-</div>  </td></td>
-      </tr> */}
+             
               <EditHotelModal refetch={refetch} editHotel={editHotel} />
 
               <DeleteHotelModal refetch={refetch} deleteHotel={deleteHotel} />
             </tbody>
-            <tfoot>
-              <tr>
-                <th></th>
-                <th>BedRoom.Info</th>
-                <th>Floor</th>
-                <th>Division</th>
-                <th>District</th>
-                <th>Upazila</th>
-                <th>SpaceSize</th>
-                <th>Cm.Bathroom</th>
-                <th>At.Bathroom</th>
-                <th>Balcony</th>
-                <th>P.Condation</th>
-                <th>Facing</th>
-                <th>AvailableFrom</th>
-                <th>RentPriceTitle</th>
-                <th>RentPrice</th>
-                <th>Deposite</th>
-                <th>Discount</th>
-                <th>Status</th>
-                <th>kitchen</th>
-                <th>DiningSpace</th>
-                <th>Furnishing </th>
-                <th>GasSupply</th>
-                <th>ccTV</th>
-                <th>StoreRoom</th>
-                <th>Lift</th>
-                <th>WaterSupply</th>
-                <th>Sc.Gard</th>
-                <th>iPS</th>
-                <th>Pk.Space</th>
-                <th>FloorType</th>
-                <th>Category</th>
-                <th>Action</th>
-              </tr>
-            </tfoot>
+          
           </table>
         </div>
       </div>
