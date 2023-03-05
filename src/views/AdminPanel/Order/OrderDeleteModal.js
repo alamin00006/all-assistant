@@ -21,7 +21,7 @@ const OrderDeleteModal = ({ orderDelete, refetch }) => {
       return toast.error(error.response.data.message);
     }
   };
-
+  console.log(orderDelete);
   return (
     <div>
       <input type="checkbox" id="order-delete-modal" className="modal-toggle" />

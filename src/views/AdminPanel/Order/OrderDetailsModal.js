@@ -1,6 +1,7 @@
 import React from "react";
 
 const OrderDetailsModal = ({ seeOrderDetails }) => {
+  console.log(seeOrderDetails);
   return (
     <div>
       <input
