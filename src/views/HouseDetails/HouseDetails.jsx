@@ -1,5 +1,7 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import DetailsHouseImage from "../DetailsHouseImage/DetailsHouseImage";
 
 const HouseDetails = () => {
@@ -14,11 +16,26 @@ const HouseDetails = () => {
       .then((res) => res.json())
       .then((data) => setHouse(data.data));
   }, [id]);
-  // if (!house) {
-  //   return <div>Loading...</div>;
-  // }
   const images = house?.houseImage;
-  // console.log(house?.houseImage);
+
+  const handleHouseOrder = async () => {
+    const orderData = {
+      orderHouse: house,
+      name: "alamin",
+      phone: "01749718743",
+    };
+    try {
+      const { data } = await axios.post(
+        `http://localhost:5000/api/v1/order`,
+        orderData
+      );
+      toast.success(data.data.message);
+    } catch (error) {
+      return toast.warn(error.response.data.message);
+    }
+    // e.target.reset();
+  };
+
   return (
     <div className="w-3/4 m-0 mx-auto">
       <h1>House Details</h1>
@@ -101,7 +118,10 @@ const HouseDetails = () => {
               </div>
             </div>
             <div className="my-4">
-              <button className="btn bg-sky-500 hover:bg-sky-700 text-white mr-4">
+              <button
+                onClick={handleHouseOrder}
+                className="btn bg-sky-500 hover:bg-sky-700 text-white mr-4"
+              >
                 Get Phone Number
               </button>
               <button className="btn bg-violet-500 hover:bg-violet-600 border-none text-white">

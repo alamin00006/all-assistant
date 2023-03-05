@@ -692,7 +692,7 @@ const CreateHouse = () => {
         <div>
           <label for="">House Deatails Address:</label>
           <textarea
-            className="rounded"
+            className="border-2 border-green-500"
             id=""
             name="houseDetailsAddress"
             rows="4"
@@ -722,7 +722,7 @@ const CreateHouse = () => {
             <input
               className="btn btn-danger fs-5"
               type="submit"
-              value="Add product"
+              value="Add House"
             />
           </div>
         </div>
