@@ -26,7 +26,7 @@ const DetailsHouseImage = ({ images }) => {
       )}
       <div>
         <img
-          className="w-60"
+          className="w-full h-32"
           src={`http://localhost:5000/${images?.[number]}`}
           alt=""
         />
