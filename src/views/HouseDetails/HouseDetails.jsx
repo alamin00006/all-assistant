@@ -20,7 +20,7 @@ const HouseDetails = () => {
   // if (!house) {
   //   return <div>Loading...</div>;
   // }
-  const images = house?.houseImage;
+  const images = house?.image;
 
   // const handleHouseOrder = async () => {
   //   const orderData = {
