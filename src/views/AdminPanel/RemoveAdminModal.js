@@ -6,7 +6,7 @@ const RemoveAdminModal = ({ removeAdmin, refetch }) => {
   const token = localStorage.getItem("token");
   const handleRemoveAdmin = async () => {
     const adminRemove = {
-      role: "user",
+      role: "User",
     };
     try {
       const { data } = await axios.patch(

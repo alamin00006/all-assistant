@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 const MakeAdminModal = ({ makeAdmin, refetch }) => {
   const token = localStorage.getItem("token");
-  console.log(makeAdmin);
+
   const handleMakeAdmin = async () => {
     const adminMake = {
       role: "Admin",
