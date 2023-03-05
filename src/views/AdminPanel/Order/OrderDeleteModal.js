@@ -2,11 +2,11 @@ import axios from "axios";
 import React from "react";
 import { toast } from "react-toastify";
 
-const DeleteHouseModal = ({ deleteHouse, refetch }) => {
-  const handleDelete = async () => {
+const OrderDeleteModal = ({ orderDelete, refetch }) => {
+  const handleOrderDelete = async () => {
     try {
       const data = await axios.delete(
-        `http://localhost:5000/api/v1/house/${deleteHouse?._id}`,
+        `http://localhost:5000/api/v1/order/${orderDelete?._id}`,
         {},
         {
           headers: {
@@ -14,6 +14,7 @@ const DeleteHouseModal = ({ deleteHouse, refetch }) => {
           },
         }
       );
+
       toast.success(data.data.message);
       refetch();
     } catch (error) {
@@ -23,20 +24,18 @@ const DeleteHouseModal = ({ deleteHouse, refetch }) => {
 
   return (
     <div>
-      <input type="checkbox" id="deletemodal" className="modal-toggle" />
+      <input type="checkbox" id="order-delete-modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box bg-red-500">
-          <h3 className="font-bold text-lg">
-            Are You Sure This Product Delete
-          </h3>
+          <h3 className="font-bold text-lg">Are You Sure This Order Delete</h3>
           <div className="flex justify-end">
             <div className="modal-action">
-              <label htmlFor="deletemodal" className="btn">
+              <label htmlFor="order-delete-modal" className="btn">
                 Cancel
               </label>
             </div>
-            <div onClick={handleDelete} className="modal-action">
-              <label htmlFor="deletemodal" className="btn">
+            <div onClick={handleOrderDelete} className="modal-action">
+              <label htmlFor="order-delete-modal" className="btn">
                 Yes
               </label>
             </div>
@@ -47,4 +46,4 @@ const DeleteHouseModal = ({ deleteHouse, refetch }) => {
   );
 };
 
-export default DeleteHouseModal;
+export default OrderDeleteModal;
