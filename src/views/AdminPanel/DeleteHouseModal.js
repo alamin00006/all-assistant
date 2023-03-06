@@ -26,7 +26,7 @@ const DeleteHouseModal = ({ deleteHouse, refetch }) => {
     <div>
       <input type="checkbox" id="deletemodal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box bg-red-500">
+        <div className="modal-box  bg-slate-200">
           <h3 className="font-bold text-lg">
             Are You Sure This Product Delete
           </h3>

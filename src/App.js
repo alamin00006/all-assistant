@@ -17,6 +17,7 @@ import AddHotel from "./views/AdminPanel/AddHotel";
 import UserManage from "./views/AdminPanel/UserManage";
 import Order from "./views/AdminPanel/Order/Order";
 import AllHouse from "./views/dashboard/CreateHouse/AllHouse";
+import AddCategory from "./views/AdminPanel/AddCategory";
 import Error from "./components/Error/Error";
 import Footer from "./views/Footer/Footer";
 
@@ -33,11 +34,13 @@ function App() {
         <Route path="singUp" element={<SignUp />} />
         <Route path="*" element={<Error />} />
         <Route path="/dashboard" element={<Dashboard />}>
-          <Route index element={<Profile />}></Route>
-          <Route path="addhotel" element={<AddHotel />}></Route>
-          <Route path="addhouse" element={<AddHouse />}></Route>
-          <Route path="manage-user" element={<UserManage />}></Route>
-          <Route path="order" element={<Order />}></Route>
+        
+        <Route path="profile" element={<Profile/>}></Route>
+        <Route path="addhouse" element={<AddHouse/>}></Route>
+        <Route path="addhotel" element={<AddHotel/>}></Route>
+        <Route path="addcategory" element={<AddCategory/>}></Route>
+        <Route path="manage-user" element={<UserManage/>}></Route>
+        <Route path="order" element={<Order/>}></Route>
         </Route>
 
         <Route path="/housedetails/:id" element={<HouseDetails />} />

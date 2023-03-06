@@ -113,7 +113,39 @@ const Admin = () => {
               )}
 
               <li className="bg-sky-300 hover:bg-slate-300 h-10">
-                <Link onClick={SingOutHandle} to="">
+                {" "}
+                <Link to="addhouse">
+                  <FaLaptopHouse />
+                  Add House
+                </Link>
+              </li>
+              <li className="bg-sky-300 hover:bg-slate-300 h-10">
+                {" "}
+                <Link to="addhotel">
+                  <FaLaptopHouse />
+                  Add Hotel
+                </Link>
+              </li>
+              <li className="bg-sky-300 hover:bg-slate-300 h-10">
+                <Link to="addcategory">
+                  {/* <MdCategory /> */}
+                  Add Category
+                </Link>
+              </li>
+              <li className="bg-sky-300 hover:bg-slate-300 h-10">
+                <Link to="manage-user">
+                  <FaUsersCog />
+                  Users
+                </Link>
+              </li>
+              <li className="bg-sky-300 hover:bg-slate-300 h-10">
+                <Link to="order">
+                  <AiOutlineUnorderedList />
+                  Orders
+                </Link>
+              </li>
+              <li className="bg-sky-300 hover:bg-slate-300 h-10">
+                <Link to="logout">
                   <RiLogoutBoxRFill />
                   Logout
                 </Link>
