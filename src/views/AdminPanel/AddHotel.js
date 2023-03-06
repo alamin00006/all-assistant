@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { DiWindows } from "react-icons/di";
 import "./AddHouse.css";
 import EditHotelModal from "./EdiHotelModal";
 import DeleteHotelModal from "./DeleteHotelModal";
@@ -7,26 +6,30 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
 import AddHotelModal from "./AddHotelModal";
 import useHotels from "../../Hooks/useHotels";
-
+import { AiOutlineEye } from "react-icons/ai";
+import ViewHotelModal from "./ViewHotelModal";
 const AddHotel = () => {
   const [hotels, refetch] = useHotels();
   const [editHotel, setEditHotel] = useState({});
+  const [detailsHotel, setDetailsHotel] = useState({});
   const [deleteHotel, setDeleteHotel] = useState({});
   return (
     <div>
-      <label htmlFor="hotel-modal" className="btn bg-cyan-300">
-        <DiWindows />
-        Add Hotel
+      <label
+        htmlFor="hotel-modal"
+        className="bg-rose-600 text-white px-8 text-lg py-2 rounded-lg cursor-pointer"
+      >
+        + Add Hotel
       </label>
       <AddHotelModal refetch={refetch} />
 
-      <div>
+      <div className="mt-5">
         {/* -------------------------table data------------------------ */}
         <div className="overflow-x-auto">
           <table className="table table-compact w-full">
             <thead>
-              <tr>
-                <th></th>
+              <tr className="bg-amber-200">
+                <th>No.</th>
                 <th>BedRoom.Info</th>
                 <th>Floor</th>
                 <th>Division</th>
@@ -62,9 +65,9 @@ const AddHotel = () => {
             </thead>
 
             <tbody>
-              {hotels?.data?.map((hotel) => (
-                <tr>
-                  <th>1</th>
+              {hotels?.data?.map((hotel, index) => (
+                <tr key={hotel._id}>
+                  <td>{index + 1}</td>
                   <td>FloorLevel</td>
                   <td>Quality Control Specialist</td>
                   <td>Littel, Schaden and Vandervort</td>
@@ -74,77 +77,32 @@ const AddHotel = () => {
 
                   <td>
                     <div className="flex space-x-4">
+                      <div onClick={() => setDetailsHotel(hotel)}>
+                        <label htmlFor="view-hotel-modal" className="">
+                          <AiOutlineEye className="h-6 w-6 cursor-pointer" />
+                        </label>
+                      </div>
                       <div onClick={() => setEditHotel(hotel)}>
                         <label htmlFor="edit-hotel-modal" className="">
-                          <FiEdit className="h-6 w-6" />
+                          <FiEdit className="h-6 w-6 cursor-pointer" />
                         </label>
                       </div>
 
                       <div onClick={() => setDeleteHotel(hotel)}>
                         <label htmlFor="delete-hotel-modal" className="">
-                          <RiDeleteBin6Line className="h-6 w-6" />
+                          <RiDeleteBin6Line className="h-6 w-6 text-rose-500 cursor-pointer" />
                         </label>
                       </div>
                     </div>
                   </td>
                 </tr>
               ))}
-              {/* <tr>
-        <th>2</th> 
-        <td>Hart Hagerty</td> 
-        <td>Desktop Support Technician</td> 
-        <td>Zemlak, Daniel and Leannon</td> 
-        <td>United States</td> 
-        <td>12/5/2020</td> 
-        <td>Purple</td>
-        <td><td><div className="dropdown dropdown-right dropdown-end">
-  <label tabIndex={0} className=" m-1 btn">Click</label>
-  <ul tabIndex={0} className="dropdown-content menu p-2 shadow  bg-green-400 rounded-box w-52">
-    <li><Link>Edit</Link></li>
-    <li><Link>Delete</Link></li>
-  </ul>
-</div>  </td></td>
-      </tr> */}
+
+              <ViewHotelModal refetch={refetch} detailsHotel={detailsHotel} />
               <EditHotelModal refetch={refetch} editHotel={editHotel} />
 
               <DeleteHotelModal refetch={refetch} deleteHotel={deleteHotel} />
             </tbody>
-            <tfoot>
-              <tr>
-                <th></th>
-                <th>BedRoom.Info</th>
-                <th>Floor</th>
-                <th>Division</th>
-                <th>District</th>
-                <th>Upazila</th>
-                <th>SpaceSize</th>
-                <th>Cm.Bathroom</th>
-                <th>At.Bathroom</th>
-                <th>Balcony</th>
-                <th>P.Condation</th>
-                <th>Facing</th>
-                <th>AvailableFrom</th>
-                <th>RentPriceTitle</th>
-                <th>RentPrice</th>
-                <th>Deposite</th>
-                <th>Discount</th>
-                <th>Status</th>
-                <th>kitchen</th>
-                <th>DiningSpace</th>
-                <th>Furnishing </th>
-                <th>GasSupply</th>
-                <th>ccTV</th>
-                <th>StoreRoom</th>
-                <th>Lift</th>
-                <th>WaterSupply</th>
-                <th>Sc.Gard</th>
-                <th>iPS</th>
-                <th>Pk.Space</th>
-                <th>FloorType</th>
-                <th>Category</th>
-                <th>Action</th>
-              </tr>
-            </tfoot>
           </table>
         </div>
       </div>

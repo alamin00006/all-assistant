@@ -1,21 +1,16 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-// import img1 from "../../assets//images/house1.jpg";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./style.css";
-const RecentProperties = ({ searchHouse }) => {
+const RecentProperties = ({ searchHouse, refetch }) => {
   const navigate = useNavigate();
-  console.log(searchHouse);
-  // const [houses, setHouses] = useState([]);
-  // useEffect(() => {
-  //   fetch("bd-houseinfo.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setHouses(data.houses));
-  // }, []);
+
   const houseDetails = (id) => {
-    // console.log(id);
     navigate(`/housedetails/${id}`);
   };
-  // console.log(datas);
+  useEffect(() => {
+    if (!searchHouse) refetch();
+  });
   return (
     <div className="w-3/4 m-0 mx-auto">
       <h1 className="text-center">Recent Properties</h1>

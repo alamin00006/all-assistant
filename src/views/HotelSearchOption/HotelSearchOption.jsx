@@ -5,7 +5,10 @@ const HotelSearchOption = ({
   handleDistricts,
   getDistricts,
   handleUpazilas,
+  handleallUpazilas,
   getUpazilas,
+  handlePrice,
+  handleRoom,
 }) => {
   // console.log(divisions);
   return (
@@ -17,7 +20,7 @@ const HotelSearchOption = ({
           className="select w-full max-w-xs"
           onChange={(e) => handleDistricts(e.target.value)}
         >
-          <option disabled defaultValue="--Select--">
+          <option disabled selected defaultValue="--Select--">
             --Select--
           </option>
           {divisions.map((div) => (
@@ -31,7 +34,7 @@ const HotelSearchOption = ({
           className="select w-full max-w-xs"
           onChange={(e) => handleUpazilas(e.target.value)}
         >
-          <option disabled defaultValue="--Select--">
+          <option disabled selected defaultValue="--Select--">
             --Select--
           </option>
           {getDistricts.map((dis) => (
@@ -42,7 +45,7 @@ const HotelSearchOption = ({
         </select>
 
         <select name="upozilla" className="select w-full max-w-xs">
-          <option disabled defaultValue="--Select--">
+          <option disabled selected defaultValue="--Select--">
             --Select--
           </option>
           {getUpazilas.map((dis) => (
@@ -51,20 +54,32 @@ const HotelSearchOption = ({
             </option>
           ))}
         </select>
-        <select name="price" className="select w-full max-w-xs">
-          <option disabled defaultValue="--Select--">
+        <select
+          name="price"
+          className="select w-full max-w-xs"
+          onChange={(e) => {
+            handlePrice(e.target.value);
+          }}
+        >
+          <option disabled selected>
             --Select--
           </option>
+          <option>Up to 200</option>
+          <option>Up to 500</option>
           <option>Up to 1000</option>
-          <option>Up to 2000</option>
-          <option>Up to 4000</option>
-          <option>Up to 6000</option>
-          <option>Up to 8000</option>
-          <option>Up to 1000888</option>
+          <option>Up to 5000</option>
+          <option>Up to 10000</option>
+          <option>Up to 30000</option>
         </select>
 
-        <select name="price" className="select w-full max-w-xs">
-          <option disabled defaultValue="--Select--">
+        <select
+          name="price"
+          className="select w-full max-w-xs"
+          onChange={(e) => {
+            handleRoom(e.target.value);
+          }}
+        >
+          <option disabled selected>
             --Select--
           </option>
           <option>One</option>
@@ -73,6 +88,8 @@ const HotelSearchOption = ({
           <option>Four</option>
           <option>Five</option>
           <option>Six</option>
+          <option>Seven</option>
+          <option>Eight</option>
         </select>
       </div>
     </div>

@@ -1,30 +1,4 @@
 {
-<<<<<<< HEAD
-    "houses": [
-      {
-        "id": "1",
-        "img": "https://res.cloudinary.com/bdassistant/image/upload/w_1000,ar_16:9,c_fill/wofkt2dkdqixbcjpztjx",
-        "taka": "22000"
-        
-      },
-      {
-        "id": "2",
-        "img": "https://res.cloudinary.com/bdassistant/image/upload/w_1000,ar_16:9,c_fill/sbrzwtrhkohlsnhbostl",
-        "taka": "23000"
-      },
-      {
-        "id": "3",
-        "img": "https://res.cloudinary.com/bdassistant/image/upload/w_1000,ar_16:9,c_fill/pa2ckevjxzlymcrdue2s",
-        "taka": "24000"
-      },
-      {
-        "id": "4",
-        "img": "https://res.cloudinary.com/bdassistant/image/upload/w_1000,ar_16:9,c_fill/xmwdlexxmjrvtqwld1b2",
-        "taka": "25000"
-      }
-    ]
-  }
-=======
   "houses": [
     {
       "id": "1",
@@ -48,4 +22,3 @@
     }
   ]
 }
->>>>>>> fd5bf7ca0b694318202a90a6fff6f82bf0c42b00

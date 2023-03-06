@@ -83,8 +83,6 @@ const House = () => {
         .then((res) => res.json())
         .then((data) => {
           setSearchHouse(data?.data);
-          console.log(data?.data);
-          // console.log(data);
         })
   );
 
@@ -101,7 +99,10 @@ const House = () => {
         handlePrice={handlePrice}
         handleRoom={handleRoom}
       ></SearchOption>
-      <RecentProperties searchHouse={searchHouse}></RecentProperties>
+      <RecentProperties
+        searchHouse={searchHouse}
+        refetch={refetch}
+      ></RecentProperties>
     </div>
   );
 };
