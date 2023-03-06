@@ -1,4 +1,6 @@
 import React from "react";
+import { AiOutlineMail } from "react-icons/ai";
+import { FaMobileAlt, FaRegAddressCard } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 
@@ -26,9 +28,23 @@ const Footer = () => {
         </div>
         <div>
           <span className="footer-title">Company</span>
-          <p>Momtaz Complex 3rd Floor, Patanish Bazar, Hajigonj, Chandpur</p>
-          <p>allassistant7@gmail.com</p>
-          <p>0171******</p>
+          <div className="flex">
+            <FaRegAddressCard></FaRegAddressCard>
+            <p className="ml-2">
+              Momtaz Complex 3rd Floor, Patanish Bazar, Hajigonj, Chandpur
+            </p>
+          </div>
+
+          <div className="flex">
+            <AiOutlineMail></AiOutlineMail>
+            <p className="ml-2">allassistant7@gmail.com</p>
+          </div>
+
+          <div className="flex">
+            <FaMobileAlt></FaMobileAlt>
+
+            <p className="ml-2">01646516565</p>
+          </div>
         </div>
         <div>
           <span className="footer-title">Legal</span>
