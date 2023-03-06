@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import logo1 from "../../assets/images/logo-original.png";
 import useUser from "../../Hooks/userUser";
 import "./Navbar.css";
@@ -64,6 +64,7 @@ const Navbar = () => {
                 className="btn btn-ghost normal-case text-lg "
                 alt=""
               />
+              <img src={logo1} className="w-20 normal-case text-xl" alt="" />
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">

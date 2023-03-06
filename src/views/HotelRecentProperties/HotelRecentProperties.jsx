@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const HotelRecentProperties = ({ searchHotel, refetch }) => {
   const navigate = useNavigate();
-  const houseDetails = (id) => {
+  const hotelDetails = (id) => {
     console.log(id);
     navigate(`/hoteldetails/${id}`);
   };
@@ -19,7 +19,7 @@ const HotelRecentProperties = ({ searchHotel, refetch }) => {
           <>
             {searchHotel.map((hotel) => (
               <div key={hotel._id} className="card w-72 bg-base-100 shadow-xl">
-                <figure onClick={() => houseDetails(hotel._id)}>
+                <figure onClick={() => hotelDetails(hotel._id)}>
                   <img
                     className="p-3 click"
                     src={`http://localhost:5000/${hotel?.image?.[0]}`}
@@ -28,14 +28,32 @@ const HotelRecentProperties = ({ searchHotel, refetch }) => {
                 </figure>
 
                 <div className="card-body">
-                  <h2 className="card-title">
-                    {hotel.division}
-                    <div className="badge badge-secondary">NEW</div>
-                  </h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div>
-                    <div className="badge badge-outline">Products</div>
+                  <div className="flex items-center justify-center">
+                    <h2 className="card-title ">{hotel.categoryName}</h2>
+
+                    <h2 className="card-title">{hotel.rentPrice}</h2>
+                  </div>
+                  <div className="flex flex-col">
+                    <div className="flex items-center justify-center">
+                      <div>
+                        <h2>{hotel.bedRoomInfo}</h2>
+                        <p>Bedroom</p>
+                      </div>
+                      <div className="ml-16">
+                        <h2>{hotel.floorLevel}</h2>
+                        <p>Floor Level</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-center">
+                      <div>
+                        <h2>{hotel.commonBathRoom}</h2>
+                        <p>Bathroom</p>
+                      </div>
+                      <div className="ml-16">
+                        <h2>{hotel.spaceSize}</h2>
+                        <p>Space Size</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
