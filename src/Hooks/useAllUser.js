@@ -1,37 +1,25 @@
 import axios from "axios";
 import { useState } from "react";
 import { useQuery } from "react-query";
-import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const useAllUser = () => {
   const [allUser, setallUser] = useState({});
-  const token = localStorage.getItem("token");
-  const navigate = useNavigate();
-  const { isLoading, refetch } = useQuery([token], () => {
+
+  const { isLoading, refetch } = useQuery([], () => {
     async function getUser() {
-      if (!token) {
-        return;
-      } else {
-        await axios
-          .get(
-            "http://localhost:5000/api/v1/user",
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            },
-            {
-              refetchInterval: 6000,
-            }
-          )
-          .then((data) => setallUser(data))
-          .catch((err) => {
-            console.log(err);
-            localStorage.removeItem("token");
-            navigate("/login");
-            window.location.reload(false);
-          });
-      }
+      await axios
+        .get(
+          "http://localhost:5000/api/v1/user",
+
+          {
+            refetchInterval: 6000,
+          }
+        )
+        .then((data) => setallUser(data))
+        .catch((err) => {
+          return toast.warn(err.response.data.message);
+        });
     }
     getUser();
   });

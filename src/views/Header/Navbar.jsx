@@ -1,20 +1,18 @@
-import React from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import logo1 from "../../assets/images/logo1.png";
 import useUser from "../../Hooks/userUser";
+import "./Navbar.css";
 
 const Navbar = () => {
-  const [user, refetch, isLoading] = useUser();
+  const [user, refetch] = useUser();
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    if (!user?.email) refetch();
+  }, [user, refetch]);
 
-  const SingOutHandle = () => {
-    navigate("/");
-    localStorage.removeItem("token");
-    window.location.reload(false);
-  };
   return (
-    <header className="bg-green-300 sticky top-0 z-50">
+    <header className="all-assistant-navbar sticky top-0 z-50">
       <nav className="lg:mx-36 md:mx-26 sm:mx-16 xs:mx-0">
         <div className="navbar  text-black">
           <div className="navbar-start">
@@ -51,9 +49,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   {user?.email ? (
-                    <Link onClick={SingOutHandle} to="">
-                      LOGOUT
-                    </Link>
+                    <Link to="/dashboard">PROFILE</Link>
                   ) : (
                     <Link to="/login" className="px-3">
                       LOGIN
@@ -86,31 +82,33 @@ const Navbar = () => {
               CART
             </Link>
             {user?.email ? (
-              <Link onClick={SingOutHandle} to="">
-                LOGOUT
-              </Link>
+              <Link to="/dashboard">PROFILE</Link>
             ) : (
               <Link to="/login" className="px-3">
                 LOGIN
               </Link>
             )}
           </div>
-          <label htmlFor="dashboard-drawer" tabIndex={2} className="btn btn-ghost lg:hidden">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
-                </svg>
-              </label>
+          <label
+            htmlFor="dashboard-drawer"
+            tabIndex={2}
+            className="btn btn-ghost lg:hidden"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </label>
         </div>
       </nav>
     </header>

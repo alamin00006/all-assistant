@@ -1,27 +1,30 @@
 import React, { useState } from "react";
 import AddHouseModal from "./AddHouseModal";
-import { DiWindows } from "react-icons/di";
 import "./AddHouse.css";
 import EditHouseModal from "./EditHouseModal";
 import DeleteHouseModal from "./DeleteHouseModal";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
+import { AiOutlineEye } from "react-icons/ai";
 import useHouse from "../../Hooks/useHouse";
+import ViewHouseModal from "./ViewHouseModal";
 
 const AddHouse = () => {
   const [houses, refetch] = useHouse();
   //console.log(houses);
 
   const [editHouse, setEditHouse] = useState({});
+  const [detailsHouse, setDetailsHouse] = useState({});
   const [deleteHouse, setDeleteHouse] = useState({});
   return (
     <div>
-      <label htmlFor="my-modal-5" className="btn bg-cyan-300">
-        <DiWindows />
-        AddHouse
+      <label
+        htmlFor="my-modal-5"
+        className="bg-rose-600 text-white px-8 text-lg py-2 rounded-lg cursor-pointer"
+      >
+        + AddHouse
       </label>
       <AddHouseModal refetch={refetch} />
-      
 
       <div>
         {/* -------------------------table data------------------------ */}
@@ -29,7 +32,7 @@ const AddHouse = () => {
           <table className="table table-compact w-full">
             <thead>
               <tr className="bg-amber-200">
-                <th></th>
+                <th>No.</th>
                 <th>BedRoom.Info</th>
                 <th>Floor</th>
                 <th>Division</th>
@@ -62,7 +65,6 @@ const AddHouse = () => {
                 <th>FloorType</th>
                 <th>CategoryName</th>
                 <th>HouseDetailsAddress</th>
-                <th>image</th>
                 <th>CreateAT</th>
                 <th>UpdateAT</th>
                 <th>Action</th>
@@ -70,9 +72,9 @@ const AddHouse = () => {
             </thead>
 
             <tbody>
-              {houses?.data?.map((house) => (
-                <tr>
-                  <th>1</th>
+              {houses?.data?.map((house, index) => (
+                <tr key={house._id}>
+                  <td>{index + 1}</td>
                   <td>{house.bedRoomInfo}</td>
                   <td>{house.floorLevel}</td>
                   <td>{house.division}</td>
@@ -105,34 +107,37 @@ const AddHouse = () => {
                   <td>{house.floorType}</td>
                   <td>{house.categoryName}</td>
                   <td>{house.houseDetailsAddress}</td>
-                  <td>{house.image}</td>
                   <td>{house.createdAt}</td>
                   <td>{house.updatedAt}</td>
-                 
 
                   <td>
                     <div className="flex space-x-4">
+                      <div onClick={() => setDetailsHouse(house)}>
+                        <label htmlFor="view-house-modal" className="">
+                          <AiOutlineEye className="h-6 w-6 cursor-pointer" />
+                        </label>
+                      </div>
                       <div onClick={() => setEditHouse(house)}>
                         <label htmlFor="edit-modal" className="">
-                          <FiEdit className="h-6 w-6" />
+                          <FiEdit className="h-6 w-6 cursor-pointer" />
                         </label>
                       </div>
 
                       <div onClick={() => setDeleteHouse(house)}>
                         <label htmlFor="deletemodal" className="">
-                          <RiDeleteBin6Line className="h-6 w-6" />
+                          <RiDeleteBin6Line className="h-6 w-6 cursor-pointer text-rose-500" />
                         </label>
                       </div>
                     </div>
                   </td>
                 </tr>
               ))}
-             
+
               <EditHouseModal editHouse={editHouse} refetch={refetch} />
+              <ViewHouseModal detailsHouse={detailsHouse} refetch={refetch} />
 
               <DeleteHouseModal deleteHouse={deleteHouse} refetch={refetch} />
             </tbody>
-            
           </table>
         </div>
       </div>

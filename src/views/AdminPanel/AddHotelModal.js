@@ -150,7 +150,7 @@ const AddHotelModal = ({ refetch }) => {
                 <div className="">
                   <label>
                     floorLevel :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
+                    <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { DiWindows } from "react-icons/di";
 import "./AddHouse.css";
 import EditHotelModal from "./EdiHotelModal";
 import DeleteHotelModal from "./DeleteHotelModal";
@@ -7,26 +6,30 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
 import AddHotelModal from "./AddHotelModal";
 import useHotels from "../../Hooks/useHotels";
-
+import { AiOutlineEye } from "react-icons/ai";
+import ViewHotelModal from "./ViewHotelModal";
 const AddHotel = () => {
   const [hotels, refetch] = useHotels();
   const [editHotel, setEditHotel] = useState({});
+  const [detailsHotel, setDetailsHotel] = useState({});
   const [deleteHotel, setDeleteHotel] = useState({});
   return (
     <div>
-      <label htmlFor="hotel-modal" className="btn bg-cyan-300">
-        <DiWindows />
-        Add Hotel
+      <label
+        htmlFor="hotel-modal"
+        className="bg-rose-600 text-white px-8 text-lg py-2 rounded-lg cursor-pointer"
+      >
+        + Add Hotel
       </label>
       <AddHotelModal refetch={refetch} />
 
-      <div>
+      <div className="mt-5">
         {/* -------------------------table data------------------------ */}
         <div className="overflow-x-auto">
           <table className="table table-compact w-full">
             <thead>
               <tr className="bg-amber-200">
-                <th></th>
+                <th>No.</th>
                 <th>BedRoom.Info</th>
                 <th>Floor</th>
                 <th>Division</th>
@@ -62,9 +65,9 @@ const AddHotel = () => {
             </thead>
 
             <tbody>
-              {hotels?.data?.map((hotel) => (
-                <tr>
-                  <th>1</th>
+              {hotels?.data?.map((hotel, index) => (
+                <tr key={hotel._id}>
+                  <td>{index + 1}</td>
                   <td>FloorLevel</td>
                   <td>Quality Control Specialist</td>
                   <td>Littel, Schaden and Vandervort</td>
@@ -74,27 +77,32 @@ const AddHotel = () => {
 
                   <td>
                     <div className="flex space-x-4">
+                      <div onClick={() => setDetailsHotel(hotel)}>
+                        <label htmlFor="view-hotel-modal" className="">
+                          <AiOutlineEye className="h-6 w-6 cursor-pointer" />
+                        </label>
+                      </div>
                       <div onClick={() => setEditHotel(hotel)}>
                         <label htmlFor="edit-hotel-modal" className="">
-                          <FiEdit className="h-6 w-6" />
+                          <FiEdit className="h-6 w-6 cursor-pointer" />
                         </label>
                       </div>
 
                       <div onClick={() => setDeleteHotel(hotel)}>
                         <label htmlFor="delete-hotel-modal" className="">
-                          <RiDeleteBin6Line className="h-6 w-6" />
+                          <RiDeleteBin6Line className="h-6 w-6 text-rose-500 cursor-pointer" />
                         </label>
                       </div>
                     </div>
                   </td>
                 </tr>
               ))}
-             
+
+              <ViewHotelModal refetch={refetch} detailsHotel={detailsHotel} />
               <EditHotelModal refetch={refetch} editHotel={editHotel} />
 
               <DeleteHotelModal refetch={refetch} deleteHotel={deleteHotel} />
             </tbody>
-          
           </table>
         </div>
       </div>
