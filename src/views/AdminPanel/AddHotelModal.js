@@ -142,7 +142,7 @@ const AddHotelModal = ({ refetch }) => {
                     className="border-2 border-orange-400 input input-bordered input-sm"
                     name="bedRoomInfo"
                     required
-                    placeholder="Product Name in English"
+                    placeholder="Input Bed Room Info"
                     id=""
                   />
                 </div>
@@ -158,7 +158,7 @@ const AddHotelModal = ({ refetch }) => {
                     className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="floorLevel"
-                    placeholder="Price"
+                    placeholder="Floor Level"
                     id=""
                   />
                 </div>
@@ -173,7 +173,7 @@ const AddHotelModal = ({ refetch }) => {
                     className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="division"
-                    placeholder="Quantity"
+                    placeholder="Division"
                     id=""
                   />
                 </div>
@@ -188,7 +188,7 @@ const AddHotelModal = ({ refetch }) => {
                     className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="district"
-                    placeholder="Quantity"
+                    placeholder="District"
                     id=""
                   />
                 </div>
@@ -203,7 +203,7 @@ const AddHotelModal = ({ refetch }) => {
                     className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="upazila"
-                    placeholder="Quantity"
+                    placeholder="Upazila"
                     id=""
                   />
                 </div>
@@ -222,7 +222,7 @@ const AddHotelModal = ({ refetch }) => {
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A totalRentRoom
+                      Select A Total Rent Room
                     </option>
 
                     <option>One</option>
@@ -238,7 +238,7 @@ const AddHotelModal = ({ refetch }) => {
 
                 <div className="">
                   <label>
-                    Attached BathRoom :{" "}
+                    Attached Bath Room :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
@@ -247,7 +247,7 @@ const AddHotelModal = ({ refetch }) => {
                     className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="attachedBathRoom"
-                    placeholder="Quantity"
+                    placeholder="Attached Bath Room"
                     id=""
                   />
                 </div>
@@ -262,7 +262,7 @@ const AddHotelModal = ({ refetch }) => {
                     className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="balcony"
-                    placeholder="Quantity"
+                    placeholder="Balcony"
                     id=""
                   />
                 </div>
@@ -299,7 +299,7 @@ const AddHotelModal = ({ refetch }) => {
                     className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="rentPrice"
-                    placeholder="Quantity"
+                    placeholder="Rent Price"
                     id=""
                   />
                 </div>
@@ -314,7 +314,7 @@ const AddHotelModal = ({ refetch }) => {
                     className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="deposit"
-                    placeholder="Quantity"
+                    placeholder="Deposit"
                     id=""
                   />
                 </div>
@@ -326,7 +326,7 @@ const AddHotelModal = ({ refetch }) => {
                     type="number"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                     name="discount"
-                    placeholder="discount"
+                    placeholder="Discount"
                     id=""
                   />
                 </div>
@@ -415,7 +415,7 @@ const AddHotelModal = ({ refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    GasSupply :{" "}
+                    Gas Supply :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -520,7 +520,7 @@ const AddHotelModal = ({ refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    ips Connection :{" "}
+                    Ips Connection :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -610,7 +610,7 @@ const AddHotelModal = ({ refetch }) => {
                   className="border-2 border-orange-400 input input-bordered input-sm"
                   required
                   name="houseImage"
-                  placeholder="productPicture"
+                  placeholder="Product Picture"
                   id=""
                 />
               </div>
