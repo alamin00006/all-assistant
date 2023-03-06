@@ -33,14 +33,32 @@ const RecentProperties = ({ searchHouse }) => {
                 </figure>
 
                 <div className="card-body">
-                  <h2 className="card-title">
-                    {house.division}
-                    <div className="badge badge-secondary">NEW</div>
-                  </h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div>
-                    <div className="badge badge-outline">Products</div>
+                  <div className="flex items-center justify-center">
+                    <h2 className="card-title ">{house.categoryName}</h2>
+
+                    <h2 className="card-title">{house.rentPrice}</h2>
+                  </div>
+                  <div className="flex flex-col">
+                    <div className="flex items-center justify-center">
+                      <div>
+                        <h2>{house.bedRoomInfo}</h2>
+                        <p>Bedroom</p>
+                      </div>
+                      <div className="ml-16">
+                        <h2>{house.floorLevel}</h2>
+                        <p>Floor Level</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-center">
+                      <div>
+                        <h2>{house.commonBathRoom}</h2>
+                        <p>Bathroom</p>
+                      </div>
+                      <div className="ml-16">
+                        <h2>{house.spaceSize}</h2>
+                        <p>Space Size</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
