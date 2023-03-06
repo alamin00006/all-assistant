@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import logo1 from "../../assets/images/logo1.png";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import logo1 from "../../assets/images/logo.png";
 import useUser from "../../Hooks/userUser";
 import "./Navbar.css";
 
@@ -59,11 +59,7 @@ const Navbar = () => {
               </ul>
             </div>
             <Link to="/">
-              <img
-                src={logo1}
-                className="btn btn-ghost normal-case text-xl"
-                alt=""
-              />
+              <img src={logo1} className="w-20 normal-case text-xl" alt="" />
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
