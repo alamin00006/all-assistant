@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import logo1 from "../../assets/images/logo1.png";
+import logo1 from "../../assets/images/logo-original.png";
 import useUser from "../../Hooks/userUser";
 
 const Navbar = () => {
@@ -65,7 +65,7 @@ const Navbar = () => {
             <Link to="/">
               <img
                 src={logo1}
-                className="btn btn-ghost normal-case text-xl"
+                className="btn btn-ghost normal-case text-lg "
                 alt=""
               />
             </Link>

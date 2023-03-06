@@ -19,6 +19,7 @@ import AddHotel from "./views/AdminPanel/AddHotel";
 import UserManage from "./views/AdminPanel/UserManage";
 import Order from "./views/AdminPanel/Order/Order";
 import AllHouse from "./views/dashboard/CreateHouse/AllHouse";
+import AddCategory from "./views/AdminPanel/AddCategory";
 
 function App() {
   return (
@@ -35,8 +36,9 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />}>
         
         <Route path="profile" element={<Profile/>}></Route>
-        <Route path="addhotel" element={<AddHotel/>}></Route>
         <Route path="addhouse" element={<AddHouse/>}></Route>
+        <Route path="addhotel" element={<AddHotel/>}></Route>
+        <Route path="addcategory" element={<AddCategory/>}></Route>
         <Route path="manage-user" element={<UserManage/>}></Route>
         <Route path="order" element={<Order/>}></Route>
         </Route>

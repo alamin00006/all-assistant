@@ -45,7 +45,7 @@ const Admin = () => {
                 </Link>
               </li>
               <li className="bg-sky-300 hover:bg-slate-300 h-10">
-                <Link>
+                <Link to="addcategory">
                   <MdCategory />
                   Add Category
                 </Link>

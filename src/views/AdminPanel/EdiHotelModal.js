@@ -89,7 +89,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
         <div className="modal-box w-8/12 max-w-5xl glass">
           <dic className="flex">
             <div class="grow h-14 ...">
-              <h3 className="text-center text-xl border border-spacing-1 bg-sky-300">
+              <h3 className="text-center text-xl border border-spacing-1 ">
                 Update Hotel Informations
               </h3>
             </div>
