@@ -9,8 +9,6 @@ import House from "./views/House/House";
 
 import CreateHouse from "./views/dashboard/CreateHouse/CreateHouse";
 
-
-
 import HouseDetails from "./views/HouseDetails/HouseDetails";
 import Login from "./views/Login/Login";
 import SignUp from "./views/SignUp/SignUp";
@@ -20,12 +18,13 @@ import UserManage from "./views/AdminPanel/UserManage";
 import Order from "./views/AdminPanel/Order/Order";
 import AllHouse from "./views/dashboard/CreateHouse/AllHouse";
 import AddCategory from "./views/AdminPanel/AddCategory";
+import Error from "./components/Error/Error";
+import Footer from "./views/Footer/Footer";
 
 function App() {
   return (
     <div className="">
       <Navbar />
-      {/* <Home /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -33,6 +32,7 @@ function App() {
         <Route path="/hotel" element={<Hotel />} />
         <Route path="/login" element={<Login />} />
         <Route path="singUp" element={<SignUp />} />
+        <Route path="*" element={<Error />} />
         <Route path="/dashboard" element={<Dashboard />}>
         
         <Route path="profile" element={<Profile/>}></Route>
@@ -43,13 +43,13 @@ function App() {
         <Route path="order" element={<Order/>}></Route>
         </Route>
 
-       
         <Route path="/housedetails/:id" element={<HouseDetails />} />
         <Route path="/hoteldetails/:id" element={<HotelDetails />} />
         <Route path="/singUp" element={<SignUp />} />
         <Route path="/create-house" element={<CreateHouse />} />
         <Route path="/all-house" element={<AllHouse />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

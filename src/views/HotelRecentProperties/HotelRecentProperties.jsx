@@ -1,31 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const HotelRecentProperties = ({ datas }) => {
+const HotelRecentProperties = ({ searchHotel, refetch }) => {
   const navigate = useNavigate();
   const houseDetails = (id) => {
-    // console.log(id);
+    console.log(id);
     navigate(`/hoteldetails/${id}`);
   };
+
+  useEffect(() => {
+    if (!searchHotel) refetch();
+  });
   return (
     <div className="w-3/4 m-0 mx-auto">
       <h1 className="text-center">Recent Properties</h1>
       <div className="grid grid-cols-1 md:grid md:grid-cols-2 md:gap-2 lg:grid lg:grid-cols-3 lg:gap-2 xl:grid xl:grid-cols-4 gap-2 justify-items-center">
-        {datas ? (
+        {searchHotel ? (
           <>
-            {datas.map((house) => (
-              <div key={house._id} className="card w-72 bg-base-100 shadow-xl">
-                <figure onClick={() => houseDetails(house._id)}>
+            {searchHotel.map((hotel) => (
+              <div key={hotel._id} className="card w-72 bg-base-100 shadow-xl">
+                <figure onClick={() => houseDetails(hotel._id)}>
                   <img
                     className="p-3 click"
-                    src={`http://localhost:5000/${house?.image?.[0]}`}
+                    src={`http://localhost:5000/${hotel?.image?.[0]}`}
                     alt="Shoes"
                   />
                 </figure>
 
                 <div className="card-body">
                   <h2 className="card-title">
-                    {house.division}
+                    {hotel.division}
                     <div className="badge badge-secondary">NEW</div>
                   </h2>
                   <p>If a dog chews shoes whose shoes does he choose?</p>

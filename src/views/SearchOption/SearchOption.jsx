@@ -10,7 +10,6 @@ const SearchOption = ({
   handlePrice,
   handleRoom,
 }) => {
-  // console.log(getUpazilas);
   return (
     <div className="w-3/4 m-0 mx-auto">
       Search Option
@@ -48,7 +47,7 @@ const SearchOption = ({
         </select>
 
         <select name="upazilla" className="select w-full max-w-xs">
-          <option disabled defaultValue="--Select--">
+          <option disabled selected defaultValue="--Select--">
             --Select--
           </option>
           {getUpazilas.map((dis) => (
@@ -72,7 +71,7 @@ const SearchOption = ({
           <option>Up to 4000</option>
           <option>Up to 6000</option>
           <option>Up to 8000</option>
-          <option>Up to 1000888</option>
+          <option>Up to 20000</option>
         </select>
 
         <select

@@ -8,6 +8,7 @@ const Order = () => {
   const [orders, refetch] = useOrders();
   const [orderDelete, setDeleteOrder] = useState({});
   const [seeOrderDetails, setOrderDetails] = useState({});
+  console.log(orders);
 
   return (
     <div>
@@ -18,28 +19,34 @@ const Order = () => {
             <tr>
               <th></th>
               <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Job Id</th>
+              <th>Phone Number</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {orders?.data.map((order) => (
+            {orders?.data.map((order, index) => (
               <tr key={order._id}>
-                <th>1</th>
-                <td>Cy Ganderton</td>
-                <td>Quality Control Specialist</td>
-                <td>Blue</td>
+                <th>{index + 1}</th>
+                <td>{order.name}</td>
+                <td>{order._id}</td>
+                <td>{order.phone}</td>
                 <td>
                   <div className="flex justify-between">
                     <div onClick={() => setOrderDetails(order)}>
-                      <label htmlFor="order-details-modal" className="">
+                      <label
+                        htmlFor="order-details-modal"
+                        className="btn bg-sky-500 hover:bg-sky-700 text-white"
+                      >
                         Details
                       </label>
                     </div>
                     <div>
                       <div onClick={() => setDeleteOrder(order)}>
-                        <label htmlFor="order-delete-modal" className="">
+                        <label
+                          htmlFor="order-delete-modal"
+                          className="btn bg-red-600 hover:bg-red-800 text-white"
+                        >
                           <RiDeleteBin6Line className="h-6 w-6" />
                         </label>
                       </div>

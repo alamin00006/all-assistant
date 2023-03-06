@@ -3,7 +3,6 @@ import React from "react";
 import { toast, ToastContainer } from "react-toastify";
 
 const RemoveAdminModal = ({ removeAdmin, refetch }) => {
-  const token = localStorage.getItem("token");
   const handleRemoveAdmin = async () => {
     const adminRemove = {
       role: "User",
@@ -11,12 +10,7 @@ const RemoveAdminModal = ({ removeAdmin, refetch }) => {
     try {
       const { data } = await axios.patch(
         `http://localhost:5000/api/v1/user/${removeAdmin?._id}`,
-        adminRemove,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
+        adminRemove
       );
       toast.success(data.data.message);
       refetch();
