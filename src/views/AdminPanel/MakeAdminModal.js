@@ -3,8 +3,6 @@ import React from "react";
 import { toast, ToastContainer } from "react-toastify";
 
 const MakeAdminModal = ({ makeAdmin, refetch }) => {
-  const token = localStorage.getItem("token");
-
   const handleMakeAdmin = async () => {
     const adminMake = {
       role: "Admin",
@@ -15,12 +13,7 @@ const MakeAdminModal = ({ makeAdmin, refetch }) => {
       }
       const { data } = await axios.patch(
         `http://localhost:5000/api/v1/user/${makeAdmin?._id}`,
-        adminMake,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
+        adminMake
       );
       toast.success(data.data.message);
       refetch();

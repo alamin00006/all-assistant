@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from "react";
 import useAllUser from "../../Hooks/useAllUser";
-import useUser from "../../Hooks/userUser";
+import Loading from "../Loading/Loading";
 import MakeAdminModal from "./MakeAdminModal";
 import RemoveAdminModal from "./RemoveAdminModal";
 
 const UserManage = () => {
   const [allUser, refetch] = useAllUser();
-  const [user, refetchSingle] = useUser();
   const [makeAdmin, setMakeAdmin] = useState({});
   const [removeAdmin, setRemoveAdmin] = useState({});
-  console.log(user);
   useEffect(() => {
-    if (!allUser?.data?.data.length === 0 || !user?.email) {
+    if (!allUser) {
       refetch();
-      refetchSingle();
+      return <Loading></Loading>;
     }
-  }, [allUser, refetch, user, refetchSingle]);
+  }, [refetch, allUser]);
 
   return (
     <div>

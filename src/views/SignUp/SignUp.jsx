@@ -90,7 +90,22 @@ const SignUp = () => {
           <div>
             <form onSubmit={handleSubmit} className="login-form">
               <div>
-                <h3 className="mb-4">Create Account</h3>
+                <div className="flex justify-between mb-8 items-center">
+                  <Link
+                    className="text-white px-10 py-2 rounded text-xl bg-black"
+                    to="/login"
+                  >
+                    Login
+                  </Link>
+                  <h3>
+                    <Link
+                      className="text-white px-10 py-2 rounded text-xl bg-black"
+                      to="/singUp"
+                    >
+                      Register
+                    </Link>
+                  </h3>
+                </div>
 
                 <label htmlFor="name">Full Name</label>
                 <input
@@ -148,17 +163,10 @@ const SignUp = () => {
                 />
                 <p></p>
                 <input
-                  className="bg-rose-500 text-white border-0 py-2 mt-2 fs-5"
+                  className="bg-rose-500 text-white text-xl rounded border-0 py-2 mt-2 fs-5"
                   type="submit"
-                  value="রেজিস্টার"
+                  value="Register"
                 />
-                <p className="mt-3">
-                  Already have a account?
-                  <Link className="text-rose-500" to="/login">
-                    {" "}
-                    Login
-                  </Link>
-                </p>
               </div>
             </form>
           </div>

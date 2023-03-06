@@ -17,12 +17,13 @@ import AddHotel from "./views/AdminPanel/AddHotel";
 import UserManage from "./views/AdminPanel/UserManage";
 import Order from "./views/AdminPanel/Order/Order";
 import AllHouse from "./views/dashboard/CreateHouse/AllHouse";
+import Error from "./components/Error/Error";
+import Footer from "./views/Footer/Footer";
 
 function App() {
   return (
     <div className="">
       <Navbar />
-      {/* <Home /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -30,6 +31,7 @@ function App() {
         <Route path="/hotel" element={<Hotel />} />
         <Route path="/login" element={<Login />} />
         <Route path="singUp" element={<SignUp />} />
+        <Route path="*" element={<Error />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<Profile />}></Route>
           <Route path="addhotel" element={<AddHotel />}></Route>
@@ -44,6 +46,7 @@ function App() {
         <Route path="/create-house" element={<CreateHouse />} />
         <Route path="/all-house" element={<AllHouse />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

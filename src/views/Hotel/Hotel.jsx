@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 import useHotels from "../../Hooks/useHotels";
-import useHouse from "../../Hooks/useHouse";
 import HotelRecentProperties from "../HotelRecentProperties/HotelRecentProperties";
 import HotelSearchOption from "../HotelSearchOption/HotelSearchOption";
-// import PropertyCategory from "../PropertyCategory/PropertyCategory";
 
 const Hotel = () => {
   const [divisions, setDivision] = useState([]);
@@ -11,6 +10,13 @@ const Hotel = () => {
   const [upazilas, setUpazilas] = useState([]);
   const [getDistricts, setFindDistrict] = useState([]);
   const [getUpazilas, setUpazila] = useState([]);
+
+  const [divisionName, setDivisionName] = useState("");
+  const [districtName, setDistrictName] = useState("");
+  const [upaZilaName, setUpazilaName] = useState("");
+  const [userPrice, setUserPrice] = useState("200");
+  const [room, setRoom] = useState("One");
+  const [searchHotel, setSearchHotel] = useState([]);
 
   useEffect(() => {
     fetch("bd-division.json")
@@ -35,31 +41,66 @@ const Hotel = () => {
   const handleDistricts = (e) => {
     const findDistricts = districts.filter((dis) => dis.division_id === e);
     setFindDistrict(findDistricts);
-    // console.log(findDistricts);
+    const findDivision = divisions.find(
+      (divisionName) => e === divisionName.id
+    );
+    setDivisionName(findDivision?.name);
   };
 
   const handleUpazilas = (e) => {
     const findUpazilas = upazilas.filter((ups) => ups.district_id === e);
     setUpazila(findUpazilas);
-    // console.log(e);
-    // console.log(e);
+    const findDistrict = districts.find(
+      (districtName) => e === districtName.id
+    );
+    setDistrictName(findDistrict?.name);
   };
 
-  const [hotels, refetch, isLoading] = useHotels();
-  // console.log(hotels);
-  const datas = hotels?.data;
+  const handleallUpazilas = (e) => {
+    const findUPazila = upazilas.find((districtName) => e === districtName.id);
+    setUpazilaName(findUPazila?.name);
+  };
+
+  const handlePrice = (price) => {
+    setUserPrice(price.split(" ")?.[2]);
+  };
+
+  const handleRoom = (room) => {
+    setRoom(room);
+  };
+
+  const { isLoading, refetch } = useQuery(
+    [divisionName, districtName, upaZilaName, userPrice, room],
+    () =>
+      fetch(
+        `http://localhost:5000/api/v1/hotel?division=${divisionName}&district=${districtName}&upazila=${upaZilaName}&rentPrice=${userPrice}&totalRentRoom=${room}`,
+        {
+          method: "GET",
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setSearchHotel(data?.data);
+          console.log(data);
+        })
+  );
   return (
     <div>
       <h1>This is a hotel Route</h1>
-      {/* <PropertyCategory></PropertyCategory> */}
       <HotelSearchOption
         divisions={divisions}
         handleDistricts={handleDistricts}
         getDistricts={getDistricts}
         handleUpazilas={handleUpazilas}
+        handleallUpazilas={handleallUpazilas}
         getUpazilas={getUpazilas}
+        handlePrice={handlePrice}
+        handleRoom={handleRoom}
       ></HotelSearchOption>
-      <HotelRecentProperties datas={datas}></HotelRecentProperties>
+      <HotelRecentProperties
+        searchHotel={searchHotel}
+        refetch={refetch}
+      ></HotelRecentProperties>
     </div>
   );
 };

@@ -162,7 +162,7 @@ const AddHouseModal = ({ refetch }) => {
                 <div className="">
                   <label>
                     Floor Level :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
+                    <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
@@ -204,6 +204,7 @@ const AddHouseModal = ({ refetch }) => {
                     id=""
                   />
                 </div>
+
                 <div className="">
                   <label>
                     Upazila :{" "}
@@ -359,7 +360,7 @@ const AddHouseModal = ({ refetch }) => {
                   </label>{" "}
                   <br />
                   <input
-                    type="text"
+                    type="date"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="availableFrom"
@@ -533,6 +534,7 @@ const AddHouseModal = ({ refetch }) => {
 
                     <option>Yes</option>
                     <option>No</option>
+                    <option>Cylinder</option>
                   </select>
                 </div>
                 <div className="">
@@ -720,6 +722,9 @@ const AddHouseModal = ({ refetch }) => {
                     </option>
                     <option>Family</option>
                     <option>Bachelor</option>
+                    <option>Office-Space</option>
+                    <option>Mess/Hostel</option>
+                    <option>Sublet</option>
                   </select>
                 </div>
               </div>
@@ -727,10 +732,7 @@ const AddHouseModal = ({ refetch }) => {
                 <h1>
                   <label for="">House Deatails Address:</label>
                 </h1>
-                {/* <textarea
-                  className="border-2 border-orange-400 input input-bordered input-sm"
-                 
-                /> */}
+
                 <textarea
                   placeholder="House Area Address"
                   className=" border-2 border-orange-400 input  input-sm  textarea textarea-bordered textarea-xs w-full max-w-xs"
@@ -742,8 +744,8 @@ const AddHouseModal = ({ refetch }) => {
               <div className="">
                 <h1>
                   <label>
-                    Upload a Book Picture :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
+                    Upload House Picture :{" "}
+                    <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                 </h1>
 

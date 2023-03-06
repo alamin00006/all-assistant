@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo1 from "../../assets/images/logo1.png";
 import useUser from "../../Hooks/userUser";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [user, refetch] = useUser();
@@ -11,7 +12,7 @@ const Navbar = () => {
   }, [user, refetch]);
 
   return (
-    <header className="bg-green-300 sticky top-0 z-50">
+    <header className="all-assistant-navbar sticky top-0 z-50">
       <nav className="lg:mx-36 md:mx-26 sm:mx-16 xs:mx-0">
         <div className="navbar  text-black">
           <div className="navbar-start">

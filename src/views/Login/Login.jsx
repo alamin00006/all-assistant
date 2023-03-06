@@ -80,7 +80,22 @@ const Login = () => {
           <div className=" flex justify-center">
             <form onSubmit={handleSubmit} className="login-form">
               <div>
-                <h3 className="mb-4 text-center">Login</h3>
+                <div className="flex justify-between mb-8 items-center">
+                  <Link
+                    className="text-white px-10 py-2 rounded text-xl bg-black"
+                    to="/login"
+                  >
+                    Login
+                  </Link>
+                  <h3>
+                    <Link
+                      className="text-white px-10 py-2 rounded text-xl bg-black"
+                      to="/singUp"
+                    >
+                      Register
+                    </Link>
+                  </h3>
+                </div>
 
                 <label className="mt-2" htmlFor="email">
                   Email
@@ -123,16 +138,10 @@ const Login = () => {
                   </Link>
                 </div> */}
                 <input
-                  className="bg-rose-500 text-white border-0 py-2 mt-2 cursor-pointer"
+                  className="bg-rose-500 text-xl text-white rounded border-0 py-2 mt-2 cursor-pointer"
                   type="submit"
                   value="Login"
                 />
-                <p className="mt-3">
-                  No Account?
-                  <Link className="text-rose-500" to="/singUp">
-                    Create Account
-                  </Link>
-                </p>
               </div>
             </form>
           </div>

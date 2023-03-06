@@ -100,7 +100,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
         <div className="modal-box w-8/12 max-w-5xl glass">
           <dic className="flex">
             <div class="grow h-14 ...">
-            <h3 className="text-center text-xl border border-spacing-1 bg-sky-300">
+              <h3 className="text-center text-xl border border-spacing-1 bg-sky-300">
                 Please Inpute House Informations
               </h3>
             </div>
@@ -342,7 +342,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                   </label>{" "}
                   <br />
                   <input
-                    type="text"
+                    type="date"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="availableFrom"
@@ -520,6 +520,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
 
                     <option>Yes</option>
                     <option>No</option>
+                    <option>Cylinder</option>
                   </select>
                 </div>
                 <div className="">
@@ -707,11 +708,16 @@ const EditHouseModal = ({ editHouse, refetch }) => {
                     </option>
                     <option>Family</option>
                     <option>Bachelor</option>
+                    <option>Office-Space</option>
+                    <option>Mess/Hostel</option>
+                    <option>Sublet</option>
                   </select>
                 </div>
               </div>
               <div>
-              <h1><label for="" >House Deatails Address:</label></h1>
+                <h1>
+                  <label for="">House Deatails Address:</label>
+                </h1>
                 <textarea
                   className="border-2 border-orange-400 input input-bordered input-sm textarea textarea-bordered textarea-xs w-full max-w-xs"
                   id=""
