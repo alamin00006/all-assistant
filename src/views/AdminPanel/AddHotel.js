@@ -32,31 +32,27 @@ const AddHotel = () => {
                 <th>Division</th>
                 <th>District</th>
                 <th>Upazila</th>
-                <th>SpaceSize</th>
-                <th>Cm.Bathroom</th>
+                <th>Total Rent Room</th>
                 <th>At.Bathroom</th>
                 <th>Balcony</th>
-                <th>P.Condation</th>
-                <th>Facing</th>
-                <th>AvailableFrom</th>
-                <th>RentPriceTitle</th>
-                <th>RentPrice</th>
+                <th>Rent Price</th>
                 <th>Deposite</th>
                 <th>Discount</th>
                 <th>Status</th>
                 <th>kitchen</th>
-                <th>DiningSpace</th>
+                <th>Dining Space</th>
                 <th>Furnishing </th>
-                <th>GasSupply</th>
+                <th>Gas Supply</th>
                 <th>ccTV</th>
-                <th>StoreRoom</th>
-                <th>Lift</th>
-                <th>WaterSupply</th>
+                <th>Store Room</th>
+                <th>Water Supply</th>
                 <th>Sc.Gard</th>
                 <th>iPS</th>
                 <th>Pk.Space</th>
-                <th>FloorType</th>
-                <th>Category</th>
+                <th>Floor Type</th>
+                <th>House Details Address</th>
+                <th>CreateAT</th>
+                <th>UpdateAT</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -65,12 +61,33 @@ const AddHotel = () => {
               {hotels?.data?.map((hotel) => (
                 <tr>
                   <th>1</th>
-                  <td>FloorLevel</td>
-                  <td>Quality Control Specialist</td>
-                  <td>Littel, Schaden and Vandervort</td>
-                  <td>Canada</td>
-                  <td>12/16/2020</td>
-                  <td>Blue</td>
+                  <td>{hotel.bedRoomInfo}</td>
+                  <td>{hotel.floorLevel}</td>
+                  <td>{hotel.division}</td>
+                  <td>{hotel.district}</td>
+                  <td>{hotel.upazila}</td>
+                  <td>{hotel.totalRentRoom}</td>
+                  <td>{hotel.attachedBathRoom}</td>
+                  <td>{hotel.balcony}</td>
+                  <td>{hotel.rentPriceTitle}</td>
+                  <td>{hotel.rentPrice}</td>
+                  <td>{hotel.deposit}</td>
+                  <td>{hotel.discount}</td>
+                  <td>{hotel.status}</td>
+                  <td>{hotel.kitchen}</td>
+                  <td>{hotel.diningSpace}</td>
+                  <td>{hotel.furnishing}</td>
+                  <td>{hotel.gasSupply}</td>
+                  <td>{hotel.ccTvCamera}</td>
+                  <td>{hotel.storeRoom}</td>
+                  <td>{hotel.waterSupply}</td>
+                  <td>{hotel.securityGuard}</td>
+                  <td>{hotel.ipsConnection}</td>
+                  <td>{hotel.parkingSpace}</td>
+                  <td>{hotel.floorType}</td>
+                  <td>{hotel.houseDetailsAddress}</td>
+                  <td>{hotel.createdAt}</td>
+                  <td>{hotel.updatedAt}</td>
 
                   <td>
                     <div className="flex space-x-4">

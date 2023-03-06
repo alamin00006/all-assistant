@@ -89,7 +89,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
         <div className="modal-box w-8/12 max-w-5xl glass">
           <dic className="flex">
             <div class="grow h-14 ...">
-              <h3 className="text-center text-xl border border-spacing-1">
+              <h3 className="text-center text-xl border border-spacing-1 bg-sky-300">
                 Update Hotel Informations
               </h3>
             </div>
@@ -114,7 +114,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     name="bedRoomInfo"
                     required
                     placeholder="Product Name in English"
@@ -131,7 +131,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                   <br />
                   <input
                     type="text"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="floorLevel"
                     placeholder="Price"
@@ -147,7 +147,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                   <br />
                   <input
                     type="text"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="division"
                     placeholder="Quantity"
@@ -163,7 +163,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                   <br />
                   <input
                     type="text"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="district"
                     placeholder="Quantity"
@@ -179,7 +179,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                   <br />
                   <input
                     type="text"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="upazila"
                     placeholder="Quantity"
@@ -199,7 +199,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                     required
                     name="totalRentRoom"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     defaultValue={editHotel?.totalRentRoom}
                   >
                     <option selected disabled>
@@ -225,7 +225,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="attachedBathRoom"
                     placeholder="Quantity"
@@ -241,7 +241,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="balcony"
                     placeholder="Quantity"
@@ -261,7 +261,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                     required
                     name="rentPriceTitle"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     defaultValue={editHotel?.rentPriceTitle}
                   >
                     <option selected disabled>
@@ -280,7 +280,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="rentPrice"
                     placeholder="Quantity"
@@ -296,7 +296,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="deposit"
                     placeholder="Quantity"
@@ -310,7 +310,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                   <input
                     onChange={(e) => setDiscount(e.target.value)}
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     name="discount"
                     placeholder="discount"
                     id=""
@@ -327,7 +327,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                     required
                     name="status"
                     id="status"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     defaultValue={editHotel?.status}
                   >
                     <option selected disabled>
@@ -349,7 +349,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                     required
                     name="kitchen"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     defaultValue={editHotel?.kitchen}
                   >
                     <option selected disabled>
@@ -371,7 +371,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                     required
                     name="diningSpace"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     defaultValue={editHotel?.diningSpace}
                   >
                     <option selected disabled>
@@ -393,7 +393,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                     required
                     name="furnishing"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     defaultValue={editHotel?.furnishing}
                   >
                     <option selected disabled>
@@ -415,7 +415,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                     required
                     name="gasSupply"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     defaultValue={editHotel?.gasSupply}
                   >
                     <option selected disabled>
@@ -437,7 +437,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                     required
                     name="ccTvCamera"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     defaultValue={editHotel?.ccTvCamera}
                   >
                     <option selected disabled>
@@ -459,7 +459,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                     required
                     name="lift"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     defaultValue={editHotel?.lift}
                   >
                     <option selected disabled>
@@ -481,7 +481,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                     required
                     name="waterSupply"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     defaultValue={editHotel?.waterSupply}
                   >
                     <option selected disabled>
@@ -503,7 +503,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                     required
                     name="securityGuard"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     defaultValue={editHotel?.securityGuard}
                   >
                     <option selected disabled>
@@ -525,7 +525,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                     required
                     name="ipsConnection"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     defaultValue={editHotel?.ipsConnection}
                   >
                     <option selected disabled>
@@ -547,7 +547,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                     required
                     name="parkingSpace"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     defaultValue={editHotel?.parkingSpace}
                   >
                     <option selected disabled>
@@ -569,7 +569,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                     required
                     name="floorType"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     defaultValue={editHotel?.floorType}
                   >
                     <option selected disabled>
@@ -582,9 +582,11 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                 </div>
               </div>
               <div>
+              <h1>
                 <label for="">Hotel Deatails Address:</label>
+                </h1>
                 <textarea
-                  className="border-2 border-green-500"
+                  className="border-2  border-orange-400 input  input-sm  textarea textarea-bordered textarea-xs w-full max-w-xs"
                   id=""
                   name="hotelDetailsAddress"
                   rows="4"
