@@ -6,7 +6,7 @@ const useHotels = () => {
     isLoading,
     refetch,
   } = useQuery([], () =>
-    fetch("http://localhost:5000/api/v1/hotel", {
+    fetch("https://all-assistant-sever-muhib95.vercel.app/api/v1/hotel", {
       method: "GET",
     }).then((res) => res.json())
   );

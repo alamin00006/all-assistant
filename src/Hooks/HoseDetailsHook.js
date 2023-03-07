@@ -6,7 +6,7 @@ const HoseDetailsHook = (id) => {
     isLoading,
     refetch,
   } = useQuery([], () =>
-    fetch(`http://localhost:5000/api/v1/house/${id}`, {
+    fetch(`https://all-assistant-sever-muhib95.vercel.app/api/v1/house/${id}`, {
       method: "GET",
     }).then((res) => res.json())
   );

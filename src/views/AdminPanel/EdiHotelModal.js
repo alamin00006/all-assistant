@@ -66,7 +66,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
 
     try {
       const { data } = await axios.patch(
-        `http://localhost:5000/api/v1/hotel/${editHotel?._id}`,
+        `https://all-assistant-sever-muhib95.vercel.app/api/v1/hotel/${editHotel?._id}`,
         formData,
         {
           headers: {
@@ -582,8 +582,8 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
                 </div>
               </div>
               <div>
-              <h1>
-                <label for="">Hotel Deatails Address:</label>
+                <h1>
+                  <label for="">Hotel Deatails Address:</label>
                 </h1>
                 <textarea
                   className="border-2  border-orange-400 input  input-sm  textarea textarea-bordered textarea-xs w-full max-w-xs"

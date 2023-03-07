@@ -10,7 +10,7 @@ const useAllUser = () => {
     async function getUser() {
       await axios
         .get(
-          "http://localhost:5000/api/v1/user",
+          "https://all-assistant-sever-muhib95.vercel.app/api/v1/user",
 
           {
             refetchInterval: 6000,

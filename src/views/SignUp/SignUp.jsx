@@ -63,11 +63,14 @@ const SignUp = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/api/v1/user/signup", {
-        name: name,
-        email: userInfo?.email,
-        password: userInfo?.password,
-      })
+      .post(
+        "https://all-assistant-sever-muhib95.vercel.app/api/v1/user/signup",
+        {
+          name: name,
+          email: userInfo?.email,
+          password: userInfo?.password,
+        }
+      )
       .then(() => {
         navigate("/login");
       })

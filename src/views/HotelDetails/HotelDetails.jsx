@@ -7,7 +7,7 @@ const HotelDetails = () => {
   const { id } = useParams();
   const [house, setHouse] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/api/v1/hotel/${id}`;
+    const url = `https://all-assistant-sever-muhib95.vercel.app/api/v1/hotel/${id}`;
     fetch(url, {
       method: "GET",
     })
@@ -25,7 +25,7 @@ const HotelDetails = () => {
           <DetailsHouseImage images={images}></DetailsHouseImage>
           {/* <img
             className="p-4"
-            src={`http://localhost:5000/${house.houseImage?.[0]}`}
+            src={`https://all-assistant-sever-muhib95.vercel.app/${house.houseImage?.[0]}`}
             alt=""
           /> */}
         </div>

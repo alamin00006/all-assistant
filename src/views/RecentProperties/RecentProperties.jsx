@@ -22,7 +22,7 @@ const RecentProperties = ({ searchHouse, refetch }) => {
                 <figure onClick={() => houseDetails(house._id)}>
                   <img
                     className="p-3 click"
-                    src={`http://localhost:5000/${house?.image?.[0]}`}
+                    src={`https://all-assistant-sever-muhib95.vercel.app/${house?.image?.[0]}`}
                     alt="Shoes"
                   />
                 </figure>

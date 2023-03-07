@@ -9,9 +9,9 @@ const Payment = () => {
   return (
     <div>
       <div className="my-20">
-        <h1 className="text-center text-black text-3xl">Payment Systems</h1>
-        <p className="text-center text-white text-xl bg-[#12856A] lg:w-1/4 m-0 mx-auto p-4 my-2 rounded-md">
-          To Pay : 01616925989
+        <h1 className="text-center text-black text-3xl">Payment</h1>
+        <p className="text-center mt-2 text-white text-xl bg-[#12856A] lg:w-1/4 m-0 mx-auto p-4 my-2 rounded-md">
+          To Pay :01616925989
         </p>
         <div className="grid grid-cols-2 md:grid md:grid-cols-3   lg:grid lg:grid-cols-5 gap-2 place-items-center my-4">
           <div>
