@@ -9,7 +9,7 @@ const Payment = () => {
   return (
     <div>
       <div className="my-20">
-        <h1 className="text-center text-black text-3xl">Payment System</h1>
+        <h1 className="text-center text-black text-3xl">Payment Systems</h1>
         <div className="grid grid-cols-2 md:grid md:grid-cols-3   lg:grid lg:grid-cols-5 gap-2 place-items-center my-4">
           <div>
             <img className="w-28" src={story1} alt="" />
@@ -22,6 +22,7 @@ const Payment = () => {
           </div>
           <div>
             <img className="w-28" src={story4} alt="" />
+            <p className="text-sm text-black">A/C : 1083313002962</p>
           </div>
           <div>
             <img className="w-28" src={story5} alt="" />
