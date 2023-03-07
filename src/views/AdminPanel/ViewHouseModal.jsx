@@ -4,17 +4,13 @@ import DetailsHouseImage from "../DetailsHouseImage/DetailsHouseImage";
 const ViewHouseModal = ({ detailsHouse }) => {
   const house = detailsHouse;
   const images = detailsHouse?.image;
-  console.log(detailsHouse);
+  // console.log(detailsHouse);
   return (
     <div>
-      <input
-        type="checkbox"
-        id="order-details-modal"
-        className="modal-toggle"
-      />
+      <input type="checkbox" id="view-house-modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box glass w-11/12 max-w-5xl mt-24 bg-orange-200">
-          <h3 className="font-bold text-lg">Order Deatails</h3>
+          <h3 className="font-bold text-lg">Add house</h3>
           <div className="w-3/4 m-0 mx-auto">
             <h1>House Details</h1>
             <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-2">
@@ -164,7 +160,7 @@ const ViewHouseModal = ({ detailsHouse }) => {
           <div className="flex justify-end">
             <div className="modal-action">
               <label
-                htmlFor="order-details-modal"
+                htmlFor="view-house-modal"
                 className="btn bg-red-500 hover:bg-red-600 text-white"
               >
                 Cancel

@@ -17,6 +17,11 @@ const AddHouse = () => {
   const [detailsHouse, setDetailsHouse] = useState({});
   const [deleteHouse, setDeleteHouse] = useState({});
   // console.log(detailsHouse);
+
+  fetch("test.json")
+    .then((res) => res.json())
+    .then((data) => console.log(data?.data));
+
   return (
     <div>
       <label

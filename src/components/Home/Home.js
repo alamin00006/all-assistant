@@ -7,6 +7,7 @@ import Banner from "../../views/Banner/Banner";
 import Footer from "../../views/Footer/Footer";
 import OurPartners from "../../views/OurPartners/OurPartners";
 import Services from "../../views/Services/Services";
+import Payment from "../../views/Payment/Payment";
 
 const Home = () => {
   return (
@@ -18,7 +19,8 @@ const Home = () => {
         <BestOffer></BestOffer>
         <MobileApp />
       </section>
-      <OurStory></OurStory>
+      {/* <OurStory></OurStory> */}
+      <Payment></Payment>
       <OurPartners></OurPartners>
     </div>
   );
