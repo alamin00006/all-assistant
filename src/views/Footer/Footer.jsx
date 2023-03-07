@@ -6,8 +6,8 @@ import logo from "../../assets/images/logo.png";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="footer p-10 bg-black text-white">
+    <div className="bg-black text-white ">
+      <footer className="footer p-10 ">
         <div className="w-1/2">
           <Link>
             <img className="w-28" src={logo} alt="" />
@@ -53,7 +53,7 @@ const Footer = () => {
           <Link className="link link-hover">Cookie policy</Link>
         </div>
       </footer>
-      <div className="bg-black text-white flex justify-center">
+      <div className=" flex justify-center">
         <p>© 2023, All Rights Reserved By All Assistant Ltd.</p>
       </div>
     </div>

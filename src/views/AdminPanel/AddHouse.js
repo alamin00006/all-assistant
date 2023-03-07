@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddHouseModal from "./AddHouseModal";
 import { DiWindows } from "react-icons/di";
 import "./AddHouse.css";
@@ -10,15 +10,23 @@ import useHouse from "../../Hooks/useHouse";
 
 const AddHouse = ({ divisions, districts, upazilas }) => {
   const [houses, refetch] = useHouse();
+  // console.log(houses);
 
   const [editHouse, setEditHouse] = useState({});
   const [deleteHouse, setDeleteHouse] = useState({});
+  // console.log(detailsHouse);
+
+  fetch("test.json")
+    .then((res) => res.json())
+    .then((data) => console.log(data?.data));
+
   return (
     <div>
-      <label htmlFor="my-modal-5"  className="bg-rose-600 text-white px-8 text-lg py-2 rounded-lg cursor-pointer"
+      <label
+        htmlFor="my-modal-5"
+        className="bg-rose-600 text-white px-8 text-lg py-2 rounded-lg cursor-pointer"
       >
-       
-       + Add House
+        + Add House
       </label>
       <AddHouseModal
         refetch={refetch}

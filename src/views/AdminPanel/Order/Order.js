@@ -12,6 +12,9 @@ const Order = () => {
 
   return (
     <div>
+      <h1 className="text-center font-bold text-xl mb-6 text-rose-500">
+        Our Orders
+      </h1>
       <div className="overflow-x-auto">
         <table className="table w-full">
           {/* head */}

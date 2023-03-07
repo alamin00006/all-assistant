@@ -18,7 +18,11 @@ const ModalBooking = ({ house }) => {
         `http://localhost:5000/api/v1/order`,
         orderData
       );
-      toast.success(data.data.message);
+      if (data.status) {
+        console.log(data);
+        window.location.reload();
+        toast.success(data.data.message);
+      }
     } catch (error) {
       return toast.warn(error.response.data.message);
     }
