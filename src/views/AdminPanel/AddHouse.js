@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddHouseModal from "./AddHouseModal";
 import "./AddHouse.css";
 import EditHouseModal from "./EditHouseModal";
@@ -11,11 +11,12 @@ import ViewHouseModal from "./ViewHouseModal";
 
 const AddHouse = () => {
   const [houses, refetch] = useHouse();
-  //console.log(houses);
+  // console.log(houses);
 
   const [editHouse, setEditHouse] = useState({});
   const [detailsHouse, setDetailsHouse] = useState({});
   const [deleteHouse, setDeleteHouse] = useState({});
+  // console.log(detailsHouse);
   return (
     <div>
       <label
