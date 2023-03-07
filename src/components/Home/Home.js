@@ -14,14 +14,14 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <Services></Services>
-      <section>
-        <UserInfo></UserInfo>
-        <BestOffer></BestOffer>
-        <MobileApp />
-      </section>
+
+      <UserInfo></UserInfo>
+      <BestOffer></BestOffer>
+      <MobileApp />
+
       {/* <OurStory></OurStory> */}
       <Payment></Payment>
-      <OurPartners></OurPartners>
+      {/* <OurPartners></OurPartners> */}
     </div>
   );
 };

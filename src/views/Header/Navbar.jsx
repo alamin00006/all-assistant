@@ -47,7 +47,7 @@ const Navbar = () => {
                     CART
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   {user?.email ? (
                     <Link to="/dashboard">PROFILE</Link>
                   ) : (
@@ -55,7 +55,18 @@ const Navbar = () => {
                       LOGIN
                     </Link>
                   )}
-                </li>
+                </li> */}
+                {user?.email ? (
+                  <li>
+                    <Link to="/dashboard">PROFILE</Link>
+                  </li>
+                ) : (
+                  <li>
+                    <Link to="/login" className="px-3">
+                      LOGIN
+                    </Link>
+                  </li>
+                )}
               </ul>
             </div>
             <Link to="/">

@@ -48,7 +48,7 @@ const Admin = () => {
   const SingOutHandle = () => {
     navigate("/");
     localStorage.removeItem("token");
-    window.location.reload(false);
+    // window.location.reload(false);
   };
 
   return (
