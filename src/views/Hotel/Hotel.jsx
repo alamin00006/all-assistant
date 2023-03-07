@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
+import useDistrict from "../../Hooks/useDistrict";
+import useDivision from "../../Hooks/useDivision";
 import useHotels from "../../Hooks/useHotels";
+import useUpazila from "../../Hooks/useUpazila";
 import HotelRecentProperties from "../HotelRecentProperties/HotelRecentProperties";
 import HotelSearchOption from "../HotelSearchOption/HotelSearchOption";
 
 const Hotel = () => {
-  const [divisions, setDivision] = useState([]);
-  const [districts, setDistricts] = useState([]);
-  const [upazilas, setUpazilas] = useState([]);
   const [getDistricts, setFindDistrict] = useState([]);
   const [getUpazilas, setUpazila] = useState([]);
 
@@ -18,25 +18,9 @@ const Hotel = () => {
   const [room, setRoom] = useState("One");
   const [searchHotel, setSearchHotel] = useState([]);
 
-  useEffect(() => {
-    fetch("bd-division.json")
-      .then((res) => res.json())
-      .then((data) => setDivision(data.divisions));
-  }, []);
-
-  useEffect(() => {
-    fetch("bd-districts.json")
-      .then((res) => res.json())
-      .then((data) => setDistricts(data.districts));
-  }, []);
-  // console.log(districts);
-
-  useEffect(() => {
-    fetch("bd-upazilas.json")
-      .then((res) => res.json())
-      .then((data) => setUpazilas(data.upazilas));
-  }, []);
-  // console.log(upazilas);
+  const [divisions] = useDivision();
+  const [districts] = useDistrict();
+  const [upazilas] = useUpazila();
 
   const handleDistricts = (e) => {
     const findDistricts = districts.filter((dis) => dis.division_id === e);

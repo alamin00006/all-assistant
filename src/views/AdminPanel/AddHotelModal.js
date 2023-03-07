@@ -4,7 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { RxCrossCircled } from "react-icons/rx";
 
-const AddHotelModal = ({ refetch }) => {
+const AddHotelModal = ({ refetch, divisions, districts, upazilas }) => {
   const [discount, setDiscount] = useState("0");
   const [image, setImage] = useState([]);
 
@@ -163,49 +163,70 @@ const AddHotelModal = ({ refetch }) => {
                   />
                 </div>
                 <div className="">
-                  <label>
+                  <label for="division">
                     Division :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
-                  </label>{" "}
+                    <span className="text-rose-500 fw-bold fs-5">*</span>
+                  </label>
                   <br />
-                  <input
-                    type="text"
-                    className="border-2 border-orange-400 input input-bordered input-sm"
+                  <select
+                    style={{ width: "100%", height: "45px" }}
                     required
                     name="division"
-                    placeholder="Division"
-                    id=""
-                  />
+                    id="division"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
+                  >
+                    <option selected disabled>
+                      Select Division
+                    </option>
+
+                    {divisions.map((division) => (
+                      <option key={division.id}>{division?.name}</option>
+                    ))}
+                  </select>
                 </div>
                 <div className="">
-                  <label>
+                  <label for="district">
                     District :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
-                  </label>{" "}
+                    <span className="text-rose-500 fw-bold fs-5">*</span>
+                  </label>
                   <br />
-                  <input
-                    type="text"
-                    className="border-2 border-orange-400 input input-bordered input-sm"
+                  <select
+                    style={{ width: "100%", height: "45px" }}
                     required
                     name="district"
-                    placeholder="District"
-                    id=""
-                  />
+                    id="district"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
+                  >
+                    <option selected disabled>
+                      Select District
+                    </option>
+
+                    {districts.map((district) => (
+                      <option key={district.id}>{district?.name}</option>
+                    ))}
+                  </select>
                 </div>
                 <div className="">
-                  <label>
+                  <label for="upazila">
                     Upazila :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
-                  </label>{" "}
+                    <span className="text-rose-500 fw-bold fs-5">*</span>
+                  </label>
                   <br />
-                  <input
-                    type="text"
-                    className="border-2 border-orange-400 input input-bordered input-sm"
+                  <select
+                    style={{ width: "100%", height: "45px" }}
                     required
                     name="upazila"
-                    placeholder="Upazila"
-                    id=""
-                  />
+                    id="upazila"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
+                  >
+                    <option selected disabled>
+                      Select Upazila
+                    </option>
+
+                    {upazilas.map((upazila) => (
+                      <option key={upazila.id}>{upazila?.name}</option>
+                    ))}
+                  </select>
                 </div>
 
                 <div className="">
@@ -584,9 +605,9 @@ const AddHotelModal = ({ refetch }) => {
               </div>
               <div>
                 <h1>
-                <label for="">Hotel Deatails Address:</label>
+                  <label for="">Hotel Deatails Address:</label>
                 </h1>
-                
+
                 <textarea
                   className="border-2  border-orange-400 input  input-sm  textarea textarea-bordered textarea-xs w-full max-w-xs"
                   id=""
@@ -595,11 +616,11 @@ const AddHotelModal = ({ refetch }) => {
                 />
               </div>
               <div className="">
-               <h1>
-                <label>
-                Upload a Hotels Picture :{" "}
-                <span className="text-danger fw-bold fs-5">*</span>
-                </label>
+                <h1>
+                  <label>
+                    Upload a Hotels Picture :{" "}
+                    <span className="text-danger fw-bold fs-5">*</span>
+                  </label>
                 </h1>
                 <input
                   multiple

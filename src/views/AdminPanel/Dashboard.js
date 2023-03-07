@@ -4,7 +4,7 @@ import { CgProfile } from "react-icons/cg";
 import { FaLaptopHouse, FaUsersCog } from "react-icons/fa";
 import { AiOutlineUnorderedList } from "react-icons/ai";
 import { RiLogoutBoxRFill } from "react-icons/ri";
-import "./Dashboard.css"
+import "./Dashboard.css";
 import { useQuery } from "react-query";
 import axios from "axios";
 
@@ -60,7 +60,7 @@ const Admin = () => {
             type="checkbox"
             className="drawer-toggle"
           />
-          <div className="drawer-content border  border-indigo-200 p-6"> 
+          <div className="drawer-content border  border-indigo-200 p-6">
             <Outlet></Outlet>
           </div>
           <div className="drawer-side w-48">

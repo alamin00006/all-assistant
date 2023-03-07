@@ -18,7 +18,7 @@ import banner3 from "../../assets/images/banner3.jfif";
 const Banner = () => {
   return (
     <div>
-      <div className="lg:mx-36 md:mx-26 sm:mx-16 xs:mx-0">
+      <div className="xl:mx-36 2xl:mx-36 lg:mx-36 md:mx-26 sm:mx-16 xs:mx-0">
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
@@ -43,6 +43,7 @@ const Banner = () => {
           <SwiperSlide>
             <div className="">
               <img
+                className="100vw"
                 style={{ width: "100%", height: "384px" }}
                 src={banner2}
                 alt=""
