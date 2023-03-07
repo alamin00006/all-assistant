@@ -15,9 +15,10 @@ const AddHouse = ({ divisions, districts, upazilas }) => {
   const [deleteHouse, setDeleteHouse] = useState({});
   return (
     <div>
-      <label htmlFor="my-modal-5" className="btn bg-cyan-300">
-        <DiWindows />
-        AddHouse
+      <label htmlFor="my-modal-5"  className="bg-rose-600 text-white px-8 text-lg py-2 rounded-lg cursor-pointer"
+      >
+       
+       + Add House
       </label>
       <AddHouseModal
         refetch={refetch}

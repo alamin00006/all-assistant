@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { RxCrossCircled } from "react-icons/rx";
+import useDivision from "../../Hooks/useDevision";
 
 const AddHouseModal = ({ refetch, divisions, districts, upazilas }) => {
   const [discount, setDiscount] = useState("0");
   const [image, setimage] = useState([]);
 
+  const [division] = useDivision();
+  console.log(division);
+
+  
+  
   const handleHouseCreate = async (e) => {
     e.preventDefault();
     const productAdd = {
