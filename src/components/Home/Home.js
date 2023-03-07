@@ -22,6 +22,11 @@ const Home = () => {
       {/* <OurStory></OurStory> */}
       <Payment></Payment>
       {/* <OurPartners></OurPartners> */}
+      <section>
+        {/* <UserInfo></UserInfo><br/> */}
+        <BestOffer></BestOffer>
+        <MobileApp />
+      </section>
     </div>
   );
 };

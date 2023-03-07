@@ -22,7 +22,7 @@ const RemoveAdminModal = ({ removeAdmin, refetch }) => {
     <div>
       <input type="checkbox" id="remove-admin-modal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box bg-red-500">
+        <div className="modal-box bg-slate-200">
           <h3 className="font-bold text-lg">Are You Sure Remove Admin</h3>
           <div className="flex justify-end">
             <div className="modal-action">

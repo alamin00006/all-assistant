@@ -8,9 +8,9 @@ import gas from "../../assets/images/gas.png";
 import { Link } from "react-router-dom";
 const Services = () => {
   return (
-    <div className="mt-4 mb-48 lg:mx-36 md:mx-26 sm:mx-16 xs:mx-0">
+    <div className="mt-4 mb-48 lg:mx-36 md:mx-26 sm:mx-26 xs:mx-10">
       <h2 className="text-center text-2xl font-bold text-gray-500">Services</h2>
-      <div className="grid lg:grid-cols-7 md:grid-cols-5 sm:grid-cols-5 xs:grid-cols-3 mt-5">
+      <div className="grid lg:grid-cols-7 md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 mt-5">
         <div>
           <Link to="/house">
             <img style={{ width: "100px" }} src={house} alt="" />

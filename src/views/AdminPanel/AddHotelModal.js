@@ -4,7 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { RxCrossCircled } from "react-icons/rx";
 
-const AddHotelModal = ({ refetch }) => {
+const AddHotelModal = ({ refetch, divisions, districts, upazilas }) => {
   const [discount, setDiscount] = useState("0");
   const [image, setImage] = useState([]);
 
@@ -114,7 +114,7 @@ const AddHotelModal = ({ refetch }) => {
         <div className="modal-box w-8/12 max-w-5xl glass">
           <dic className="flex">
             <div class="grow h-14 ...">
-              <h3 className="text-center text-xl border border-spacing-1">
+              <h3 className="text-center text-xl border border-spacing-1 ">
                 Please Input Hotel Informations
               </h3>
             </div>
@@ -130,87 +130,108 @@ const AddHotelModal = ({ refetch }) => {
               onSubmit={handleHotelCreate}
               className="mt-2 product-form px-4 mx-2 py-3 rounded"
             >
-              <div className="grid grid-cols-4">
+              <div className="md:grid md:grid-cols-3 sm:grid sm:grid-cols-2 grid grid-cols-1">
                 <div className="">
                   <label>
-                    bedRoomInfo:{" "}
+                    Bed Room Info:{" "}
                     <span className="text-danger font-bold ">*</span>
                   </label>
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     name="bedRoomInfo"
                     required
-                    placeholder="Product Name in English"
+                    placeholder="Input Bed Room Info"
                     id=""
                   />
                 </div>
 
                 <div className="">
                   <label>
-                    floorLevel :{" "}
-                    <span className="text-rose-500 fw-bold fs-5">*</span>
+                    Floor Level :{" "}
+                    <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="text"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="floorLevel"
-                    placeholder="Price"
+                    placeholder="Floor Level"
                     id=""
                   />
                 </div>
                 <div className="">
-                  <label>
+                  <label for="division">
                     Division :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
-                  </label>{" "}
+                    <span className="text-rose-500 fw-bold fs-5">*</span>
+                  </label>
                   <br />
-                  <input
-                    type="text"
-                    className="border-2 border-green-500"
+                  <select
+                    style={{ width: "100%", height: "45px" }}
                     required
                     name="division"
-                    placeholder="Quantity"
-                    id=""
-                  />
+                    id="division"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
+                  >
+                    <option selected disabled>
+                      Select Division
+                    </option>
+
+                    {divisions.map((division) => (
+                      <option key={division.id}>{division?.name}</option>
+                    ))}
+                  </select>
                 </div>
                 <div className="">
-                  <label>
-                    district :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
-                  </label>{" "}
+                  <label for="district">
+                    District :{" "}
+                    <span className="text-rose-500 fw-bold fs-5">*</span>
+                  </label>
                   <br />
-                  <input
-                    type="text"
-                    className="border-2 border-green-500"
+                  <select
+                    style={{ width: "100%", height: "45px" }}
                     required
                     name="district"
-                    placeholder="Quantity"
-                    id=""
-                  />
+                    id="district"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
+                  >
+                    <option selected disabled>
+                      Select District
+                    </option>
+
+                    {districts.map((district) => (
+                      <option key={district.id}>{district?.name}</option>
+                    ))}
+                  </select>
                 </div>
                 <div className="">
-                  <label>
-                    upazila :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
-                  </label>{" "}
+                  <label for="upazila">
+                    Upazila :{" "}
+                    <span className="text-rose-500 fw-bold fs-5">*</span>
+                  </label>
                   <br />
-                  <input
-                    type="text"
-                    className="border-2 border-green-500"
+                  <select
+                    style={{ width: "100%", height: "45px" }}
                     required
                     name="upazila"
-                    placeholder="Quantity"
-                    id=""
-                  />
+                    id="upazila"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
+                  >
+                    <option selected disabled>
+                      Select Upazila
+                    </option>
+
+                    {upazilas.map((upazila) => (
+                      <option key={upazila.id}>{upazila?.name}</option>
+                    ))}
+                  </select>
                 </div>
 
                 <div className="">
                   <label for="category">
-                    totalRentRoom :{" "}
+                    Total Rent Room :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -219,10 +240,10 @@ const AddHotelModal = ({ refetch }) => {
                     required
                     name="totalRentRoom"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A totalRentRoom
+                      Select A Total Rent Room
                     </option>
 
                     <option>One</option>
@@ -238,38 +259,38 @@ const AddHotelModal = ({ refetch }) => {
 
                 <div className="">
                   <label>
-                    attachedBathRoom :{" "}
+                    Attached Bath Room :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="attachedBathRoom"
-                    placeholder="Quantity"
+                    placeholder="Attached Bath Room"
                     id=""
                   />
                 </div>
                 <div className="">
                   <label>
-                    balcony :{" "}
+                    Balcony :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="balcony"
-                    placeholder="Quantity"
+                    placeholder="Balcony"
                     id=""
                   />
                 </div>
 
                 <div className="">
                   <label for="category">
-                    rentPriceTitle :{" "}
+                    Rent Price Title :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -278,7 +299,7 @@ const AddHotelModal = ({ refetch }) => {
                     required
                     name="rentPriceTitle"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
                       Select A rentPriceTitle
@@ -290,31 +311,31 @@ const AddHotelModal = ({ refetch }) => {
                 </div>
                 <div className="">
                   <label>
-                    rentPrice :{" "}
+                    Rent Price :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="rentPrice"
-                    placeholder="Quantity"
+                    placeholder="Rent Price"
                     id=""
                   />
                 </div>
                 <div className="">
                   <label>
-                    deposit :{" "}
+                    Deposit :{" "}
                     <span className="text-danger fw-bold fs-5">*</span>
                   </label>{" "}
                   <br />
                   <input
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     required
                     name="deposit"
-                    placeholder="Quantity"
+                    placeholder="Deposit"
                     id=""
                   />
                 </div>
@@ -324,9 +345,9 @@ const AddHotelModal = ({ refetch }) => {
                   <input
                     onChange={(e) => setDiscount(e.target.value)}
                     type="number"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                     name="discount"
-                    placeholder="discount"
+                    placeholder="Discount"
                     id=""
                   />
                 </div>
@@ -340,7 +361,7 @@ const AddHotelModal = ({ refetch }) => {
                     required
                     name="status"
                     id="status"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
                       Select A Status
@@ -352,7 +373,7 @@ const AddHotelModal = ({ refetch }) => {
 
                 <div className="">
                   <label for="category">
-                    kitchen :{" "}
+                    Kitchen :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -361,7 +382,7 @@ const AddHotelModal = ({ refetch }) => {
                     required
                     name="kitchen"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
                       Select A kitchen
@@ -373,7 +394,7 @@ const AddHotelModal = ({ refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    diningSpace :{" "}
+                    DiningSpace :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -382,10 +403,10 @@ const AddHotelModal = ({ refetch }) => {
                     required
                     name="diningSpace"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A diningSpace
+                      Select A Dining Space
                     </option>
 
                     <option>Yes</option>
@@ -394,7 +415,7 @@ const AddHotelModal = ({ refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    furnishing :{" "}
+                    Furnishing :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -403,10 +424,10 @@ const AddHotelModal = ({ refetch }) => {
                     required
                     name="furnishing"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A furnishing
+                      Select A Furnishing
                     </option>
 
                     <option>Yes</option>
@@ -415,7 +436,7 @@ const AddHotelModal = ({ refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    gasSupply :{" "}
+                    Gas Supply :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -424,10 +445,10 @@ const AddHotelModal = ({ refetch }) => {
                     required
                     name="gasSupply"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A gasSupply
+                      Select A GasSupply
                     </option>
 
                     <option>Yes</option>
@@ -436,7 +457,7 @@ const AddHotelModal = ({ refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    ccTvCamera :{" "}
+                    ccTv Camera :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -445,10 +466,10 @@ const AddHotelModal = ({ refetch }) => {
                     required
                     name="ccTvCamera"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A ccTvCamera
+                      Select A ccTv Camera
                     </option>
 
                     <option>Yes</option>
@@ -458,7 +479,7 @@ const AddHotelModal = ({ refetch }) => {
 
                 <div className="">
                   <label for="category">
-                    lift : <span className="text-rose-500 fw-bold fs-5">*</span>
+                    Lift : <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
                   <select
@@ -466,10 +487,10 @@ const AddHotelModal = ({ refetch }) => {
                     required
                     name="lift"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A lift
+                      Select A Lift
                     </option>
 
                     <option>Yes</option>
@@ -478,7 +499,7 @@ const AddHotelModal = ({ refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    waterSupply :{" "}
+                    Water Supply :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -487,10 +508,10 @@ const AddHotelModal = ({ refetch }) => {
                     required
                     name="waterSupply"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A waterSupply
+                      Select A Water Supply
                     </option>
 
                     <option>Yes</option>
@@ -499,7 +520,7 @@ const AddHotelModal = ({ refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    securityGuard :{" "}
+                    Security Guard :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -508,10 +529,10 @@ const AddHotelModal = ({ refetch }) => {
                     required
                     name="securityGuard"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A securityGuard
+                      Select A Security Guard
                     </option>
 
                     <option>Yes</option>
@@ -520,7 +541,7 @@ const AddHotelModal = ({ refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    ipsConnection :{" "}
+                    Ips Connection :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -529,10 +550,10 @@ const AddHotelModal = ({ refetch }) => {
                     required
                     name="ipsConnection"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A ipsConnection
+                      Select A ips Connection
                     </option>
 
                     <option>Yes</option>
@@ -541,7 +562,7 @@ const AddHotelModal = ({ refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    parkingSpace :{" "}
+                    Parking Space :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -550,10 +571,10 @@ const AddHotelModal = ({ refetch }) => {
                     required
                     name="parkingSpace"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A parkingSpace
+                      Select A Parking Space
                     </option>
 
                     <option>Car & Bike Both</option>
@@ -562,7 +583,7 @@ const AddHotelModal = ({ refetch }) => {
                 </div>
                 <div className="">
                   <label for="category">
-                    floorType :{" "}
+                    Floor Type :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
                   <br />
@@ -571,10 +592,10 @@ const AddHotelModal = ({ refetch }) => {
                     required
                     name="floorType"
                     id="category"
-                    className="border-2 border-green-500"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
                   >
                     <option selected disabled>
-                      Select A floorType
+                      Select A Floor Type
                     </option>
 
                     <option>Tilesed</option>
@@ -583,29 +604,34 @@ const AddHotelModal = ({ refetch }) => {
                 </div>
               </div>
               <div>
-                <label for="">Hotel Deatails Address:</label>
+                <h1>
+                  <label for="">Hotel Deatails Address:</label>
+                </h1>
+
                 <textarea
-                  className="border-2 border-green-500"
+                  className="border-2  border-orange-400 input  input-sm  textarea textarea-bordered textarea-xs w-full max-w-xs"
                   id=""
                   name="hotelDetailsAddress"
                   rows="4"
                 />
               </div>
               <div className="">
-                <label>
-                  Upload a Hotels Picture :{" "}
-                  <span className="text-danger fw-bold fs-5">*</span>
-                </label>
+                <h1>
+                  <label>
+                    Upload a Hotels Picture :{" "}
+                    <span className="text-danger fw-bold fs-5">*</span>
+                  </label>
+                </h1>
                 <input
                   multiple
                   onChange={(e) => {
                     setImage(e.target.files);
                   }}
                   type="file"
-                  className="border-2 border-green-500"
+                  className="border-2 border-orange-400 input input-bordered input-sm"
                   required
                   name="houseImage"
-                  placeholder="productPicture"
+                  placeholder="Product Picture"
                   id=""
                 />
               </div>

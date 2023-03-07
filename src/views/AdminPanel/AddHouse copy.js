@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import AddHouseModal from "./AddHouseModal";
 import { DiWindows } from "react-icons/di";
 import "./AddHouse.css";
@@ -8,32 +8,20 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
 import useHouse from "../../Hooks/useHouse";
 
-const AddHouse = ({ divisions, districts, upazilas }) => {
+const AddHouse = () => {
   const [houses, refetch] = useHouse();
-  // console.log(houses);
+  //console.log(houses);
 
   const [editHouse, setEditHouse] = useState({});
   const [deleteHouse, setDeleteHouse] = useState({});
-  // console.log(detailsHouse);
-
-  fetch("test.json")
-    .then((res) => res.json())
-    .then((data) => console.log(data?.data));
-
   return (
     <div>
-      <label
-        htmlFor="my-modal-5"
-        className="bg-rose-600 text-white px-8 text-lg py-2 rounded-lg cursor-pointer"
-      >
-        + Add House
+      <label htmlFor="my-modal-5" className="btn bg-cyan-300">
+        <DiWindows />
+        AddHouse
       </label>
-      <AddHouseModal
-        refetch={refetch}
-        divisions={divisions}
-        districts={districts}
-        upazilas={upazilas}
-      />
+      <AddHouseModal refetch={refetch} />
+      
 
       <div>
         {/* -------------------------table data------------------------ */}
@@ -120,6 +108,7 @@ const AddHouse = ({ divisions, districts, upazilas }) => {
                   <td>{house.image}</td>
                   <td>{house.createdAt}</td>
                   <td>{house.updatedAt}</td>
+                 
 
                   <td>
                     <div className="flex space-x-4">
@@ -138,11 +127,12 @@ const AddHouse = ({ divisions, districts, upazilas }) => {
                   </td>
                 </tr>
               ))}
-
+             
               <EditHouseModal editHouse={editHouse} refetch={refetch} />
 
               <DeleteHouseModal deleteHouse={deleteHouse} refetch={refetch} />
             </tbody>
+            
           </table>
         </div>
       </div>

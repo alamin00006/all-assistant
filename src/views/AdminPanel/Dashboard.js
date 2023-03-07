@@ -4,7 +4,7 @@ import { CgProfile } from "react-icons/cg";
 import { FaLaptopHouse, FaUsersCog } from "react-icons/fa";
 import { AiOutlineUnorderedList } from "react-icons/ai";
 import { RiLogoutBoxRFill } from "react-icons/ri";
-
+import "./Dashboard.css";
 import { useQuery } from "react-query";
 import axios from "axios";
 
@@ -69,20 +69,20 @@ const Admin = () => {
               className="drawer-overlay "
             ></label>
             <ul className="menu p-2 w-80 bg-green-100 space-y-2 ">
-              <li className="bg-sky-300  hover:bg-slate-300 border-none  h-10">
+              <li className="Drawer-bg hover:bg-slate-300 border-none  h-10">
                 <Link to="/dashboard">
                   <CgProfile /> Profile
                 </Link>
               </li>
               {user?.role === "Admin" || user?.role === "SuperAdmin" ? (
                 <span>
-                  <li className="bg-sky-300 hover:bg-slate-300 h-10">
+                  <li className="Drawer-bg hover:bg-slate-300 h-10">
                     <Link to="addhouse">
                       <FaLaptopHouse />
                       Add House
                     </Link>
                   </li>
-                  <li className="bg-sky-300 hover:bg-slate-300 h-10">
+                  <li className="Drawer-bg hover:bg-slate-300 h-10">
                     {" "}
                     <Link to="addhotel">
                       <FaLaptopHouse />
@@ -90,7 +90,7 @@ const Admin = () => {
                     </Link>
                   </li>
 
-                  <li className="bg-sky-300 hover:bg-slate-300 h-10">
+                  <li className="Drawer-bg hover:bg-slate-300 h-10">
                     <Link to="order">
                       <AiOutlineUnorderedList />
                       Orders
@@ -102,7 +102,7 @@ const Admin = () => {
               )}
 
               {user?.role === "SuperAdmin" ? (
-                <li className="bg-sky-300 hover:bg-slate-300 h-10">
+                <li className="Drawer-bg hover:bg-slate-300 h-10">
                   <Link to="manage-user">
                     <FaUsersCog />
                     Users
@@ -112,7 +112,7 @@ const Admin = () => {
                 ""
               )}
 
-              <li className="bg-sky-300 hover:bg-slate-300 h-10">
+              <li className="Drawer-bg hover:bg-slate-300 h-10">
                 <Link onClick={SingOutHandle} to="">
                   <RiLogoutBoxRFill />
                   Logout
