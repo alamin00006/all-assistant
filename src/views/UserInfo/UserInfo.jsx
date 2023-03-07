@@ -7,7 +7,7 @@ import './UserInfo.css';
 const UserInfo = () => {
     return (
 
-    <div>   
+    <div className='w-9/12 m-0 mx-auto'>   
     <div class="grid bg-slate-100 justify-around grid-cols-3 gap-3">
 
      <div className='flex flex-col items-center'>
