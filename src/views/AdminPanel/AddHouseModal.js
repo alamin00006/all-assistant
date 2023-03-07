@@ -4,7 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { RxCrossCircled } from "react-icons/rx";
 
-const AddHouseModal = ({ refetch }) => {
+const AddHouseModal = ({ refetch, divisions, districts, upazilas }) => {
   const [discount, setDiscount] = useState("0");
   const [image, setimage] = useState([]);
 
@@ -174,51 +174,72 @@ const AddHouseModal = ({ refetch }) => {
                     id=""
                   />
                 </div>
-                <div className="">
-                  <label>
-                    Division :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
-                  </label>{" "}
-                  <br />
-                  <input
-                    type="text"
-                    className="border-2 border-orange-400 input input-bordered input-sm"
-                    required
-                    name="division"
-                    placeholder="Division"
-                    id=""
-                  />
-                </div>
-                <div className="">
-                  <label>
-                    District :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
-                  </label>{" "}
-                  <br />
-                  <input
-                    type="text"
-                    className="border-2 border-orange-400 input input-bordered input-sm"
-                    required
-                    name="district"
-                    placeholder="District"
-                    id=""
-                  />
-                </div>
 
                 <div className="">
-                  <label>
-                    Upazila :{" "}
-                    <span className="text-danger fw-bold fs-5">*</span>
-                  </label>{" "}
+                  <label for="division">
+                    Division :{" "}
+                    <span className="text-rose-500 fw-bold fs-5">*</span>
+                  </label>
                   <br />
-                  <input
-                    type="text"
+                  <select
+                    style={{ width: "100%", height: "45px" }}
+                    required
+                    name="division"
+                    id="division"
                     className="border-2 border-orange-400 input input-bordered input-sm"
+                  >
+                    <option selected disabled>
+                      Select Division
+                    </option>
+
+                    {divisions.map((division) => (
+                      <option key={division.id}>{division?.name}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="">
+                  <label for="district">
+                    District :{" "}
+                    <span className="text-rose-500 fw-bold fs-5">*</span>
+                  </label>
+                  <br />
+                  <select
+                    style={{ width: "100%", height: "45px" }}
+                    required
+                    name="district"
+                    id="district"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
+                  >
+                    <option selected disabled>
+                      Select District
+                    </option>
+
+                    {districts.map((district) => (
+                      <option key={district.id}>{district?.name}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="">
+                  <label for="upazila">
+                    Upazila :{" "}
+                    <span className="text-rose-500 fw-bold fs-5">*</span>
+                  </label>
+                  <br />
+                  <select
+                    style={{ width: "100%", height: "45px" }}
                     required
                     name="upazila"
-                    placeholder="Upazila"
-                    id=""
-                  />
+                    id="upazila"
+                    className="border-2 border-orange-400 input input-bordered input-sm"
+                  >
+                    <option selected disabled>
+                      Select Upazila
+                    </option>
+
+                    {upazilas.map((upazila) => (
+                      <option key={upazila.id}>{upazila?.name}</option>
+                    ))}
+                  </select>
                 </div>
 
                 <div className="">
@@ -516,7 +537,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Gas Supply :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -528,7 +549,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A Gas Supply
                     </option>
 
@@ -538,7 +559,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     CcTv Camera :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -550,7 +571,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A CcTv Camera
                     </option>
 
@@ -591,7 +612,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A Lift
                     </option>
 
@@ -612,7 +633,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A Water Supply
                     </option>
 
@@ -642,7 +663,7 @@ const AddHouseModal = ({ refetch }) => {
                   </select>
                 </div>
                 <div className="">
-                  <label for="category" >
+                  <label for="category">
                     Ips Connection :{" "}
                     <span className="text-rose-500 fw-bold fs-5">*</span>
                   </label>
@@ -654,7 +675,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A Ips Connection
                     </option>
 
@@ -675,7 +696,7 @@ const AddHouseModal = ({ refetch }) => {
                     id="category"
                     className="border-2 border-orange-400 input input-bordered input-sm"
                   >
-                    <option selected disabled >
+                    <option selected disabled>
                       Select A Parking Space
                     </option>
 

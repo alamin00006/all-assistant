@@ -8,9 +8,8 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
 import useHouse from "../../Hooks/useHouse";
 
-const AddHouse = () => {
+const AddHouse = ({ divisions, districts, upazilas }) => {
   const [houses, refetch] = useHouse();
-  //console.log(houses);
 
   const [editHouse, setEditHouse] = useState({});
   const [deleteHouse, setDeleteHouse] = useState({});
@@ -20,8 +19,12 @@ const AddHouse = () => {
         <DiWindows />
         AddHouse
       </label>
-      <AddHouseModal refetch={refetch} />
-      
+      <AddHouseModal
+        refetch={refetch}
+        divisions={divisions}
+        districts={districts}
+        upazilas={upazilas}
+      />
 
       <div>
         {/* -------------------------table data------------------------ */}
@@ -108,7 +111,6 @@ const AddHouse = () => {
                   <td>{house.image}</td>
                   <td>{house.createdAt}</td>
                   <td>{house.updatedAt}</td>
-                 
 
                   <td>
                     <div className="flex space-x-4">
@@ -127,12 +129,11 @@ const AddHouse = () => {
                   </td>
                 </tr>
               ))}
-             
+
               <EditHouseModal editHouse={editHouse} refetch={refetch} />
 
               <DeleteHouseModal deleteHouse={deleteHouse} refetch={refetch} />
             </tbody>
-            
           </table>
         </div>
       </div>
