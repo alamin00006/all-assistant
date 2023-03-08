@@ -1,9 +1,9 @@
 import React from "react";
-import mobileApp from "../../assets/images/App_First_Screen-01_zlkeax.png";
+import mobileApp from "../../assets/images/mobile.png";
 import googlePlayStore from "../../assets/images/google-play_gksojj.png";
 const MobileApp = () => {
   return (
-    <div>
+    <div className="mt-10">
       <div className="flex lg:flex-row md:flex-row sm:flex-row xs:flex-col items-center lg:justify-center  sm:justify-center xs:justify-center md:justify-center">
         <div>
           <img

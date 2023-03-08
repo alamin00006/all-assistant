@@ -70,7 +70,6 @@ const Hotel = () => {
   );
   return (
     <div>
-      <h1>This is a hotel Route</h1>
       <HotelSearchOption
         divisions={divisions}
         handleDistricts={handleDistricts}

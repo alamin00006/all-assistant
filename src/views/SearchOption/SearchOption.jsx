@@ -12,7 +12,7 @@ const SearchOption = ({
 }) => {
   return (
     <div className="w-3/4 m-0 mx-auto">
-      Search Option
+      <h1 className="text-2xl text-center my-4 ">Search Option</h1>
       <div className="md:grid md:grid-cols-3 lg:grid lg:grid-cols-5 gap-2">
         <select
           name="division"

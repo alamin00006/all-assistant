@@ -13,7 +13,7 @@ const HotelSearchOption = ({
   // console.log(divisions);
   return (
     <div className="w-3/4 m-0 mx-auto">
-      Search Option
+      <h1 className="text-2xl text-center my-4">Search Option</h1>
       <div>
         <select
           name="division"
