@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,8 +12,6 @@ const AddHouseModal = ({ refetch, divisions, districts, upazilas }) => {
   const [division] = useDivision();
   console.log(division);
 
-  
-  
   const handleHouseCreate = async (e) => {
     e.preventDefault();
     const productAdd = {
@@ -102,8 +100,8 @@ const AddHouseModal = ({ refetch, divisions, districts, upazilas }) => {
 
     const file = image[0];
 
-    if (file.size > 5000000) {
-      return toast.error("Product Picture size 5MB more than not allowed");
+    if (file.size > 1000000) {
+      return toast.error("Product Picture size 1MB more than not allowed");
     } else {
       if (isValidFileUploaded(file)) {
         Array.from(image).forEach((item) => {
@@ -116,7 +114,7 @@ const AddHouseModal = ({ refetch, divisions, districts, upazilas }) => {
 
     try {
       const { data } = await axios.post(
-        `http://localhost:5000/api/v1/house`,
+        `https://all-assistant-sever-muhib95.vercel.app/api/v1/house`,
         formData
       );
       toast.success(data.data.message);

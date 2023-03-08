@@ -12,7 +12,7 @@ const MakeAdminModal = ({ makeAdmin, refetch }) => {
         return toast.warn("Sorry You SuperAdmin");
       }
       const { data } = await axios.patch(
-        `http://localhost:5000/api/v1/user/${makeAdmin?._id}`,
+        `https://all-assistant-sever-muhib95.vercel.app/api/v1/user/${makeAdmin?._id}`,
         adminMake
       );
       toast.success(data.data.message);

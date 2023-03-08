@@ -8,7 +8,6 @@ const Order = () => {
   const [orders, refetch] = useOrders();
   const [orderDelete, setDeleteOrder] = useState({});
   const [seeOrderDetails, setOrderDetails] = useState({});
-  console.log(orders);
 
   return (
     <div>

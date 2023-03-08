@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { FaLaptopHouse, FaUsersCog } from "react-icons/fa";
@@ -7,6 +7,7 @@ import { RiLogoutBoxRFill } from "react-icons/ri";
 import "./Dashboard.css";
 import { useQuery } from "react-query";
 import axios from "axios";
+import Loading from "../Loading/Loading";
 
 const Admin = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Admin = () => {
       } else {
         await axios
           .get(
-            "http://localhost:5000/api/v1/user/me",
+            "https://all-assistant-sever-muhib95.vercel.app/api/v1/user/me",
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -33,24 +34,26 @@ const Admin = () => {
           )
           .then((data) => {
             setUser(data?.data?.data);
+            refetch();
           })
           .catch((err) => {
             localStorage.removeItem("token");
             navigate("/login");
-            window.location.reload(false);
           });
       }
     }
-    refetch();
     getUser();
   });
 
   const SingOutHandle = () => {
     navigate("/");
     localStorage.removeItem("token");
-    // window.location.reload(false);
+    window.location.reload(false);
   };
 
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   return (
     <div>
       <div>

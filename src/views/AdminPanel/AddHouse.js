@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import AddHouseModal from "./AddHouseModal";
-import { DiWindows } from "react-icons/di";
 import "./AddHouse.css";
 import EditHouseModal from "./EditHouseModal";
 import DeleteHouseModal from "./DeleteHouseModal";
@@ -74,7 +73,6 @@ const AddHouse = ({ divisions, districts, upazilas }) => {
                 <th>FloorType</th>
                 <th>CategoryName</th>
                 <th>HouseDetailsAddress</th>
-                <th>image</th>
                 <th>CreateAT</th>
                 <th>UpdateAT</th>
                 <th>Action</th>
@@ -83,8 +81,7 @@ const AddHouse = ({ divisions, districts, upazilas }) => {
 
             <tbody>
               {houses?.data?.map((house) => (
-                <tr>
-                  <th>1</th>
+                <tr key={house._id}>
                   <td>{house.bedRoomInfo}</td>
                   <td>{house.floorLevel}</td>
                   <td>{house.division}</td>
@@ -117,10 +114,8 @@ const AddHouse = ({ divisions, districts, upazilas }) => {
                   <td>{house.floorType}</td>
                   <td>{house.categoryName}</td>
                   <td>{house.houseDetailsAddress}</td>
-                  <td>{house.image}</td>
                   <td>{house.createdAt}</td>
                   <td>{house.updatedAt}</td>
-
                   <td>
                     <div className="flex space-x-4">
                       <div onClick={() => setEditHouse(house)}>

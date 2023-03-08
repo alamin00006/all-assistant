@@ -16,7 +16,7 @@ const DetailsHouseImage = ({ images }) => {
               onClick={() => imageHandle(index)}
               className="w-24 mr-2"
               key={index}
-              src={`http://localhost:5000/${img}`}
+              src={`https://all-assistant-sever-muhib95.vercel.app/${img}`}
               alt=""
             />
           ))}
@@ -27,7 +27,7 @@ const DetailsHouseImage = ({ images }) => {
       <div>
         <img
           className="w-full h-full mt-2 relative"
-          src={`http://localhost:5000/${images?.[number]}`}
+          src={`https://all-assistant-sever-muhib95.vercel.app/${images?.[number]}`}
           alt=""
         />
       </div>

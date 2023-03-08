@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import DetailsHouseImage from "../DetailsHouseImage/DetailsHouseImage";
 import ModalBooking from "../../views/ModalBooking/ModalBooking";
 
@@ -10,7 +10,7 @@ const HouseDetails = () => {
 
   const [house, setHouse] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/api/v1/house/${id}`;
+    const url = `https://all-assistant-sever-muhib95.vercel.app/api/v1/house/${id}`;
     fetch(url, {
       method: "GET",
     })
@@ -30,7 +30,7 @@ const HouseDetails = () => {
   //   };
   //   try {
   //     const { data } = await axios.post(
-  //       `http://localhost:5000/api/v1/order`,
+  //       `https://all-assistant-sever-muhib95.vercel.app/api/v1/order`,
   //       orderData
   //     );
   //     toast.success(data.data.message);
@@ -48,7 +48,7 @@ const HouseDetails = () => {
           <DetailsHouseImage images={images}></DetailsHouseImage>
           {/* <img
             className="p-4"
-            src={`http://localhost:5000/${house.houseImage?.[0]}`}
+            src={`https://all-assistant-sever-muhib95.vercel.app/${house.houseImage?.[0]}`}
             alt=""
           /> */}
         </div>
@@ -128,9 +128,7 @@ const HouseDetails = () => {
               >
                 Get Phone Number
               </label>
-              {/* <button className="btn bg-sky-500 hover:bg-sky-700 text-white mr-4">
-                Get Phone Number
-              </button> */}
+
               <button className="btn bg-violet-500 hover:bg-violet-600 border-none text-white">
                 Share
               </button>
@@ -184,6 +182,7 @@ const HouseDetails = () => {
               <td>Parking Space</td>
               <td>{house?.parkingSpace}</td>
             </tr>
+            <ToastContainer className="toast-position" position="top-center" />
           </tbody>
         </table>
       </div>

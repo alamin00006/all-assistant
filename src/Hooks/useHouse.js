@@ -6,7 +6,7 @@ const useHouse = () => {
     isLoading,
     refetch,
   } = useQuery([], () =>
-    fetch("http://localhost:5000/api/v1/house", {
+    fetch("https://all-assistant-sever-muhib95.vercel.app/api/v1/house", {
       method: "GET",
     }).then((res) => res.json())
   );

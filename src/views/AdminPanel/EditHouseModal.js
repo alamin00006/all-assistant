@@ -78,7 +78,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
     formData.append("houseDetailsAddress", houseUpdate.houseDetailsAddress);
     try {
       const { data } = await axios.patch(
-        `http://localhost:5000/api/v1/house/${editHouse?._id}`,
+        `https://all-assistant-sever-muhib95.vercel.app/api/v1/house/${editHouse?._id}`,
         formData,
         {
           headers: {
@@ -100,7 +100,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
         <div className="modal-box w-8/12 max-w-5xl glass">
           <dic className="flex">
             <div class="grow h-14 ...">
-            <h3 className="text-center text-xl border border-spacing-1">
+              <h3 className="text-center text-xl border border-spacing-1">
                 Please Inpute House Informations
               </h3>
             </div>

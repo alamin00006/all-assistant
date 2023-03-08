@@ -62,7 +62,7 @@ const House = () => {
     [divisionName, districtName, upaZilaName, categoryName, userPrice, room],
     () =>
       fetch(
-        `http://localhost:5000/api/v1/house?division=${divisionName}&district=${districtName}&upazila=${upaZilaName}&categoryName=${categoryName}&rentPrice=${userPrice}&totalRentRoom=${room}`,
+        `https://all-assistant-sever-muhib95.vercel.app/api/v1/house?division=${divisionName}&district=${districtName}&upazila=${upaZilaName}&categoryName=${categoryName}&rentPrice=${userPrice}&totalRentRoom=${room}`,
         {
           method: "GET",
         }

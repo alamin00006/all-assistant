@@ -52,7 +52,7 @@ const UserManage = () => {
                         Make Admin
                       </label>
                     </div>
-                    <div onClick={() => setRemoveAdmin(user)}>
+                    <div className="ml-5" onClick={() => setRemoveAdmin(user)}>
                       <label
                         htmlFor="remove-admin-modal"
                         className="bg-rose-600 text-white cursor-pointer px-3 py-2 rounded-lg"

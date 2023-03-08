@@ -6,7 +6,7 @@ const DeleteHotelModal = ({ deleteHotel, refetch }) => {
   const handleDelete = async () => {
     try {
       const data = await axios.delete(
-        `http://localhost:5000/api/v1/hotel/${deleteHotel?._id}`,
+        `https://all-assistant-sever-muhib95.vercel.app/api/v1/hotel/${deleteHotel?._id}`,
         {},
         {
           headers: {

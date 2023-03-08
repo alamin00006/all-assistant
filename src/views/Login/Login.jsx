@@ -52,14 +52,17 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const data = await axios.post("http://localhost:5000/api/v1/user/login", {
-        email: userInfo?.email,
-        password: userInfo?.password,
-      });
-      localStorage.setItem("token", data.data?.data?.token);
+      const data = await axios.post(
+        "https://all-assistant-sever-muhib95.vercel.app/api/v1/user/login",
+        {
+          email: userInfo?.email,
+          password: userInfo?.password,
+        }
+      );
+      localStorage.setItem("token", data?.data?.data?.token);
       navigate("/");
     } catch (error) {
-      return toast.warn(error.response.data.message);
+      return toast.warn(error?.response?.data?.message);
     }
   };
 
