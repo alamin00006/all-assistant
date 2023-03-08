@@ -22,7 +22,7 @@ const Admin = () => {
       } else {
         await axios
           .get(
-            "https://all-assistant-sever-muhib95.vercel.app/api/v1/user/me",
+            "http://localhost:5000/api/v1/user/me",
             {
               headers: {
                 Authorization: `Bearer ${token}`,

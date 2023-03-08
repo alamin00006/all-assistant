@@ -6,7 +6,7 @@ const OrderDeleteModal = ({ orderDelete, refetch }) => {
   const handleOrderDelete = async () => {
     try {
       const data = await axios.delete(
-        `https://all-assistant-sever-muhib95.vercel.app/api/v1/order/${orderDelete?._id}`,
+        `http://localhost:5000/api/v1/order/${orderDelete?._id}`,
         {},
         {
           headers: {

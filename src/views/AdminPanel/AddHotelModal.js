@@ -96,7 +96,7 @@ const AddHotelModal = ({ refetch, divisions, districts, upazilas }) => {
 
     try {
       const { data } = await axios.post(
-        `https://all-assistant-sever-muhib95.vercel.app/api/v1/hotel`,
+        `http://localhost:5000/api/v1/hotel`,
         formData
       );
       toast.success(data.data.message);

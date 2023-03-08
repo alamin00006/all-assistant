@@ -15,7 +15,7 @@ const ModalBooking = ({ house }) => {
     };
     try {
       const { data } = await axios.post(
-        `https://all-assistant-sever-muhib95.vercel.app/api/v1/order`,
+        `http://localhost:5000/api/v1/order`,
         orderData
       );
 

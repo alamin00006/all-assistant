@@ -9,7 +9,7 @@ const RemoveAdminModal = ({ removeAdmin, refetch }) => {
     };
     try {
       const { data } = await axios.patch(
-        `https://all-assistant-sever-muhib95.vercel.app/api/v1/user/${removeAdmin?._id}`,
+        `http://localhost:5000/api/v1/user/${removeAdmin?._id}`,
         adminRemove
       );
       toast.success(data.data.message);

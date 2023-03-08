@@ -78,7 +78,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
     formData.append("houseDetailsAddress", houseUpdate.houseDetailsAddress);
     try {
       const { data } = await axios.patch(
-        `https://all-assistant-sever-muhib95.vercel.app/api/v1/house/${editHouse?._id}`,
+        `http://localhost:5000/api/v1/house/${editHouse?._id}`,
         formData,
         {
           headers: {

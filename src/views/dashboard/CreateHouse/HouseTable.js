@@ -6,7 +6,7 @@ const HouseTable = ({ house, setHouseDelete, houseDelete, refetch }) => {
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `https://all-assistant-sever-muhib95.vercel.app/api/v1/house/${houseDelete?._id}`,
+        `http://localhost:5000/api/v1/house/${houseDelete?._id}`,
         {
           headers: {
             "Content-Type": "application/json",
