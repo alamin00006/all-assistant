@@ -14,14 +14,14 @@ const HotelSearchOption = ({
   return (
     <div className="w-3/4 m-0 mx-auto">
       <h1 className="text-2xl text-center my-4">Search Option</h1>
-      <div>
+      <div className="md:grid md:grid-cols-3 lg:grid lg:grid-cols-5 gap-2 ">
         <select
           name="division"
-          className="select w-full max-w-xs"
+          className="select w-full max-w-xs mb-2"
           onChange={(e) => handleDistricts(e.target.value)}
         >
           <option disabled selected defaultValue="--Select--">
-            --Select--
+            --Division--
           </option>
           {divisions.map((div) => (
             <option value={div.id} key={div.id}>
@@ -31,11 +31,11 @@ const HotelSearchOption = ({
         </select>
         <select
           name="district"
-          className="select w-full max-w-xs"
+          className="select w-full max-w-xs mb-2"
           onChange={(e) => handleUpazilas(e.target.value)}
         >
           <option disabled selected defaultValue="--Select--">
-            --Select--
+            --District--
           </option>
           {getDistricts.map((dis) => (
             <option value={dis.id} key={dis.id}>
@@ -44,9 +44,9 @@ const HotelSearchOption = ({
           ))}
         </select>
 
-        <select name="upozilla" className="select w-full max-w-xs">
+        <select name="upozilla" className="select w-full max-w-xs mb-2">
           <option disabled selected defaultValue="--Select--">
-            --Select--
+            --Upazila--
           </option>
           {getUpazilas.map((dis) => (
             <option value={dis.id} key={dis.id}>
@@ -56,13 +56,13 @@ const HotelSearchOption = ({
         </select>
         <select
           name="price"
-          className="select w-full max-w-xs"
+          className="select w-full max-w-xs mb-2"
           onChange={(e) => {
             handlePrice(e.target.value);
           }}
         >
           <option disabled selected>
-            --Select--
+            --Price--
           </option>
           <option>Up to 200</option>
           <option>Up to 500</option>
@@ -80,7 +80,7 @@ const HotelSearchOption = ({
           }}
         >
           <option disabled selected>
-            --Select--
+            --Room--
           </option>
           <option>One</option>
           <option>Two</option>

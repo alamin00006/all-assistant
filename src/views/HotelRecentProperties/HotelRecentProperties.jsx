@@ -13,7 +13,7 @@ const HotelRecentProperties = ({ searchHotel, refetch }) => {
   });
   return (
     <div className="w-3/4 m-0 mx-auto my-6">
-      <h1 className="text-center text-2xl my-4">Recent Properties</h1>
+      <h1 className="text-center text-2xl my-4">Recent Hotels</h1>
       <div className="grid grid-cols-1 md:grid md:grid-cols-2 md:gap-2 lg:grid lg:grid-cols-3 lg:gap-2 xl:grid xl:grid-cols-4 gap-2 justify-items-center">
         {searchHotel ? (
           <>

@@ -41,8 +41,7 @@ const HouseDetails = () => {
   // };
 
   return (
-    <div className="w-3/4 m-0 mx-auto">
-      <h1>House Details</h1>
+    <div className="w-3/4 m-0 mx-auto my-8">
       <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-2">
         <div className="border-2 border-sky-500">
           <DetailsHouseImage images={images}></DetailsHouseImage>
@@ -53,14 +52,14 @@ const HouseDetails = () => {
           /> */}
         </div>
         <div className="border-2 border-sky-500 text-center">
-          <div>
+          <div className="mt-3">
             <h2>PROPERTY ID:1610</h2>
             <p>
               Location: <span>{house?.district}</span>{" "}
               <span>{house?.division}</span> <span>{house?.upazila}</span>
             </p>
-            <button className="btn bg-sky-500 hover:bg-sky-700 text-white">
-              For Family
+            <button className="p-2 my-2 rounded bg-sky-500 text-white cursor-text">
+              {house?.categoryName}
             </button>
           </div>
           <div>
@@ -138,7 +137,7 @@ const HouseDetails = () => {
       </div>
 
       <div className="overflow-x-auto mt-7">
-        <h1>Over View</h1>
+        <h1 className="mb-3 text-2xl ">Over View</h1>
         <table className="table w-full border border-sky-500 ">
           <tbody>
             {/* row 1 */}

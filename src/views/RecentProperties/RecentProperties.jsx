@@ -29,9 +29,9 @@ const RecentProperties = ({ searchHouse, refetch }) => {
 
                 <div className="card-body">
                   <div className="flex items-center justify-center">
-                    <h2 className="card-title ">{house.categoryName}</h2>
+                    <h2 className="card-title mr-10">{house.categoryName}</h2>
 
-                    <h2 className="card-title">{house.rentPrice}</h2>
+                    <h2 className="card-title ">{house.rentPrice}</h2>
                   </div>
                   <div className="flex flex-col">
                     <div className="flex items-center justify-center">

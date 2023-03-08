@@ -82,6 +82,7 @@ const AddHouse = ({ divisions, districts, upazilas }) => {
             <tbody>
               {houses?.data?.map((house) => (
                 <tr key={house._id}>
+                  <td></td>
                   <td>{house.bedRoomInfo}</td>
                   <td>{house.floorLevel}</td>
                   <td>{house.division}</td>

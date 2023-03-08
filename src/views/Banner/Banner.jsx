@@ -10,9 +10,9 @@ import "swiper/css/autoplay";
 import "./banner.css";
 // import required modules
 import { Pagination, Navigation, Autoplay } from "swiper";
-import banner1 from "../../assets/images/bangkok-thailand-august-12-2016-beautiful-luxury-living-room.jpg";
-import banner2 from "../../assets/images/interior-modern-comfortable-hotel-room.jpg";
-import banner3 from "../../assets/images/3d-contemporary-living-room-interior-modern-furniture (1).jpg";
+import banner1 from "../../assets/images/bedroom-389254 (1).jpg";
+import banner2 from "../../assets/images/bedroom-5772286_1920.jpg";
+import banner3 from "../../assets/images/pexels-scott-webb-1029599.jpg";
 
 // import banner3 from "../../images/banner3.jpg";
 const Banner = () => {

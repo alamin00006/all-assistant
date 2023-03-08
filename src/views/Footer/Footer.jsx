@@ -21,10 +21,18 @@ const Footer = () => {
         </div>
         <div>
           <span className="footer-title">Services</span>
-          <Link className="link link-hover">Branding</Link>
-          <Link className="link link-hover">Design</Link>
-          <Link className="link link-hover">Marketing</Link>
-          <Link className="link link-hover">Advertisement</Link>
+          <Link to="/house" className="link  link-hover">
+            House
+          </Link>
+          <Link to="/hotel" className="link link-hover">
+            Hotel
+          </Link>
+          <Link className="link link-hover">Shifting</Link>
+          <Link className="link link-hover">Techician</Link>
+          {/* <Link className="link link-hover">Fish All</Link>
+          <Link className="link link-hover">Meats All</Link>
+          <Link className="link link-hover">Grocery</Link>
+          <Link className="link link-hover">Furniture</Link> */}
         </div>
         <div>
           <span className="footer-title">Company</span>
