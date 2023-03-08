@@ -59,10 +59,10 @@ const Login = () => {
           password: userInfo?.password,
         }
       );
-      localStorage.setItem("token", data.data?.data?.token);
+      localStorage.setItem("token", data?.data?.data?.token);
       navigate("/");
     } catch (error) {
-      return toast.warn(error.response.data.message);
+      return toast.warn(error?.response?.data?.message);
     }
   };
 
