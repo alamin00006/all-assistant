@@ -100,8 +100,8 @@ const AddHouseModal = ({ refetch, divisions, districts, upazilas }) => {
 
     const file = image[0];
 
-    if (file.size > 1000000) {
-      return toast.error("Product Picture size 1MB more than not allowed");
+    if (file.size > 5000000) {
+      return toast.error("Product Picture size 5MB more than not allowed");
     } else {
       if (isValidFileUploaded(file)) {
         Array.from(image).forEach((item) => {
@@ -114,13 +114,13 @@ const AddHouseModal = ({ refetch, divisions, districts, upazilas }) => {
 
     try {
       const { data } = await axios.post(
-        `https://all-assistant-sever-muhib95.vercel.app/api/v1/house`,
+        `http://localhost:5000/api/v1/house`,
         formData
       );
-      toast.success(data.data.message);
+      toast.success(data?.data?.message);
       refetch();
     } catch (error) {
-      return toast.warn(error.response.data.message);
+      return toast.warn(error?.response?.data?.message);
     }
     e.target.reset();
   };
