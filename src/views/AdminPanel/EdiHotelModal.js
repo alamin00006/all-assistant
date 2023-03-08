@@ -66,7 +66,7 @@ const EdiHotelModal = ({ editHotel, refetch }) => {
 
     try {
       const { data } = await axios.patch(
-        `http://localhost:5000/api/v1/hotel/${editHotel?._id}`,
+        `https://all-assistant-server.onrender.com/api/v1/hotel/${editHotel?._id}`,
         formData,
         {
           headers: {

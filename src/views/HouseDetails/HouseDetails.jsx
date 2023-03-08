@@ -10,7 +10,7 @@ const HouseDetails = () => {
 
   const [house, setHouse] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/api/v1/house/${id}`;
+    const url = `https://all-assistant-server.onrender.com/api/v1/house/${id}`;
     fetch(url, {
       method: "GET",
     })
@@ -30,7 +30,7 @@ const HouseDetails = () => {
   //   };
   //   try {
   //     const { data } = await axios.post(
-  //       `http://localhost:5000/api/v1/order`,
+  //       `https://all-assistant-server.onrender.com/api/v1/order`,
   //       orderData
   //     );
   //     toast.success(data.data.message);
@@ -48,7 +48,7 @@ const HouseDetails = () => {
           <DetailsHouseImage images={images}></DetailsHouseImage>
           {/* <img
             className="p-4"
-            src={`http://localhost:5000/${house.houseImage?.[0]}`}
+            src={`https://all-assistant-server.onrender.com/${house.houseImage?.[0]}`}
             alt=""
           /> */}
         </div>

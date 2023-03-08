@@ -114,7 +114,7 @@ const AddHouseModal = ({ refetch, divisions, districts, upazilas }) => {
 
     try {
       const { data } = await axios.post(
-        `http://localhost:5000/api/v1/house`,
+        `https://all-assistant-server.onrender.com/api/v1/house`,
         formData
       );
       toast.success(data?.data?.message);

@@ -18,7 +18,7 @@ const ViewHouseModal = ({ detailsHouse }) => {
                 <DetailsHouseImage images={images}></DetailsHouseImage>
                 {/* <img
           className="p-4"
-          src={`http://localhost:5000/${house.houseImage?.[0]}`}
+          src={`https://all-assistant-server.onrender.com/${house.houseImage?.[0]}`}
           alt=""
         /> */}
               </div>

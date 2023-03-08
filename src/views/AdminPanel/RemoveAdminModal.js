@@ -9,7 +9,7 @@ const RemoveAdminModal = ({ removeAdmin, refetch }) => {
     };
     try {
       const { data } = await axios.patch(
-        `http://localhost:5000/api/v1/user/${removeAdmin?._id}`,
+        `https://all-assistant-server.onrender.com/api/v1/user/${removeAdmin?._id}`,
         adminRemove
       );
       toast.success(data.data.message);

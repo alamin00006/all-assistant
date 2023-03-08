@@ -6,7 +6,7 @@ const useHotels = () => {
     isLoading,
     refetch,
   } = useQuery([], () =>
-    fetch("http://localhost:5000/api/v1/hotel", {
+    fetch("https://all-assistant-server.onrender.com/api/v1/hotel", {
       method: "GET",
     }).then((res) => res.json())
   );
