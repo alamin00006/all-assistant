@@ -15,7 +15,7 @@ const ModalBooking = ({ house }) => {
     };
     try {
       const { data } = await axios.post(
-        `http://localhost:5000/api/v1/order`,
+        `https://all-assistant-server.onrender.com/api/v1/order`,
         orderData
       );
 

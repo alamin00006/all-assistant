@@ -78,7 +78,7 @@ const EditHouseModal = ({ editHouse, refetch }) => {
     formData.append("houseDetailsAddress", houseUpdate.houseDetailsAddress);
     try {
       const { data } = await axios.patch(
-        `http://localhost:5000/api/v1/house/${editHouse?._id}`,
+        `https://all-assistant-server.onrender.com/api/v1/house/${editHouse?._id}`,
         formData,
         {
           headers: {

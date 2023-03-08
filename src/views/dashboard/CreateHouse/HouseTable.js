@@ -6,7 +6,7 @@ const HouseTable = ({ house, setHouseDelete, houseDelete, refetch }) => {
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/v1/house/${houseDelete?._id}`,
+        `https://all-assistant-server.onrender.com/api/v1/house/${houseDelete?._id}`,
         {
           headers: {
             "Content-Type": "application/json",

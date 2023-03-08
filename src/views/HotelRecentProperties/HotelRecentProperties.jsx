@@ -22,7 +22,7 @@ const HotelRecentProperties = ({ searchHotel, refetch }) => {
                 <figure onClick={() => hotelDetails(hotel._id)}>
                   <img
                     className="p-3 click"
-                    src={`http://localhost:5000/${hotel?.image?.[0]}`}
+                    src={`https://all-assistant-server.onrender.com/${hotel?.image?.[0]}`}
                     alt="Shoes"
                   />
                 </figure>

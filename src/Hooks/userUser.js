@@ -14,7 +14,7 @@ const useUser = () => {
       } else {
         await axios
           .get(
-            "http://localhost:5000/api/v1/user/me",
+            "https://all-assistant-server.onrender.com/api/v1/user/me",
             {
               headers: {
                 Authorization: `Bearer ${token}`,
