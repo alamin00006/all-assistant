@@ -77,8 +77,15 @@ const Login = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className="bg-white">
+    <div className="min-h-screen flex justify-center items-center">
       <div className="">
+        <div className="flex justify-center">
+          <h2 className="text-center text-xl text-white bg-rose-500 p-5 font-bold rounded-lg">
+            Alrady have a Account? Please Login
+            <br />
+            No have you Account? Please Register
+          </h2>
+        </div>
         <div className="">
           <div className=" flex justify-center">
             <form onSubmit={handleSubmit} className="login-form">
