@@ -80,8 +80,8 @@ const Login = () => {
     <div className="min-h-screen flex justify-center items-center">
       <div className="">
         <div className="flex justify-center">
-          <h2 className="text-center text-xl text-white bg-rose-500 p-5 font-bold rounded-lg">
-            Alrady have a Account? Please Login
+          <h2 className="text-center text-xl text-white bg-login-info p-5 font-bold rounded-lg">
+            Already have a Account? Please Login
             <br />
             No have you Account? Please Register
           </h2>
