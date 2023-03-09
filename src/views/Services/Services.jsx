@@ -115,7 +115,7 @@ const Services = () => {
           <Link to="/comming-soon">
             <div className="flex items-center flex-col justify-center">
               <img style={{ width: "130px" }} src={cleaning} alt="" />
-              <p className="text-xl">Cleaning & Pest control</p>
+              <p className="text-xl text-center">Cleaning & Pest control</p>
             </div>
           </Link>
         </div>
@@ -131,7 +131,7 @@ const Services = () => {
           <Link to="/comming-soon">
             <div className="flex items-center flex-col justify-center">
               <img style={{ width: "120px" }} src={beauty} alt="" />
-              <p className="text-xl">Beauty & Salon</p>
+              <p className="text-xl text-center">Beauty & Salon</p>
             </div>
           </Link>
         </div>

@@ -16,7 +16,7 @@ const Payment = () => {
         </div>
 
         <p className="text-center mt-4 text-white text-xl bg-[#12856A] lg:w-1/4 m-0 mx-auto p-4 my-2 rounded-md">
-          To Pay :01616925989
+          To Pay : 01616925989
         </p>
         <div className="grid grid-cols-2 md:grid md:grid-cols-3   lg:grid lg:grid-cols-5 gap-2 place-items-center my-4">
           <div>
