@@ -38,9 +38,7 @@ const Footer = () => {
           <span className="footer-title">Company</span>
           <div className="flex">
             <FaRegAddressCard></FaRegAddressCard>
-            <p className="ml-2">
-              Momtaz Complex 3rd Floor, Patanish Bazar, Hajigonj, Chandpur
-            </p>
+            <p className="ml-2">DHAKA, BANGLADESH</p>
           </div>
 
           <div className="flex">

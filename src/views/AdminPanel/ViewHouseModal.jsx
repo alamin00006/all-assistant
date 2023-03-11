@@ -3,8 +3,8 @@ import DetailsHouseImage from "../DetailsHouseImage/DetailsHouseImage";
 
 const ViewHouseModal = ({ detailsHouse }) => {
   const house = detailsHouse;
-  const images = detailsHouse?.image;
-  // console.log(detailsHouse);
+  const images = detailsHouse?.image ? detailsHouse.image : "na";
+  console.log(detailsHouse);
   return (
     <div>
       <input type="checkbox" id="view-house-modal" className="modal-toggle" />

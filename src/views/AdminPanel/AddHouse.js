@@ -6,11 +6,13 @@ import DeleteHouseModal from "./DeleteHouseModal";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
 import useHouse from "../../Hooks/useHouse";
+import { AiOutlineEye } from "react-icons/ai";
+import ViewHouseModal from "./ViewHouseModal";
 
 const AddHouse = ({ divisions, districts, upazilas }) => {
   const [houses, refetch] = useHouse();
   // console.log(houses);
-
+  const [detailsHouse, setHouse] = useState({});
   const [editHouse, setEditHouse] = useState({});
   const [deleteHouse, setDeleteHouse] = useState({});
   // console.log(detailsHouse);
@@ -18,7 +20,7 @@ const AddHouse = ({ divisions, districts, upazilas }) => {
   fetch("test.json")
     .then((res) => res.json())
     .then((data) => console.log(data?.data));
-
+  console.log(detailsHouse);
   return (
     <div>
       <label
@@ -119,6 +121,11 @@ const AddHouse = ({ divisions, districts, upazilas }) => {
                   <td>{house.updatedAt}</td>
                   <td>
                     <div className="flex space-x-4">
+                      <div onClick={() => setHouse(house)}>
+                        <label htmlFor="view-house-modal" className="">
+                          <AiOutlineEye className="h-6 w-6 cursor-pointer" />
+                        </label>
+                      </div>
                       <div onClick={() => setEditHouse(house)}>
                         <label htmlFor="edit-modal" className="">
                           <FiEdit className="h-6 w-6" />
@@ -134,7 +141,7 @@ const AddHouse = ({ divisions, districts, upazilas }) => {
                   </td>
                 </tr>
               ))}
-
+              <ViewHouseModal detailsHouse={detailsHouse}></ViewHouseModal>
               <EditHouseModal editHouse={editHouse} refetch={refetch} />
 
               <DeleteHouseModal deleteHouse={deleteHouse} refetch={refetch} />

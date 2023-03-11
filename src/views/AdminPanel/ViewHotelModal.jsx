@@ -4,7 +4,7 @@ import DetailsHouseImage from "../DetailsHouseImage/DetailsHouseImage";
 const ViewHotelModal = ({ detailsHotel }) => {
   const house = detailsHotel;
   const images = detailsHotel?.image;
-  // console.log(detailsHotel);
+  console.log(detailsHotel);
   return (
     <div>
       <input type="checkbox" id="view-hotel-modal" className="modal-toggle" />
