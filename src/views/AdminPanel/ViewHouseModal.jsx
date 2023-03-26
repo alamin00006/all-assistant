@@ -3,8 +3,7 @@ import DetailsHouseImage from "../DetailsHouseImage/DetailsHouseImage";
 
 const ViewHouseModal = ({ detailsHouse }) => {
   const house = detailsHouse;
-  const images = detailsHouse?.image ? detailsHouse.image : "na";
-  console.log(detailsHouse);
+
   return (
     <div>
       <input type="checkbox" id="view-house-modal" className="modal-toggle" />
@@ -15,7 +14,7 @@ const ViewHouseModal = ({ detailsHouse }) => {
             <h1>House Details</h1>
             <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-2">
               <div className="border-2 border-sky-500">
-                <DetailsHouseImage images={images}></DetailsHouseImage>
+                <DetailsHouseImage images={detailsHouse?.image}></DetailsHouseImage>
                 {/* <img
           className="p-4"
           src={`https://all-assistant-server.onrender.com/${house.houseImage?.[0]}`}
