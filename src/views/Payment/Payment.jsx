@@ -30,7 +30,7 @@ const Payment = () => {
           </div>
           <div>
             <img className="w-28" src={story4} alt="" />
-            <p className="text-sm text-black">A/C : 1083313002962</p>
+            <p className="text-sm text-black">A/C : 1083319003073</p>
           </div>
           <div>
             <img className="w-28" src={story5} alt="" />
