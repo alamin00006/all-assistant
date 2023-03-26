@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import logo1 from "../../assets/images/logo-original.png";
+import logo1 from "../../assets/images/logo1 (1).png";
 import useUser from "../../Hooks/userUser";
 import "./Navbar.css";
 
@@ -16,14 +16,14 @@ const Navbar = () => {
       <nav className="lg:mx-36 md:mx-26 sm:mx-16 xs:mx-0">
         <div className="navbar  text-black">
           <div className="navbar-start">
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center justify-center">
               <img
                 src={logo1}
                 className=" lg:w-16 md:w-20 sm:w-14 xs:w-14 h-16 "
                 alt=""
               />
-              <span className="text-white mb-2 all-assistant-text">
-                All assistant
+              <span className="text-white mb-2 all-assistant-text mt-4 ">
+                Palki Top Solutions
               </span>
             </Link>
           </div>

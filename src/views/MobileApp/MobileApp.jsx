@@ -1,5 +1,5 @@
 import React from "react";
-import mobileApp from "../../assets/images/mobile.png";
+import mobileApp from "../../assets/images/App_First_Screen-01_zlkeax.jpeg";
 import googlePlayStore from "../../assets/images/google-play_gksojj.png";
 import { Link } from "react-router-dom";
 const MobileApp = () => {
