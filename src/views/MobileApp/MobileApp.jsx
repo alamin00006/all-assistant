@@ -1,5 +1,5 @@
 import React from "react";
-import mobileApp from "../../assets/images/App_First_Screen-01_zlkeax.png";
+import mobileApp from "../../assets/images/App_First_Screen-01_zlkeax.jpeg";
 import googlePlayStore from "../../assets/images/google-play_gksojj.png";
 const MobileApp = () => {
   return (

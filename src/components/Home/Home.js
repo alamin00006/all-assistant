@@ -15,7 +15,7 @@ const Home = () => {
       <Services></Services>
       <section>
         <UserInfo></UserInfo>
-        <BestOffer></BestOffer>
+        {/* <BestOffer></BestOffer> */}
         <MobileApp />
       </section>
       <OurStory></OurStory>
