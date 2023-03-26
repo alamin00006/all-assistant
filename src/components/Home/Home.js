@@ -1,5 +1,5 @@
 import React from "react";
-import BestOffer from "../../views/BestOffer/BestOffer";
+
 import UserInfo from "../../views/UserInfo/UserInfo";
 import MobileApp from "../../views/MobileApp/MobileApp";
 import OurStory from "../../views/OurStory/OurStory";
