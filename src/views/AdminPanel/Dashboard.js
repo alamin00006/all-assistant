@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { FaLaptopHouse, FaUsersCog } from "react-icons/fa";
 import { AiOutlineUnorderedList } from "react-icons/ai";
 import { RiLogoutBoxRFill } from "react-icons/ri";
-
+import "./Dashboard.css";
 import { useQuery } from "react-query";
 import axios from "axios";
+import Loading from "../Loading/Loading";
 
 const Admin = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Admin = () => {
       } else {
         await axios
           .get(
-            "http://localhost:5000/api/v1/user/me",
+            "https://all-assistant-server.onrender.com/api/v1/user/me",
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -33,15 +34,14 @@ const Admin = () => {
           )
           .then((data) => {
             setUser(data?.data?.data);
+            refetch();
           })
           .catch((err) => {
             localStorage.removeItem("token");
             navigate("/login");
-            window.location.reload(false);
           });
       }
     }
-    refetch();
     getUser();
   });
 
@@ -51,6 +51,9 @@ const Admin = () => {
     window.location.reload(false);
   };
 
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   return (
     <div>
       <div>
@@ -69,20 +72,20 @@ const Admin = () => {
               className="drawer-overlay "
             ></label>
             <ul className="menu p-2 w-80 bg-green-100 space-y-2 ">
-              <li className="bg-sky-300  hover:bg-slate-300 border-none  h-10">
+              <li className="Drawer-bg hover:bg-slate-300 border-none  h-10">
                 <Link to="/dashboard">
                   <CgProfile /> Profile
                 </Link>
               </li>
               {user?.role === "Admin" || user?.role === "SuperAdmin" ? (
                 <span>
-                  <li className="bg-sky-300 hover:bg-slate-300 h-10">
+                  <li className="Drawer-bg hover:bg-slate-300 h-10">
                     <Link to="addhouse">
                       <FaLaptopHouse />
                       Add House
                     </Link>
                   </li>
-                  <li className="bg-sky-300 hover:bg-slate-300 h-10">
+                  <li className="Drawer-bg hover:bg-slate-300 h-10">
                     {" "}
                     <Link to="addhotel">
                       <FaLaptopHouse />
@@ -90,7 +93,7 @@ const Admin = () => {
                     </Link>
                   </li>
 
-                  <li className="bg-sky-300 hover:bg-slate-300 h-10">
+                  <li className="Drawer-bg hover:bg-slate-300 h-10">
                     <Link to="order">
                       <AiOutlineUnorderedList />
                       Orders
@@ -102,7 +105,7 @@ const Admin = () => {
               )}
 
               {user?.role === "SuperAdmin" ? (
-                <li className="bg-sky-300 hover:bg-slate-300 h-10">
+                <li className="Drawer-bg hover:bg-slate-300 h-10">
                   <Link to="manage-user">
                     <FaUsersCog />
                     Users
@@ -112,40 +115,8 @@ const Admin = () => {
                 ""
               )}
 
-              <li className="bg-sky-300 hover:bg-slate-300 h-10">
-                {" "}
-                <Link to="addhouse">
-                  <FaLaptopHouse />
-                  Add House
-                </Link>
-              </li>
-              <li className="bg-sky-300 hover:bg-slate-300 h-10">
-                {" "}
-                <Link to="addhotel">
-                  <FaLaptopHouse />
-                  Add Hotel
-                </Link>
-              </li>
-              <li className="bg-sky-300 hover:bg-slate-300 h-10">
-                <Link to="addcategory">
-                  {/* <MdCategory /> */}
-                  Add Category
-                </Link>
-              </li>
-              <li className="bg-sky-300 hover:bg-slate-300 h-10">
-                <Link to="manage-user">
-                  <FaUsersCog />
-                  Users
-                </Link>
-              </li>
-              <li className="bg-sky-300 hover:bg-slate-300 h-10">
-                <Link to="order">
-                  <AiOutlineUnorderedList />
-                  Orders
-                </Link>
-              </li>
-              <li className="bg-sky-300 hover:bg-slate-300 h-10">
-                <Link to="logout">
+              <li className="Drawer-bg hover:bg-slate-300 h-10">
+                <Link onClick={SingOutHandle} to="">
                   <RiLogoutBoxRFill />
                   Logout
                 </Link>

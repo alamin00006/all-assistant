@@ -12,8 +12,8 @@ const RecentProperties = ({ searchHouse, refetch }) => {
     if (!searchHouse) refetch();
   });
   return (
-    <div className="w-3/4 m-0 mx-auto">
-      <h1 className="text-center">Recent Properties</h1>
+    <div className="w-3/4 m-0 mx-auto my-8">
+      <h1 className="text-center text-2xl">Recent Properties</h1>
       <div className="grid grid-cols-1 md:grid md:grid-cols-2 md:gap-2 lg:grid lg:grid-cols-3 lg:gap-2 xl:grid xl:grid-cols-4 gap-2 justify-items-center">
         {searchHouse ? (
           <>
@@ -22,16 +22,16 @@ const RecentProperties = ({ searchHouse, refetch }) => {
                 <figure onClick={() => houseDetails(house._id)}>
                   <img
                     className="p-3 click"
-                    src={`http://localhost:5000/${house?.image?.[0]}`}
+                    src={`https://all-assistant-server.onrender.com/${house?.image?.[0]}`}
                     alt="Shoes"
                   />
                 </figure>
 
                 <div className="card-body">
                   <div className="flex items-center justify-center">
-                    <h2 className="card-title ">{house.categoryName}</h2>
+                    <h2 className="card-title mr-10">{house.categoryName}</h2>
 
-                    <h2 className="card-title">{house.rentPrice}</h2>
+                    <h2 className="card-title ">{house.rentPrice}</h2>
                   </div>
                   <div className="flex flex-col">
                     <div className="flex items-center justify-center">

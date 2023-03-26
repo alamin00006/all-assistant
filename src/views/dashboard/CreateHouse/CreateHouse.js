@@ -111,7 +111,10 @@ const CreateHouse = () => {
     }
 
     try {
-      await axios.post(`http://localhost:5000/api/v1/house`, formData);
+      await axios.post(
+        `https://all-assistant-server.onrender.com/api/v1/house`,
+        formData
+      );
 
       //  return toast.success(data.data.message)
     } catch (error) {

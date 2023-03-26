@@ -3,11 +3,10 @@ import React from "react";
 import { toast } from "react-toastify";
 
 const DeleteHouseModal = ({ deleteHouse, refetch }) => {
-  console.log(deleteHouse);
   const handleDelete = async () => {
     try {
       const data = await axios.delete(
-        `http://localhost:5000/api/v1/house/${deleteHouse?._id}`,
+        `https://all-assistant-server.onrender.com/api/v1/house/${deleteHouse?._id}`,
         {},
         {
           headers: {

@@ -23,7 +23,7 @@ export const choosesCategory = [
   },
   {
     id: 3,
-    image: images["officeSpace.svg"],
+    image: images["officeSpace.png"],
     title: "Office-Space",
   },
   {
@@ -33,7 +33,7 @@ export const choosesCategory = [
   },
   {
     id: 5,
-    image: images["sublet.svg"],
+    image: images["erfhyjk.png"],
     title: "Sublet",
   },
 ];

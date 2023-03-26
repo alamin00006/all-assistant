@@ -10,15 +10,15 @@ import "swiper/css/autoplay";
 import "./banner.css";
 // import required modules
 import { Pagination, Navigation, Autoplay } from "swiper";
-import banner1 from "../../assets/images/banner1.jfif";
-import banner2 from "../../assets/images/banner2.jfif";
-import banner3 from "../../assets/images/banner3.jfif";
+import banner1 from "../../assets/images/bedroom-389254 (1).jpg";
+import banner2 from "../../assets/images/bedroom-5772286_1920.jpg";
+import banner3 from "../../assets/images/pexels-scott-webb-1029599.jpg";
 
 // import banner3 from "../../images/banner3.jpg";
 const Banner = () => {
   return (
     <div>
-      <div className="lg:mx-36 md:mx-26 sm:mx-16 xs:mx-0">
+      <div className="xl:mx-36 2xl:mx-36 lg:mx-36 md:mx-26 sm:mx-16 xs:mx-0">
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
@@ -43,6 +43,7 @@ const Banner = () => {
           <SwiperSlide>
             <div className="">
               <img
+                className="100vw"
                 style={{ width: "100%", height: "384px" }}
                 src={banner2}
                 alt=""

@@ -52,14 +52,17 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const data = await axios.post("http://localhost:5000/api/v1/user/login", {
-        email: userInfo?.email,
-        password: userInfo?.password,
-      });
-      localStorage.setItem("token", data.data?.data?.token);
+      const data = await axios.post(
+        "https://all-assistant-server.onrender.com/api/v1/user/login",
+        {
+          email: userInfo?.email,
+          password: userInfo?.password,
+        }
+      );
+      localStorage.setItem("token", data?.data?.data?.token);
       navigate("/");
     } catch (error) {
-      return toast.warn(error.response.data.message);
+      return toast.warn(error?.response?.data?.message);
     }
   };
 
@@ -74,8 +77,15 @@ const Login = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className="bg-white">
+    <div className="min-h-screen flex justify-center items-center">
       <div className="">
+        <div className="flex justify-center">
+          <h2 className="text-center text-xl text-white bg-login-info p-5 font-bold rounded-lg">
+            Already have a Account? Please Login
+            <br />
+            No have you Account? Please Register
+          </h2>
+        </div>
         <div className="">
           <div className=" flex justify-center">
             <form onSubmit={handleSubmit} className="login-form">

@@ -12,18 +12,18 @@ const SearchOption = ({
 }) => {
   return (
     <div className="w-3/4 m-0 mx-auto">
-      Search Option
-      <div className="md:grid md:grid-cols-3 lg:grid lg:grid-cols-5 gap-2">
+      <h1 className="text-2xl text-center my-4 ">Search Option</h1>
+      <div className="md:grid md:grid-cols-3 lg:grid lg:grid-cols-5 gap-2 ">
         <select
           name="division"
-          className="select w-full max-w-xs"
+          className="select w-full max-w-xs mb-2"
           onChange={(e) => {
             handleDistricts(e.target.value);
             // console.log(e.target.value);
           }}
         >
           <option disabled selected>
-            --Select--
+            --Division--
           </option>
           {divisions.map((div) => (
             <option value={div.id} key={div.id}>
@@ -33,11 +33,11 @@ const SearchOption = ({
         </select>
         <select
           name="district"
-          className="select w-full max-w-xs"
+          className="select w-full max-w-xs mb-2"
           onChange={(e) => handleUpazilas(e.target.value)}
         >
           <option disabled selected>
-            --Select--
+            --District--
           </option>
           {getDistricts.map((dis) => (
             <option value={dis.id} key={dis.id}>
@@ -46,9 +46,9 @@ const SearchOption = ({
           ))}
         </select>
 
-        <select name="upazilla" className="select w-full max-w-xs">
+        <select name="upazilla" className="select w-full max-w-xs mb-2">
           <option disabled selected defaultValue="--Select--">
-            --Select--
+            --Upazila--
           </option>
           {getUpazilas.map((dis) => (
             <option value={dis.id} key={dis.id}>
@@ -58,13 +58,13 @@ const SearchOption = ({
         </select>
         <select
           name="price"
-          className="select w-full max-w-xs"
+          className="select w-full max-w-xs mb-2"
           onChange={(e) => {
             handlePrice(e.target.value);
           }}
         >
           <option disabled selected>
-            --Select--
+            --Price--
           </option>
           <option>Up to 1000</option>
           <option>Up to 2000</option>
@@ -82,7 +82,7 @@ const SearchOption = ({
           }}
         >
           <option disabled selected>
-            --Select--
+            --Room--
           </option>
           <option>One</option>
           <option>Two</option>

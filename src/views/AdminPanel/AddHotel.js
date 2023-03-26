@@ -8,7 +8,7 @@ import AddHotelModal from "./AddHotelModal";
 import useHotels from "../../Hooks/useHotels";
 import { AiOutlineEye } from "react-icons/ai";
 import ViewHotelModal from "./ViewHotelModal";
-const AddHotel = () => {
+const AddHotel = ({ divisions, districts, upazilas }) => {
   const [hotels, refetch] = useHotels();
   const [editHotel, setEditHotel] = useState({});
   const [detailsHotel, setDetailsHotel] = useState({});
@@ -21,7 +21,12 @@ const AddHotel = () => {
       >
         + Add Hotel
       </label>
-      <AddHotelModal refetch={refetch} />
+      <AddHotelModal
+        refetch={refetch}
+        divisions={divisions}
+        districts={districts}
+        upazilas={upazilas}
+      />
 
       <div className="mt-5">
         {/* -------------------------table data------------------------ */}

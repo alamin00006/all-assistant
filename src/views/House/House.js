@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
+import useDistrict from "../../Hooks/useDistrict";
+import useDivision from "../../Hooks/useDivision";
+import useUpazila from "../../Hooks/useUpazila";
 import PropertyCategory from "../PropertyCategory/PropertyCategory";
 import RecentProperties from "../RecentProperties/RecentProperties";
 import SearchOption from "../SearchOption/SearchOption";
 
 const House = () => {
-  const [divisions, setDivision] = useState([]);
-  const [districts, setDistricts] = useState([]);
-  const [upazilas, setUpazilas] = useState([]);
   const [getDistricts, setFindDistrict] = useState([]);
   const [getUpazilas, setUpazila] = useState([]);
 
@@ -18,23 +18,10 @@ const House = () => {
   const [userPrice, setUserPrice] = useState("1000");
   const [room, setRoom] = useState("Two");
   const [searchHouse, setSearchHouse] = useState([]);
-  useEffect(() => {
-    fetch("bd-division.json")
-      .then((res) => res.json())
-      .then((data) => setDivision(data.divisions));
-  }, []);
 
-  useEffect(() => {
-    fetch("bd-districts.json")
-      .then((res) => res.json())
-      .then((data) => setDistricts(data.districts));
-  }, []);
-
-  useEffect(() => {
-    fetch("bd-upazilas.json")
-      .then((res) => res.json())
-      .then((data) => setUpazilas(data.upazilas));
-  }, []);
+  const [divisions] = useDivision();
+  const [districts] = useDistrict();
+  const [upazilas] = useUpazila();
 
   const handleDistricts = (e) => {
     const findDistricts = districts.filter((dis) => dis.division_id === e);
@@ -75,7 +62,7 @@ const House = () => {
     [divisionName, districtName, upaZilaName, categoryName, userPrice, room],
     () =>
       fetch(
-        `http://localhost:5000/api/v1/house?division=${divisionName}&district=${districtName}&upazila=${upaZilaName}&categoryName=${categoryName}&rentPrice=${userPrice}&totalRentRoom=${room}`,
+        `https://all-assistant-server.onrender.com/api/v1/house?division=${divisionName}&district=${districtName}&upazila=${upaZilaName}&categoryName=${categoryName}&rentPrice=${userPrice}&totalRentRoom=${room}`,
         {
           method: "GET",
         }

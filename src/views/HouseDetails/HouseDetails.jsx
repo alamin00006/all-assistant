@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import DetailsHouseImage from "../DetailsHouseImage/DetailsHouseImage";
 import ModalBooking from "../../views/ModalBooking/ModalBooking";
 
@@ -10,7 +10,7 @@ const HouseDetails = () => {
 
   const [house, setHouse] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/api/v1/house/${id}`;
+    const url = `https://all-assistant-server.onrender.com/api/v1/house/${id}`;
     fetch(url, {
       method: "GET",
     })
@@ -30,7 +30,7 @@ const HouseDetails = () => {
   //   };
   //   try {
   //     const { data } = await axios.post(
-  //       `http://localhost:5000/api/v1/order`,
+  //       `https://all-assistant-server.onrender.com/api/v1/order`,
   //       orderData
   //     );
   //     toast.success(data.data.message);
@@ -41,26 +41,25 @@ const HouseDetails = () => {
   // };
 
   return (
-    <div className="w-3/4 m-0 mx-auto">
-      <h1>House Details</h1>
+    <div className="w-3/4 m-0 mx-auto my-8">
       <div className="grid grid-cols-1 md:grid md:grid-cols-2 gap-2">
         <div className="border-2 border-sky-500">
           <DetailsHouseImage images={images}></DetailsHouseImage>
           {/* <img
             className="p-4"
-            src={`http://localhost:5000/${house.houseImage?.[0]}`}
+            src={`https://all-assistant-server.onrender.com/${house.houseImage?.[0]}`}
             alt=""
           /> */}
         </div>
         <div className="border-2 border-sky-500 text-center">
-          <div>
+          <div className="mt-3">
             <h2>PROPERTY ID:1610</h2>
             <p>
               Location: <span>{house?.district}</span>{" "}
               <span>{house?.division}</span> <span>{house?.upazila}</span>
             </p>
-            <button className="btn bg-sky-500 hover:bg-sky-700 text-white">
-              For Family
+            <button className="p-2 my-2 rounded bg-sky-500 text-white cursor-text">
+              {house?.categoryName}
             </button>
           </div>
           <div>
@@ -128,9 +127,7 @@ const HouseDetails = () => {
               >
                 Get Phone Number
               </label>
-              {/* <button className="btn bg-sky-500 hover:bg-sky-700 text-white mr-4">
-                Get Phone Number
-              </button> */}
+
               <button className="btn bg-violet-500 hover:bg-violet-600 border-none text-white">
                 Share
               </button>
@@ -140,7 +137,7 @@ const HouseDetails = () => {
       </div>
 
       <div className="overflow-x-auto mt-7">
-        <h1>Over View</h1>
+        <h1 className="mb-3 text-2xl ">Over View</h1>
         <table className="table w-full border border-sky-500 ">
           <tbody>
             {/* row 1 */}
@@ -184,6 +181,7 @@ const HouseDetails = () => {
               <td>Parking Space</td>
               <td>{house?.parkingSpace}</td>
             </tr>
+            <ToastContainer className="toast-position" position="top-center" />
           </tbody>
         </table>
       </div>

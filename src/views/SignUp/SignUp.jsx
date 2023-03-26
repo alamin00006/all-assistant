@@ -63,7 +63,7 @@ const SignUp = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/api/v1/user/signup", {
+      .post("https://all-assistant-server.onrender.com/api/v1/user/signup", {
         name: name,
         email: userInfo?.email,
         password: userInfo?.password,
@@ -84,8 +84,15 @@ const SignUp = () => {
     }
   }, [refetch, token, user, isLoading, navigate]);
   return (
-    <div className="bg-white">
+    <div className="min-h-screen flex justify-center items-center">
       <div className="">
+        <div className="flex justify-center">
+          <h2 className="text-center text-xl text-white bg-login-info p-5 font-bold rounded-lg">
+            Already have a Account? Please Login
+            <br />
+            No have you Account? Please Register
+          </h2>
+        </div>
         <div className="flex justify-center">
           <div>
             <form onSubmit={handleSubmit} className="login-form">
@@ -163,7 +170,7 @@ const SignUp = () => {
                 />
                 <p></p>
                 <input
-                  className="bg-rose-500 text-white text-xl rounded border-0 py-2 mt-2 fs-5"
+                  className="bg-rose-500 text-white text-xl rounded border-0 py-2 mt-2 fs-5 cursor-pointer"
                   type="submit"
                   value="Register"
                 />

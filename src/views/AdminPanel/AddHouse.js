@@ -1,27 +1,40 @@
 import React, { useState } from "react";
 import AddHouseModal from "./AddHouseModal";
-import { DiWindows } from "react-icons/di";
 import "./AddHouse.css";
 import EditHouseModal from "./EditHouseModal";
 import DeleteHouseModal from "./DeleteHouseModal";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
 import useHouse from "../../Hooks/useHouse";
+import { AiOutlineEye } from "react-icons/ai";
+import ViewHouseModal from "./ViewHouseModal";
 
-const AddHouse = () => {
+const AddHouse = ({ divisions, districts, upazilas }) => {
   const [houses, refetch] = useHouse();
-  //console.log(houses);
-
+  // console.log(houses);
+  const [detailsHouse, setHouse] = useState({});
   const [editHouse, setEditHouse] = useState({});
   const [deleteHouse, setDeleteHouse] = useState({});
+  // console.log(detailsHouse);
+
+  fetch("test.json")
+    .then((res) => res.json())
+    .then((data) => console.log(data?.data));
+  console.log(detailsHouse);
   return (
     <div>
-      <label htmlFor="my-modal-5" className="btn bg-cyan-300">
-        <DiWindows />
-        AddHouse
+      <label
+        htmlFor="my-modal-5"
+        className="bg-rose-600 text-white px-8 text-lg py-2 rounded-lg cursor-pointer"
+      >
+        + Add House
       </label>
-      <AddHouseModal refetch={refetch} />
-      
+      <AddHouseModal
+        refetch={refetch}
+        divisions={divisions}
+        districts={districts}
+        upazilas={upazilas}
+      />
 
       <div>
         {/* -------------------------table data------------------------ */}
@@ -62,7 +75,6 @@ const AddHouse = () => {
                 <th>FloorType</th>
                 <th>CategoryName</th>
                 <th>HouseDetailsAddress</th>
-                <th>image</th>
                 <th>CreateAT</th>
                 <th>UpdateAT</th>
                 <th>Action</th>
@@ -71,8 +83,8 @@ const AddHouse = () => {
 
             <tbody>
               {houses?.data?.map((house) => (
-                <tr>
-                  <th>1</th>
+                <tr key={house._id}>
+                  <td></td>
                   <td>{house.bedRoomInfo}</td>
                   <td>{house.floorLevel}</td>
                   <td>{house.division}</td>
@@ -105,13 +117,15 @@ const AddHouse = () => {
                   <td>{house.floorType}</td>
                   <td>{house.categoryName}</td>
                   <td>{house.houseDetailsAddress}</td>
-                  <td>{house.image}</td>
                   <td>{house.createdAt}</td>
                   <td>{house.updatedAt}</td>
-                 
-
                   <td>
                     <div className="flex space-x-4">
+                      <div onClick={() => setHouse(house)}>
+                        <label htmlFor="view-house-modal" className="">
+                          <AiOutlineEye className="h-6 w-6 cursor-pointer" />
+                        </label>
+                      </div>
                       <div onClick={() => setEditHouse(house)}>
                         <label htmlFor="edit-modal" className="">
                           <FiEdit className="h-6 w-6" />
@@ -127,12 +141,11 @@ const AddHouse = () => {
                   </td>
                 </tr>
               ))}
-             
+              <ViewHouseModal detailsHouse={detailsHouse}></ViewHouseModal>
               <EditHouseModal editHouse={editHouse} refetch={refetch} />
 
               <DeleteHouseModal deleteHouse={deleteHouse} refetch={refetch} />
             </tbody>
-            
           </table>
         </div>
       </div>

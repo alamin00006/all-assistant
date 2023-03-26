@@ -12,7 +12,7 @@ const OrderDetailsModal = ({ seeOrderDetails }) => {
         className="modal-toggle"
       />
       <div className="modal">
-        <div className="modal-box glass w-11/12 max-w-5xl mt-24 bg-orange-200">
+        <div className="modal-box  w-11/12 max-w-5xl mt-24 bg-orange-200">
           <h3 className="font-bold text-lg">Order Deatails</h3>
           <div className="w-3/4 m-0 mx-auto">
             <h1>House Details</h1>
@@ -21,7 +21,7 @@ const OrderDetailsModal = ({ seeOrderDetails }) => {
                 <DetailsHouseImage images={images}></DetailsHouseImage>
                 {/* <img
             className="p-4"
-            src={`http://localhost:5000/${house.houseImage?.[0]}`}
+            src={`https://all-assistant-server.onrender.com/${house.houseImage?.[0]}`}
             alt=""
           /> */}
               </div>

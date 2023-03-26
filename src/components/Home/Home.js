@@ -7,19 +7,19 @@ import Banner from "../../views/Banner/Banner";
 import Footer from "../../views/Footer/Footer";
 import OurPartners from "../../views/OurPartners/OurPartners";
 import Services from "../../views/Services/Services";
+import Payment from "../../views/Payment/Payment";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
       <Services></Services>
-      <section>
-        <UserInfo></UserInfo>
-        {/* <BestOffer></BestOffer> */}
-        <MobileApp />
-      </section>
-      <OurStory></OurStory>
-      <OurPartners></OurPartners>
+
+      {/* <UserInfo></UserInfo> */}
+      {/* <BestOffer></BestOffer> */}
+      <MobileApp />
+
+      <Payment></Payment>
     </div>
   );
 };
