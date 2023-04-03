@@ -23,6 +23,7 @@ import useDivision from "./Hooks/useDivision";
 import useDistrict from "./Hooks/useDistrict";
 import useUpazila from "./Hooks/useUpazila";
 import CommingSoon from "./views/Services/CommingSoon";
+import Shifting from "./views/Shifting/Shifting";
 
 function App() {
   const [divisions] = useDivision();
@@ -36,6 +37,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/house" element={<House />} />
         <Route path="/hotel" element={<Hotel />} />
+        <Route path="/shifting" element={<Shifting />} />
         <Route path="/login" element={<Login />} />
         <Route path="/singUp" element={<SignUp />} />
         <Route path="/comming-soon" element={<CommingSoon />} />
