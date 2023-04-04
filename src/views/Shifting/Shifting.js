@@ -13,7 +13,7 @@ const Shifting = () => {
 		<div className="flex flex-col lg:flex-row items-center justify-between">
 			<h2 className="text-center text-2xl tracking-tighter font-bold">1 Bedroom hall and kitchen</h2>
 			<h2 className="text-center text-green-600 text-sm tracking-tighter font-bold">For 1 bedroom, dining, drawing & kitchen
-Service available within a city and between two cities</h2>
+            Service available within a city and between two cities</h2>
 
 			<div className="space-x-2 text-center py-2 lg:py-0">
 				
@@ -36,7 +36,7 @@ Service available within a city and between two cities</h2>
 		<div className="flex flex-col lg:flex-row items-center justify-between">
 			<h2 className="text-center text-2xl tracking-tighter font-bold">2 Bedroom hall and kitchen</h2>
 			<h2 className="text-center text-green-600 text-sm tracking-tighter font-bold">For 2 bedroom, dining, drawing & kitchen
-Service available within a city and between two cities</h2>
+             Service available within a city and between two cities</h2>
 
 			<div className="space-x-2 text-center py-2 lg:py-0">
 				

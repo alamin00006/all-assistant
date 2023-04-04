@@ -1,4 +1,5 @@
 import React from 'react';
+import CheckPriceModal from '../Shifting/CheckPriceModal';
 
 const SearchOptionforShift = ({
     divisions,
@@ -87,7 +88,8 @@ const SearchOptionforShift = ({
         <input type="text" placeholder="Mobile" className="input w-full max-w-xs" />
         </div>
         <div>
-        <button className="btn bg-green-600 btn-success">Check Price</button>
+        
+        <CheckPriceModal></CheckPriceModal>
         </div>
       </div>
       
