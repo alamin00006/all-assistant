@@ -7,7 +7,7 @@ import story5 from "../../assets/images/upay.png";
 
 const Payment = () => {
   return (
-    <div>
+    <div className="w-3/4 m-0 mx-auto">
       <div className="my-20">
         <div className="flex justify-center">
           <h1 className="text-center text-black font-bold text-2xl border-b-4 border-black">
