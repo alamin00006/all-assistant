@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const MicrowaveOvenService = () => {
-  const [cart, setCart] = useState([]);
+const MicrowaveOvenService = ({ addCart }) => {
+  // const [cart, setCart] = useState([]);
   const [services, setData] = useState([
     {
       id: 1,
@@ -30,21 +30,20 @@ const MicrowaveOvenService = () => {
     },
   ]);
 
-  const addCart = (ser) => {
-    let arr = [];
-    arr = [...cart, ser];
-    setCart(arr);
-  };
+  // const addCart = (ser) => {
+  //   let arr = [];
+  //   arr = [...cart, ser];
+  //   setCart(arr);
+  // };
 
-  console.log(cart);
+  // console.log(addCart);
   return (
     <div>
-      <button>Cart</button>
       <div className="grid grid-cols-3">
         {services.map((service) => (
-          <div key={service.id} className="card w-96 bg-base-100 shadow-xl">
+          <div key={service.id} className="card w-60  bg-base-100 shadow-xl">
             <figure>
-              <img src={service.image} alt="Shoes" />
+              <img className="w-16" src={service.image} alt="Shoes" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">title</h2>

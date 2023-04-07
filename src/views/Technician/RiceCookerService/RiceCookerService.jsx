@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-const RiceCookerService = () => {
+const RiceCookerService = ({ addCart }) => {
+  // console.log(addCart);
   const [services, setData] = useState([
     {
       id: 1,
@@ -53,15 +54,15 @@ const RiceCookerService = () => {
   return (
     <div className="grid grid-cols-3">
       {services.map((service) => (
-        <div key={service.id} className="card w-96 bg-base-100 shadow-xl">
+        <div key={service.id} className="card w-60 bg-base-100 shadow-xl">
           <figure>
-            <img src={service.image} alt="Shoes" />
+            <img className="w-16" src={service.image} alt="Shoes" />
           </figure>
           <div className="card-body">
             <h2 className="card-title">title</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions justify-end">
-              <button>add</button>
+              <button onClick={() => addCart(service)}>add</button>
             </div>
           </div>
         </div>
