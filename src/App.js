@@ -66,7 +66,10 @@ function App() {
         <Route path="/comming-soon" element={<CommingSoon />} />
         <Route path="*" element={<Error />} />
         <Route path="/technician" element={<Technician />}>
-          <Route index element={<RiceCookerService />}></Route>
+          <Route
+            index
+            element={<RiceCookerService addCart={addCart} />}
+          ></Route>
           <Route
             path="ricecooker"
             element={<RiceCookerService addCart={addCart} />}

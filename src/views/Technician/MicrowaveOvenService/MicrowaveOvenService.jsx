@@ -49,7 +49,12 @@ const MicrowaveOvenService = ({ addCart }) => {
               <h2 className="card-title">title</h2>
               <p>If a dog chews shoes whose shoes does he choose?</p>
               <div className="card-actions justify-end">
-                <button onClick={() => addCart(service)}>add</button>
+                <button
+                  className="bg-sky-500 hover:bg-sky-700 text-white p-2 rounded-lg"
+                  onClick={() => addCart(service)}
+                >
+                  add
+                </button>
               </div>
             </div>
           </div>
