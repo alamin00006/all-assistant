@@ -40,7 +40,7 @@ const Services = () => {
           </Link>
         </div>
         <div>
-          <Link to="/comming-soon">
+          <Link to="/Shifting">
             <div className="flex items-center flex-col justify-center">
               <img style={{ width: "190px" }} src={shifting} alt="" />
               <p className="text-xl">Shifting</p>
