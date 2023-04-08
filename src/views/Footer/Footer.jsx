@@ -28,7 +28,7 @@ const Footer = () => {
             Hotel
           </Link>
           <Link className="link link-hover">Shifting</Link>
-          <Link className="link link-hover">Techician</Link>
+          <Link className="link link-hover">Technician</Link>
           {/* <Link className="link link-hover">Fish All</Link>
           <Link className="link link-hover">Meats All</Link>
           <Link className="link link-hover">Grocery</Link>

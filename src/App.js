@@ -23,12 +23,19 @@ import useDivision from "./Hooks/useDivision";
 import useDistrict from "./Hooks/useDistrict";
 import useUpazila from "./Hooks/useUpazila";
 import CommingSoon from "./views/Services/CommingSoon";
-import Shifting from "./views/Shifting/Shifting";
 
 function App() {
   const [divisions] = useDivision();
   const [districts] = useDistrict();
   const [upazilas] = useUpazila();
+
+  const [cart, setCart] = useState([]);
+  const addCart = (ser) => {
+    let arr = [];
+    arr = [...cart, ser];
+    setCart(arr);
+  };
+
   return (
     <div className="">
       <Navbar />
@@ -42,6 +49,69 @@ function App() {
         <Route path="/singUp" element={<SignUp />} />
         <Route path="/comming-soon" element={<CommingSoon />} />
         <Route path="*" element={<Error />} />
+        <Route path="/technician" element={<Technician />}>
+          <Route
+            index
+            element={<RiceCookerService addCart={addCart} />}
+          ></Route>
+          <Route
+            path="ricecooker"
+            element={<RiceCookerService addCart={addCart} />}
+          ></Route>
+          <Route
+            path="microwave"
+            element={<MicrowaveOvenService addCart={addCart} cart={cart} />}
+          ></Route>
+          <Route
+            path="computerservice"
+            element={<ComputerService addCart={addCart} />}
+          ></Route>
+          <Route
+            path="treadmillrepair"
+            element={<TreadmillRepair addCart={addCart} />}
+          ></Route>
+          <Route
+            path="electricalservice"
+            element={<ElectricalService addCart={addCart} />}
+          ></Route>
+          <Route
+            path="waterpumprepair"
+            element={<WaterPumpRepair addCart={addCart} />}
+          ></Route>
+          <Route
+            path="acrepair"
+            element={<AcRepair addCart={addCart} />}
+          ></Route>
+          <Route
+            path="waterheaterrepair"
+            element={<WaterHeaterRepair addCart={addCart} />}
+          ></Route>
+          <Route
+            path="cccamera"
+            element={<CcCameraInstallation addCart={addCart} />}
+          ></Route>
+          <Route
+            path="fridgerepair"
+            element={<FridgeRepair addCart={addCart} />}
+          ></Route>
+          <Route
+            path="ipsservice"
+            element={<IpsService addCart={addCart} />}
+          ></Route>
+          <Route
+            path="gasstoveservice"
+            element={<GasStoveService addCart={addCart} />}
+          ></Route>
+          <Route
+            path="plumbingservice"
+            element={<PlumbingService addCart={addCart} />}
+          ></Route>
+          <Route
+            path="geyserservice"
+            element={<GeyserService addCart={addCart} />}
+          ></Route>
+        </Route>
+        <Route path="/cart" element={<Cart cart={cart} />}></Route>
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<Profile />}></Route>
           <Route
