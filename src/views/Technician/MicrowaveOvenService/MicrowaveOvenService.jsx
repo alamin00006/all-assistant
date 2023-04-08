@@ -39,7 +39,7 @@ const MicrowaveOvenService = ({ addCart }) => {
   // console.log(addCart);
   return (
     <div>
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-end">
         {services.map((service) => (
           <div key={service.id} className="card w-60  bg-base-100 shadow-xl">
             <figure>
