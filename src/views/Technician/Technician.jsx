@@ -4,7 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 const Technician = () => {
   return (
     <div>
-      <div className="drawer drawer-mobile w-4/5 m-0 mx-auto">
+      <div className="drawer drawer-mobile lg:w-4/5 lg:m-0 lg:mx-auto">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content ">
           <div className="rounded-full w-12 h-12 bg-lime-600 p-2">
@@ -12,18 +12,26 @@ const Technician = () => {
               Cart
             </Link>
           </div>
+          {/* <div className="flex justify-end">
+            <label
+              htmlFor="my-drawer-2"
+              className="btn bg-green-700 text-white drawer-button lg:hidden "
+            >
+              Technician Menu
+            </label>
+          </div> */}
 
           <Outlet></Outlet>
           <label
             htmlFor="my-drawer-2"
             className="btn btn-primary drawer-button lg:hidden"
           >
-            Open drawer
+            Technician Menu
           </label>
         </div>
-        <div className="drawer-side border-solid border-2 border-sky-500">
+        <div className="drawer-side border-solid border-2 border-sky-500 ">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 bg-base-100 text-base-content">
+          <ul className="menu p-4 w-[180px] md:w-80 lg:w-80 bg-green-600 text-white z-50">
             <li>
               <Link to="ricecooker">Rice Cooker Service</Link>
             </li>
